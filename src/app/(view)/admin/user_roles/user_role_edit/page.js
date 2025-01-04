@@ -1483,7 +1483,7 @@ const UserRoleEdit = ({ id }) => {
 
 
 
-
+{/* 
                                                                     <div className=' mt-2 p-1' >
                                                                         <div style={{ width: '15%', fontSize: '15px' }} className="form-check form-check-inline w-15">
                                                                             <input
@@ -1563,7 +1563,7 @@ const UserRoleEdit = ({ id }) => {
                                                                                 type="checkbox" />
                                                                             <label class="form-check-label font-weight-bold" for="inlineCheckbox1">Delete All</label>
                                                                         </div>
-                                                                    </div>
+                                                                    </div> */}
 
 
                                                                 </div>
