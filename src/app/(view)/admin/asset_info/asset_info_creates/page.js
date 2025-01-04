@@ -159,7 +159,7 @@ const AssetInfoCreates = () => {
         console.log(file);
         setFileNames(newName);
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5003/asset_info/asset_info_image`, formData)
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/asset_info/asset_info_image`, formData)
             .then(res => {
                 console.log(res);
             })
@@ -498,7 +498,7 @@ const AssetInfoCreates = () => {
 
                                                     {selectedFile[0] &&
                                                         <>
-                                                            <img className="w-100 mb-2 img-thumbnail" onChange={(e) => brand_file_change(e)} src={`${process.env.NEXT_PUBLIC_API_URL}:5003/${selectedFile[0].path}`} alt="Uploaded File" />
+                                                            <img className="w-100 mb-2 img-thumbnail" onChange={(e) => brand_file_change(e)} src={`${process.env.NEXT_PUBLIC_API_URL}/${selectedFile[0].path}`} alt="Uploaded File" />
 
                                                             <input type="hidden" name="img" value={selectedFile[0].path} />
                                                             <button onClick={brand_image_remove} type="button" className="btn btn-danger btn-sm position-absolute float-right ml-n4" ><FaTimes></FaTimes></button>
