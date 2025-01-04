@@ -719,7 +719,7 @@ const EmployeeCreate = () => {
         const newName = `${fileName}.${extension}`;
         formData.append('files', file, newName);
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/employe/employe_image`, formData, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5003/employe/employe_image`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
@@ -786,7 +786,7 @@ const EmployeeCreate = () => {
         const newName = `${fileName}.${extension}`;
         formData.append('files', file, newName);
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/employe/employe_image`, formData, {
+        axios.post(`http://localhost:5003/employe/employe_image`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
@@ -2023,7 +2023,7 @@ onChange={employee_input_change}
                                                                 </div>
                                                                 <input type="text" className='d-none' value={uploadedFileUrl} name='photo' />
                                                                 <div id="software_logo" className="logo bg-light img-thumbnail">
-                                                                    {uploadedFileUrl && <img src={`${process.env.NEXT_PUBLIC_API_URL}/${uploadedFileUrl}`} alt="Uploaded" className="img-fluid" />}
+                                                                    {uploadedFileUrl && <img src={`${process.env.NEXT_PUBLIC_API_URL}:5003/${uploadedFileUrl}`} alt="Uploaded" className="img-fluid" />}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2059,7 +2059,7 @@ onChange={employee_input_change}
                                                                 </div>
                                                                 <input name='signature_image' type="text" className='d-none' value={uploadedImageUrl} />
                                                                 <div id="software_logo" className="logo bg-light img-thumbnail">
-                                                                    {uploadedImageUrl && <img src={`${process.env.NEXT_PUBLIC_API_URL}/${uploadedImageUrl}`} alt="Uploaded" className="img-fluid" />}
+                                                                    {uploadedImageUrl && <img src={`http://localhost:5003/${uploadedImageUrl}`} alt="Uploaded" className="img-fluid" />}
                                                                 </div>
                                                             </div>
                                                         </div>
