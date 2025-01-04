@@ -3650,8 +3650,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Select from 'react-dropdown-select';
 import { FaTrash, FaUpload } from 'react-icons/fa';
-import "./jssor.slider.min.css"; // Ensure you have the appropriate CSS file for Jssor Slider
-import "../js/jssor.slider.min.js"; // Ensure this file exists and is correctly loaded
+
 
 
 const SliderCreates = () => {
