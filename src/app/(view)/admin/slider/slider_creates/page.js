@@ -247,7 +247,7 @@
 //     } = useQuery({
 //         queryKey: ['page_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
 //             const data = await res.json()
 //             return data
@@ -257,7 +257,7 @@
 //     } = useQuery({
 //         queryKey: ['page_list_status'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
 //             const data = await res.json()
 //             return data
@@ -269,7 +269,7 @@
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -2001,7 +2001,7 @@
 //     } = useQuery({
 //         queryKey: ['transition_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/transition_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/transition_list`)
 
 //             const data = await res.json()
 //             return data
@@ -2093,7 +2093,7 @@
 //   const { data: transition_list = [] } = useQuery({
 //     queryKey: ['transition_list'],
 //     queryFn: async () => {
-//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/transition_list`);
+//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/transition_list`);
 //       const data = await res.json();
 //       return data;
 //     }
@@ -2244,7 +2244,7 @@
 //     } = useQuery({
 //         queryKey: ['page_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
 //             const data = await res.json()
 //             return data
@@ -2258,7 +2258,7 @@
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -2800,7 +2800,7 @@
 //     const { data: transition_list = [] } = useQuery({
 //         queryKey: ['transition_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/transition_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/transition_list`);
 //             const data = await res.json();
 //             return data;
 //         },
@@ -3650,8 +3650,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Select from 'react-dropdown-select';
 import { FaTrash, FaUpload } from 'react-icons/fa';
-import "./jssor.slider.min.css"; // Ensure you have the appropriate CSS file for Jssor Slider
-import "../js/jssor.slider.min.js"; // Ensure this file exists and is correctly loaded
+
 
 
 const SliderCreates = () => {
@@ -3786,7 +3785,7 @@ const SliderCreates = () => {
     } = useQuery({
         queryKey: ['page_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
             const data = await res.json()
             return data
@@ -3797,7 +3796,7 @@ const SliderCreates = () => {
     } = useQuery({
         queryKey: ['transition_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/transition_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/transition_list`)
 
             const data = await res.json()
             return data
@@ -3808,7 +3807,7 @@ const SliderCreates = () => {
     } = useQuery({
         queryKey: ['page_list_status'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
             const data = await res.json()
             return data
@@ -3820,7 +3819,7 @@ const SliderCreates = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -4116,8 +4115,8 @@ const SliderCreates = () => {
 
         console.log(allData)
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/slider_create
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/slider/slider_create
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/slider_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/slider/slider_create
 
         fetch(``, {
             method: 'POST',

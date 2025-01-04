@@ -15,7 +15,7 @@ const CopyCategory = ({ id }) => {
     } = useQuery({
         queryKey: ['categorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
 
             const data = await res.json()
             return data
@@ -25,7 +25,7 @@ const CopyCategory = ({ id }) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/category/category_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/category/category_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -219,7 +219,7 @@ const CopyCategory = ({ id }) => {
         };
 
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then((response) => response.json())
             .then((categoryData) => {
                 // Check if brand_name already exists in categoryData
@@ -239,7 +239,7 @@ const CopyCategory = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -305,7 +305,7 @@ const CopyCategory = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

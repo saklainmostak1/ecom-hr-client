@@ -65,7 +65,7 @@ const EmployeeLoanCreates = () => {
     const { data: employeeList = [], } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -82,7 +82,7 @@ const EmployeeLoanCreates = () => {
     } = useQuery({
         queryKey: ['loanAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_all`)
 
             const data = await res.json()
             return data
@@ -94,7 +94,7 @@ const EmployeeLoanCreates = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -105,7 +105,7 @@ const EmployeeLoanCreates = () => {
     const { data: payment_type = [], } = useQuery({
         queryKey: ['payment_type'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_type_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_type_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -323,7 +323,7 @@ const EmployeeLoanCreates = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -450,9 +450,9 @@ const EmployeeLoanCreates = () => {
 
         // Retrieve the form's image value
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_create
         // Make the fetch request
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employe_loan/employe_loan_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employe_loan/employe_loan_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -508,7 +508,7 @@ const EmployeeLoanCreates = () => {
             selectedEntryType: assetInfo.account
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

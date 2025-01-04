@@ -49,7 +49,7 @@ const CreateTypeExcel = () => {
     } = useQuery({
         queryKey: ['types'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`)
 
             const data = await res.json()
             return data
@@ -284,7 +284,7 @@ const CreateTypeExcel = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -343,7 +343,7 @@ const CreateTypeExcel = () => {
 
     // const [status, setStatus] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data))
     // }, [])
@@ -430,7 +430,7 @@ const CreateTypeExcel = () => {
     // //  const router = useRouter();
 
     // //  useEffect(() => {
-    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     // //          .then(res => res.json())
     // //          .then(data => setStatus(data))
     // //  }, [])
@@ -537,7 +537,7 @@ const CreateTypeExcel = () => {
     // const [excelData, setExcelData] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data));
     // }, []);
@@ -791,7 +791,7 @@ const CreateTypeExcel = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

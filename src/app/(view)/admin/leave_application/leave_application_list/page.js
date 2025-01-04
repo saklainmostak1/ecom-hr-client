@@ -38,7 +38,7 @@
 //     } = useQuery({
 //         queryKey: ['leave_applications'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_all`)
 
 //             const data = await res.json()
 //             return data
@@ -61,7 +61,7 @@
 //     } = useQuery({
 //         queryKey: ['module_settings'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
 //             const data = await res.json()
 //             return data
@@ -90,7 +90,7 @@
 //     } = useQuery({
 //         queryKey: ['leaveCategory'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`)
 
 //             const data = await res.json()
 //             return data
@@ -132,7 +132,7 @@
 //     } = useQuery({
 //         queryKey: ['moduleInfo'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
 //             const data = await res.json()
 //             return data
@@ -190,7 +190,7 @@
 //     }
 //     const [pageUsers, setPageUsers] = useState([]);
 //     const caregory_list = async () => {
-//         const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_all/${currentPage}/${dataPerPage}`;
+//         const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_all/${currentPage}/${dataPerPage}`;
 //         const response = await fetch(url);
 //         const data = await response.json();
 //         setPageUsers(data);
@@ -207,7 +207,7 @@
 //         console.log(id)
 //         const proceed = window.confirm(`Are You Sure delete${id}`)
 //         if (proceed) {
-//             fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_delete/${id}`, {
+//             fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_delete/${id}`, {
 //                 method: "POST",
 
 //             })
@@ -258,7 +258,7 @@
 //     //     setFormData(approvedDates);
 //     //     console.log(approvedDates);
 
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'content-type': 'application/json',
@@ -293,7 +293,7 @@
 //         setFormData(approvedDates);
 //         console.log(approvedDates);
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -305,7 +305,7 @@
 //                 console.log(data.affectedRows);
 
 //                 // Update application status
-//                 return fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_edit_status/${id}`, {
+//                 return fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_edit_status/${id}`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'content-type': 'application/json',
@@ -340,7 +340,7 @@
 //         setFormData(approvedDates);
 //         console.log(approvedDates);
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -352,7 +352,7 @@
 //                 console.log(data.affectedRows);
 
 //                 // Update application status
-//                 return fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_edit_status/${id}`, {
+//                 return fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_edit_status/${id}`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'content-type': 'application/json',
@@ -386,7 +386,7 @@
 //     //     setFormData(approvedDates);
 //     //     console.log(approvedDates);
 
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'content-type': 'application/json',
@@ -454,7 +454,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
 //             fromDate, toDate, searchQuery, status, selectedColumns
 //         })
 //             .then(response => {
@@ -1308,7 +1308,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['leave_applications'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_all`)
 
             const data = await res.json()
             return data
@@ -1319,7 +1319,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
 
             const data = await res.json()
             return data
@@ -1334,7 +1334,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -1433,7 +1433,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['leaveCategory'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`)
 
             const data = await res.json()
             return data
@@ -1475,7 +1475,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -1533,7 +1533,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_all/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_all/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -1550,7 +1550,7 @@ const ListLeaveApplication = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_delete/${id}`, {
                 method: "POST",
 
             })
@@ -1596,7 +1596,7 @@ const ListLeaveApplication = ({ searchParams }) => {
         setFormData(approvedDates);
         console.log(approvedDates);
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1608,7 +1608,7 @@ const ListLeaveApplication = ({ searchParams }) => {
                 console.log(data.affectedRows);
 
                 // Update application status
-                return fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_edit_status/${id}`, {
+                return fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_edit_status/${id}`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -1643,7 +1643,7 @@ const ListLeaveApplication = ({ searchParams }) => {
         setFormData(approvedDates);
         console.log(approvedDates);
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_approve`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_approve`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1655,7 +1655,7 @@ const ListLeaveApplication = ({ searchParams }) => {
                 console.log(data.affectedRows);
 
                 // Update application status
-                return fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_edit_status/${id}`, {
+                return fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_edit_status/${id}`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -1723,7 +1723,7 @@ const ListLeaveApplication = ({ searchParams }) => {
 
     const period_search = () => {
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
             fromDate, toDate, searchQuery, status, selectedColumns, userGroup, multiSearch
         })
             .then(response => {
@@ -1759,7 +1759,7 @@ const ListLeaveApplication = ({ searchParams }) => {
 
     const category_print = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
                 fromDate, toDate, searchQuery, status, selectedColumns, userGroup, multiSearch
             });
             const searchResults = response.data.results;
@@ -1958,7 +1958,7 @@ const ListLeaveApplication = ({ searchParams }) => {
 
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
                 fromDate, toDate, searchQuery, status, selectedColumns, multiSearch
             });
             const searchResults = response.data.results;
@@ -2031,7 +2031,7 @@ const ListLeaveApplication = ({ searchParams }) => {
     const category_word_download = async () => {
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
                 fromDate, toDate, searchQuery, status, selectedColumns, multiSearch
             });
             const searchResults = response.data.results;
@@ -2123,7 +2123,7 @@ const ListLeaveApplication = ({ searchParams }) => {
 
     const category_PDF_download = async () => {
         // setLoading(true);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_search`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_search`, {
             fromDate, toDate, searchQuery, status, selectedColumns, multiSearch
         });
 
@@ -2162,7 +2162,7 @@ const ListLeaveApplication = ({ searchParams }) => {
         }
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

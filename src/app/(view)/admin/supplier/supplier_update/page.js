@@ -147,7 +147,7 @@ const SupplierUpdate = ({ id }) => {
     const { data: supplier = [], isLoading, refetch } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_all/${id}`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -243,7 +243,7 @@ const SupplierUpdate = ({ id }) => {
         }
 
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_edit/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -286,7 +286,7 @@ const SupplierUpdate = ({ id }) => {
 
     const [statuss, setStatuss] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatuss(data))
     }, [])

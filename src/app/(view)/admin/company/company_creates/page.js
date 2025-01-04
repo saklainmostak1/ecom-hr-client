@@ -12,7 +12,7 @@ const ComapanyCreate = () => {
     } = useQuery({
         queryKey: ['companyAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`)
 
             const data = await res.json()
             return data
@@ -106,7 +106,7 @@ const ComapanyCreate = () => {
             created_by
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

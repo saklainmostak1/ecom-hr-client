@@ -69,7 +69,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
     } = useQuery({
         queryKey: ['office_visits_persons'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_all/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_all/${id}`)
 
             const data = await res.json()
             return data
@@ -187,9 +187,9 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
 
 
         console.log(schoolShift)
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -220,7 +220,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -360,7 +360,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list/${currentPage}/${dataPerPage}/${id}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list/${currentPage}/${dataPerPage}/${id}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -390,7 +390,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_delete/${id}`, {
                 method: "POST",
 
             })
@@ -414,8 +414,8 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
 
     const expense_excel_download = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_search/${id}`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_search/${id}`, {
                 itemName,
                 fromDate,
                 toDate,
@@ -469,7 +469,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
 
     const person_search = () => {
         // setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_search/${id}`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_search/${id}`, {
             itemName,
             fromDate,
             toDate,
@@ -494,8 +494,8 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
 
     const expense_PDF_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_search/${id}`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_search/${id}`, {
             itemName,
             fromDate,
             toDate,
@@ -508,7 +508,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -545,8 +545,8 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
 
     const office_visit_person_Print_download = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_search/${id}`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_search/${id}`, {
                 itemName,
                 fromDate,
                 toDate,
@@ -561,7 +561,7 @@ const OfficeVisitPerson = ({ id, searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

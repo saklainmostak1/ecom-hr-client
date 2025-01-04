@@ -122,9 +122,9 @@
 //             return
 //         }
 //         console.log(schoolShift)
-//         // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create
+//         // ${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -151,7 +151,7 @@
 //     const { data: employeeList = [], isLoading } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -161,7 +161,7 @@
 //     const { data: branches = [] } = useQuery({
 //         queryKey: ['branches'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -457,7 +457,7 @@ const MobileAllowanceCreate = () => {
         }
         console.log(schoolShift);
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -483,7 +483,7 @@ const MobileAllowanceCreate = () => {
     const { data: employeeList = [], isLoading } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             return data;
         }
@@ -492,7 +492,7 @@ const MobileAllowanceCreate = () => {
     const { data: branches = [] } = useQuery({
         queryKey: ['branches'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }

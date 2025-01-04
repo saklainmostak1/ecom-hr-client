@@ -118,7 +118,7 @@
 //         queryKey: ['payRoll'],
 //         queryFn: async () => {
 //             // const res = await fetch(datas)
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
 
 //             const data = await res.json()
@@ -130,7 +130,7 @@
 //     } = useQuery({
 //         queryKey: ['educationName'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_list`)
 
 //             const data = await res.json()
 //             return data
@@ -141,7 +141,7 @@
 //     } = useQuery({
 //         queryKey: ['divisions'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 
 //             const data = await res.json()
 //             return data
@@ -152,7 +152,7 @@
 //     } = useQuery({
 //         queryKey: ['district'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 
 //             const data = await res.json()
 //             return data
@@ -163,7 +163,7 @@
 //     } = useQuery({
 //         queryKey: ['upazilas'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 
 //             const data = await res.json()
 //             return data
@@ -248,20 +248,20 @@
 //     } = useQuery({
 //         queryKey: ['schoolShiftList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_all`)
 
 //             const data = await res.json()
 //             return data
 //         }
 //     })
 
-//     // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+//     // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
 //     const { data: allEmployeeList = [],
 //     } = useQuery({
 //         queryKey: ['allEmployeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 
 //             const data = await res.json()
 //             return data
@@ -671,8 +671,8 @@
 //         // setPassingYear(new Array(fields.length).fill(''));
 
 
-//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
-//         const apiUrl2 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee_user/employee_user_update/${id}`;
+//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
+//         const apiUrl2 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee_user/employee_user_update/${id}`;
 
 
 
@@ -720,7 +720,7 @@
 //     //     e.preventDefault()
 
 //     //     // First API endpoint
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee_user/employee_user_update/${id}`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee_user/employee_user_update/${id}`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'Content-Type': 'application/json'
@@ -733,7 +733,7 @@
 //     //             if (response.ok === true) {
 //     //                 sessionStorage.setItem("message", "Data Update successfully!");
 //     //                 // Call the second API endpoint here
-//     //                 fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`, {
+//     //                 fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`, {
 //     //                     method: 'POST',
 //     //                     headers: {
 //     //                         'Content-Type': 'application/json'
@@ -767,7 +767,7 @@
 //     //     e.preventDefault()
 
 
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'Content-Type': 'application/json'
@@ -936,7 +936,7 @@
 //     } = useQuery({
 //         queryKey: ['genderList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_list`)
 
 //             const data = await res.json()
 //             return data
@@ -947,7 +947,7 @@
 //     } = useQuery({
 //         queryKey: ['religionList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_list`)
 
 //             const data = await res.json()
 //             return data
@@ -958,7 +958,7 @@
 //     } = useQuery({
 //         queryKey: ['designationList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
 
 //             const data = await res.json()
 //             return data
@@ -969,7 +969,7 @@
 //     } = useQuery({
 //         queryKey: ['branchAll'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
 //             const data = await res.json()
 //             return data
@@ -2154,7 +2154,7 @@
 //     const { data: allEmployeeList = [] } = useQuery({
 //         queryKey: ['allEmployeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2163,7 +2163,7 @@
 //     const { data: divisions = [] } = useQuery({
 //         queryKey: ['divisions'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2172,7 +2172,7 @@
 //     const { data: districts = [] } = useQuery({
 //         queryKey: ['districts'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2181,7 +2181,7 @@
 //     const { data: upazilas = [] } = useQuery({
 //         queryKey: ['upazilas'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2349,7 +2349,7 @@
 //     const employee_edit = (e) => {
 //         e.preventDefault();
 
-//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
+//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
 
 //         const requestOptions1 = {
 //             method: 'POST',
@@ -2552,7 +2552,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['allEmployeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 
             const data = await res.json()
             return data
@@ -2563,7 +2563,7 @@ const EmployeeEdit = ({ id }) => {
         queryKey: ['payRoll'],
         queryFn: async () => {
             // const res = await fetch(datas)
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
 
             const data = await res.json()
@@ -2575,7 +2575,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['professions'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/profession/profession_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/profession/profession_all`)
 
             const data = await res.json()
             return data
@@ -2585,7 +2585,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['educationName'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_list`)
 
             const data = await res.json()
             return data
@@ -2596,7 +2596,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['divisions'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 
             const data = await res.json()
             return data
@@ -2607,7 +2607,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['district'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 
             const data = await res.json()
             return data
@@ -2618,7 +2618,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['upazilas'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 
             const data = await res.json()
             return data
@@ -3139,14 +3139,14 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['schoolShiftList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_all`)
 
             const data = await res.json()
             return data
         }
     })
 
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
 
 
@@ -3342,8 +3342,8 @@ const EmployeeEdit = ({ id }) => {
         }
 
 
-        const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
-        const apiUrl2 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee_user/employee_user_update/${id}`;
+        const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
+        const apiUrl2 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee_user/employee_user_update/${id}`;
 
 
 
@@ -3531,7 +3531,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['genderList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_list`)
 
             const data = await res.json()
             return data
@@ -3542,7 +3542,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['bloods'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all`)
 
             const data = await res.json()
             return data
@@ -3553,7 +3553,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['religionList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_list`)
 
             const data = await res.json()
             return data
@@ -3564,7 +3564,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['designationList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
 
             const data = await res.json()
             return data
@@ -3575,7 +3575,7 @@ const EmployeeEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
             const data = await res.json()
             return data
@@ -4546,7 +4546,7 @@ export default EmployeeEdit;
 //     } = useQuery({
 //         queryKey: ['allEmployeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 
 //             const data = await res.json()
 //             return data
@@ -4558,7 +4558,7 @@ export default EmployeeEdit;
 //     } = useQuery({
 //         queryKey: ['divisions'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 
 //             const data = await res.json()
 //             return data
@@ -4569,7 +4569,7 @@ export default EmployeeEdit;
 //     } = useQuery({
 //         queryKey: ['district'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 
 //             const data = await res.json()
 //             return data
@@ -4580,7 +4580,7 @@ export default EmployeeEdit;
 //     } = useQuery({
 //         queryKey: ['upazilas'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 
 //             const data = await res.json()
 //             return data
@@ -4711,7 +4711,7 @@ export default EmployeeEdit;
 
 
 
-//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
+//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
 
 
 
@@ -5005,7 +5005,7 @@ export default EmployeeEdit;
 //     const { data: allEmployeeList = [] } = useQuery({
 //         queryKey: ['allEmployeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5014,7 +5014,7 @@ export default EmployeeEdit;
 //     const { data: divisions = [] } = useQuery({
 //         queryKey: ['divisions'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5023,7 +5023,7 @@ export default EmployeeEdit;
 //     const { data: districts = [] } = useQuery({
 //         queryKey: ['districts'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5032,7 +5032,7 @@ export default EmployeeEdit;
 //     const { data: upazilas = [] } = useQuery({
 //         queryKey: ['upazilas'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5176,7 +5176,7 @@ export default EmployeeEdit;
 //     const employee_edit = (e) => {
 //         e.preventDefault();
 
-//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
+//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
 
 //         const requestOptions1 = {
 //             method: 'POST',
@@ -5351,7 +5351,7 @@ export default EmployeeEdit;
 //     const { data: allEmployeeList = [] } = useQuery({
 //         queryKey: ['allEmployeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list/${id}`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5360,7 +5360,7 @@ export default EmployeeEdit;
 //     const { data: divisions = [] } = useQuery({
 //         queryKey: ['divisions'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/divisions/divisions_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/divisions/divisions_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5369,7 +5369,7 @@ export default EmployeeEdit;
 //     const { data: districts = [] } = useQuery({
 //         queryKey: ['districts'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/district/district_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/district/district_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5378,7 +5378,7 @@ export default EmployeeEdit;
 //     const { data: upazilas = [] } = useQuery({
 //         queryKey: ['upazilas'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/upazilas/upazilas_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/upazilas/upazilas_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -5544,7 +5544,7 @@ export default EmployeeEdit;
 //     const employee_edit = (e) => {
 //         e.preventDefault();
 
-//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_edit/${id}`;
+//         const apiUrl1 = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_edit/${id}`;
 
 //         const requestOptions1 = {
 //             method: 'POST',

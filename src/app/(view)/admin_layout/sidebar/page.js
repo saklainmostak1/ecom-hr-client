@@ -43,13 +43,13 @@ const AdminSidebar = ({ isSidebarActive, child, toggleSidebar, props }) => {
   const { data: allSideNavDatas = [], isLoading, refetch } = useQuery({
     queryKey: ['allSideNavData'],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${usersId}/role`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${usersId}/role`);
       const data = await res.json();
 
       return data;
     },
   });
-  // ${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${usersId}/role
+  // ${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${usersId}/role
 
   // const [intervalId, setIntervalId] = useState(null);
 
@@ -57,7 +57,7 @@ const AdminSidebar = ({ isSidebarActive, child, toggleSidebar, props }) => {
   // const { data: allSideNavDatas = [], isLoading, refetch } = useQuery({
   //   queryKey: ['allSideNavData'],
   //   queryFn: async () => {
-  //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${usersId}/role`);
+  //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${usersId}/role`);
   //     const data = await res.json();
   //     return data;
   //   },
@@ -98,7 +98,7 @@ const AdminSidebar = ({ isSidebarActive, child, toggleSidebar, props }) => {
   const { data: users = [] } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser`);
       const data = await res.json();
 
       return data;
@@ -368,7 +368,7 @@ const AdminSidebar = ({ isSidebarActive, child, toggleSidebar, props }) => {
 
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/admin_panel_settings`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/admin_panel_settings`)
       .then(Response => Response.json())
       .then(data => setSideNav(data))
   }, [])
@@ -1140,7 +1140,7 @@ export default AdminSidebar;
 //   const { data: allSideNavDatas = [], isLoading, refetch } = useQuery({
 //     queryKey: ['allSideNavData'],
 //     queryFn: async () => {
-//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${usersId}/role`);
+//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${usersId}/role`);
 //       const data = await res.json();
 
 //       return data;
@@ -1166,7 +1166,7 @@ export default AdminSidebar;
 //   const { data: users = [] } = useQuery({
 //     queryKey: ['users'],
 //     queryFn: async () => {
-//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser`);
+//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser`);
 //       const data = await res.json();
 
 //       return data;
@@ -1344,7 +1344,7 @@ export default AdminSidebar;
 
 
 //   useEffect(() => {
-//     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/admin_panel_settings`)
+//     fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/admin_panel_settings`)
 //       .then(Response => Response.json())
 //       .then(data => setSideNav(data))
 //   }, [])

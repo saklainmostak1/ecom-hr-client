@@ -63,7 +63,7 @@ const DueReportSeller = () => {
     } = useQuery({
         queryKey: ['supplier_due_amount_purchase_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list`)
 
             const data = await res.json()
             return data
@@ -95,7 +95,7 @@ const DueReportSeller = () => {
             return
         }
         
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
             toDate, fromDate, supplier_id
 
         })
@@ -119,7 +119,7 @@ const DueReportSeller = () => {
     } = useQuery({
         queryKey: ['supplier_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`)
 
             const data = await res.json()
             return data
@@ -129,8 +129,8 @@ const DueReportSeller = () => {
 
     const supplier_due_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
             supplier_id
         });
 
@@ -181,7 +181,7 @@ const DueReportSeller = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier_due/supplier_due_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier_due/supplier_due_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -218,8 +218,8 @@ const DueReportSeller = () => {
 
     const supplier_due_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
                 supplier_id
             });
 
@@ -272,7 +272,7 @@ const DueReportSeller = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier_due/supplier_due_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier_due/supplier_due_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -294,7 +294,7 @@ const DueReportSeller = () => {
 
     const supplier_due_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
                 supplier_id
             });
 
@@ -351,7 +351,7 @@ const DueReportSeller = () => {
 
     const supplier_due_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
                 supplier_id
             });
 
@@ -463,7 +463,7 @@ const DueReportSeller = () => {
 
     const sale_print_single = async (id) => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
                 toDate, fromDate, supplier_id
             });
 
@@ -520,7 +520,7 @@ const DueReportSeller = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/report/purchase_due_list_print_single`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/report/purchase_due_list_print_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -543,7 +543,7 @@ const DueReportSeller = () => {
 
     const sale_pdf_download_single = async (id) => {
 
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/supplier_due_amount_purchase_list_search`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/supplier_due_amount_purchase_list_search`, {
             toDate, fromDate, supplier_id
         });
 
@@ -598,7 +598,7 @@ const DueReportSeller = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/report/purchase_due_list_pdf_single`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/report/purchase_due_list_pdf_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ const CopyType = ({ id }) => {
     } = useQuery({
         queryKey: ['types'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`)
 
             const data = await res.json()
             return data
@@ -25,7 +25,7 @@ const CopyType = ({ id }) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -212,7 +212,7 @@ const CopyType = ({ id }) => {
             return name?.trim().replace(/\s+/g, '');
         };
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`)
             .then((response) => response.json())
             .then((typeData) => {
                 // Check if brand_name already exists in typeData
@@ -232,7 +232,7 @@ const CopyType = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -297,7 +297,7 @@ const CopyType = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

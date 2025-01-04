@@ -14,7 +14,7 @@
 //     } = useQuery({
 //         queryKey: ['adminPageListSingle'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -49,7 +49,7 @@
 
 //     const users_update = event => {
 //         event.preventDefault()
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateUsers/${id}`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateUsers/${id}`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json'
@@ -165,7 +165,7 @@ const UpdateUsers = ({ id }) => {
     const { data: adminPageListSingle = [], isLoading, refetch } = useQuery({
         queryKey: ['adminPageListSingle'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`)
             const data = await res.json()
             return data
         }
@@ -228,7 +228,7 @@ const UpdateUsers = ({ id }) => {
             return;
         }
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateUsers/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateUsers/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -40,7 +40,7 @@ const CreateExpense = () => {
         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
         queryFn: async () => {
             if (api) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
                 const data = await res.json();
                 return data;
             }
@@ -523,7 +523,7 @@ const [selectedEntryType, setSelectedEntryType] = useState('');
     } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`)
 
             const data = await res.json()
             return data
@@ -561,7 +561,7 @@ const [selectedData, setSelectedData] = useState({ amount: 0 }); // Example data
             selectedEntryType: selectedEntryType
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -726,7 +726,7 @@ const [selectedData, setSelectedData] = useState({ amount: 0 }); // Example data
             console.log(productData, '=====================')
 
             // /Admin/expense/expense_create
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/expense/expense_create`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/expense/expense_create`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -844,7 +844,7 @@ const [selectedData, setSelectedData] = useState({ amount: 0 }); // Example data
     } = useQuery({
         queryKey: ['expenseCategories'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/expence_category/expence_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/expence_category/expence_category_all`)
 
             const data = await res.json()
             return data
@@ -856,7 +856,7 @@ const [selectedData, setSelectedData] = useState({ amount: 0 }); // Example data
     } = useQuery({
         queryKey: ['supplierList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`)
 
             const data = await res.json()
             return data
@@ -867,7 +867,7 @@ const [selectedData, setSelectedData] = useState({ amount: 0 }); // Example data
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -1793,7 +1793,7 @@ export default CreateExpense;
 //         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
 //         queryFn: async () => {
 //             if (api) {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
 //                 const data = await res.json();
 //                 return data;
 //             }
@@ -1939,7 +1939,7 @@ export default CreateExpense;
 //     } = useQuery({
 //         queryKey: ['supplierList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`)
 
 //             const data = await res.json()
 //             return data
@@ -1950,7 +1950,7 @@ export default CreateExpense;
 //     } = useQuery({
 //         queryKey: ['module_settings'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
 //             const data = await res.json()
 //             return data

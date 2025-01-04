@@ -14,7 +14,7 @@ const ModuleInfoTutorials = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfoTutorial'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_tutorial_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_tutorial_all`)
 
             const data = await res.json()
             return data
@@ -84,7 +84,7 @@ const ModuleInfoTutorials = ({ searchParams }) => {
         const updatedData = { ...assetInfo, [id]: { ...assetInfo[id], img: imagePath } };
         // You can make an API call to your backend to update the image in the database
         // Assuming you have an API endpoint like `updateImage` to handle this operation
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_tutorial_update`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_tutorial_update`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ const ModuleInfoTutorials = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_tutorial_all_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_tutorial_all_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -213,7 +213,7 @@ const ModuleInfoTutorials = ({ searchParams }) => {
         const updatedData = { ...assetInfo, [id]: { ...assetInfo[id], video_link: videoLink } };
 
         // Make the fetch request to update the database
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_tutorial_update`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_tutorial_update`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -659,7 +659,7 @@ export default ModuleInfoTutorials;
 
 
 //     // Make the fetch request
-//     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_tutorial_update`, {
+//     fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_tutorial_update`, {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json'

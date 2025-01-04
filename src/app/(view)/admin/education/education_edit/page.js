@@ -29,7 +29,7 @@
 //     queryKey: ["educationAll"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -40,7 +40,7 @@
 //     queryKey: ["currentEducation", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -88,7 +88,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -256,7 +256,7 @@ useEffect(() => {
     queryKey: ["educationAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all`
       );
       const data = await res.json();
       // return data;
@@ -270,7 +270,7 @@ useEffect(() => {
     queryKey: ["currentEducation", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -359,7 +359,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_edit/${id}`,
         {
           method: "POST",
           headers: {

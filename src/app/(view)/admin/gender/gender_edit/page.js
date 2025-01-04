@@ -17,7 +17,7 @@
 //     queryKey: ["noticeCategorySingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -28,7 +28,7 @@
 //     queryKey: ["religions"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -74,7 +74,7 @@
 //     }
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -232,7 +232,7 @@ const GenderEdit = ({ id }) => {
     queryKey: ["noticeCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -243,7 +243,7 @@ const GenderEdit = ({ id }) => {
     queryKey: ["genders"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -320,7 +320,7 @@ const GenderEdit = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_edit/${id}`,
         {
           method: "POST",
           headers: {

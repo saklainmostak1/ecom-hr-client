@@ -49,7 +49,7 @@ const PurchaseProductUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['purchaseProductSingle'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_all/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_all/${id}`)
 
             const data = await res.json()
             return data
@@ -75,7 +75,7 @@ const PurchaseProductUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['units'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -86,7 +86,7 @@ const PurchaseProductUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -164,7 +164,7 @@ const PurchaseProductUpdate = ({ id }) => {
 
 
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_edit/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

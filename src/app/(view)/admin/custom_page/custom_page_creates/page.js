@@ -228,7 +228,7 @@ const CustomPageCreates = () => {
     } = useQuery({
         queryKey: ['page_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
             const data = await res.json()
             return data
@@ -238,7 +238,7 @@ const CustomPageCreates = () => {
     } = useQuery({
         queryKey: ['page_list_status'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
             const data = await res.json()
             return data
@@ -250,7 +250,7 @@ const CustomPageCreates = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -681,9 +681,9 @@ if(!formData.title){
 
     console.log(allData)
 
-    //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/custom_page_create
+    //${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/custom_page_create
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/custom_page/custom_page_create`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/custom_page/custom_page_create`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -2504,7 +2504,7 @@ export default CustomPageCreates;
 //     } = useQuery({
 //         queryKey: ['page_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
 //             const data = await res.json()
 //             return data
@@ -2514,7 +2514,7 @@ export default CustomPageCreates;
 //     } = useQuery({
 //         queryKey: ['page_list_status'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
 //             const data = await res.json()
 //             return data
@@ -2524,7 +2524,7 @@ export default CustomPageCreates;
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -2869,7 +2869,7 @@ export default CustomPageCreates;
 //     const { data: page_list = [] } = useQuery({
 //         queryKey: ['page_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -2879,7 +2879,7 @@ export default CustomPageCreates;
 //     const { data: page_list_status = [] } = useQuery({
 //         queryKey: ['page_list_status'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -2889,7 +2889,7 @@ export default CustomPageCreates;
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'Content-Type': 'application/json',

@@ -19,7 +19,7 @@ const VerificationOTP = ({ params }) => {
     const { data: singleUsers = [] } = useQuery({
         queryKey: ['singleUsers'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${userInfo}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${userInfo}`);
             const data = await res.json();
 
             return data;
@@ -35,7 +35,7 @@ console.log(userNumber)
     const [pass_reset, setPass_reset] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${roleName}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${roleName}`)
         .then(res => res.json())
         .then(data => setPass_reset(data))
     } , [roleName])
@@ -57,7 +57,7 @@ console.log(userNumber)
     } = useQuery({
         queryKey: ['roleDefaultPage'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_permission/${roleName}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users_role/users_role_permission/${roleName}`)
 
             const data = await res.json()
             return data
@@ -73,7 +73,7 @@ console.log(userNumber)
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userInfo}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userInfo}`)
 
             const data = await res.json()
             return data
@@ -97,7 +97,7 @@ console.log(userNumber)
     const { data: singleUser = [], isLoading, refetch } = useQuery({
         queryKey: ['singleUser'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
             const data = await res.json();
 
             return data;
@@ -122,7 +122,7 @@ console.log(enteredOtp)
         if (verifyCode === enteredOtp) {
             try {
                 // Clear the verifyCode by making a PUT request
-                const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+                const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
                     verifiy_codes: null,
                     OTP: null,
                     

@@ -11,7 +11,7 @@ const YearlyHolidayCreates = () => {
     } = useQuery({
         queryKey: ['holiday_category'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/holiday_category/holiday_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/holiday_category/holiday_category_all`)
 
             const data = await res.json()
             return data
@@ -146,7 +146,7 @@ const YearlyHolidayCreates = () => {
     //     }));
 
 
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_create`, {
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_create`, {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json',
@@ -215,7 +215,7 @@ const YearlyHolidayCreates = () => {
             created_by: created_by
         }));
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

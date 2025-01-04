@@ -103,7 +103,7 @@ const LaonCreates = () => {
     const { data: loan_authority = [], isLoading, refetch } = useQuery({
         queryKey: ['loan_authority'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_authority/loan_authority_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_authority/loan_authority_all`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -114,7 +114,7 @@ const LaonCreates = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -135,7 +135,7 @@ const LaonCreates = () => {
     const { data: payment_types = [], } = useQuery({
         queryKey: ['payment_type'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_type_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_type_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -392,7 +392,7 @@ const LaonCreates = () => {
 
 
         // Make the fetch request
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -449,7 +449,7 @@ const LaonCreates = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

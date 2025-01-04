@@ -48,7 +48,7 @@
 //     queryKey: ["bloodgroups"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -82,7 +82,7 @@
 //   //   }
 
 //   //   fetch(
-//   //     `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_create`,
+//   //     `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_create`,
 //   //     {
 //   //       method: "POST",
 //   //       headers: {
@@ -124,7 +124,7 @@
 //     }
 
 //     fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_create`,
+//       `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_create`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -395,7 +395,7 @@ const BloodGroupCreate = () => {
     queryKey: ["bloodgroups"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all`
       );
       const data = await res.json();
       return data;
@@ -427,7 +427,7 @@ const BloodGroupCreate = () => {
   //   }
 
   //   fetch(
-  //     `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_create`,
+  //     `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_create`,
   //     {
   //       method: "POST",
   //       headers: {
@@ -516,7 +516,7 @@ const BloodGroupCreate = () => {
 
 
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_create`,
+      `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_create`,
       {
         method: "POST",
         headers: {

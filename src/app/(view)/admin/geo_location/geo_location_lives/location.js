@@ -23,8 +23,8 @@ const LiveLocationEmployee = ({ id }) => {
                 if (!selectedEmployeeId) {
                     return [];
                 }
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
-                // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${selectedEmployeeId}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
+                // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${selectedEmployeeId}`);
                 if (!res.ok) {
                     throw new Error('Failed to fetch employee data');
                 }

@@ -16,7 +16,7 @@ const UserRoleEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['usersRoleCreate'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/page-group/display-name/with-id`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/page-group/display-name/with-id`)
 
             const data = await res.json()
             return data
@@ -25,7 +25,7 @@ const UserRoleEdit = ({ id }) => {
 
     const [userRole, setUserRole] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${id}`)
             .then(Response => Response.json())
             .then(data => setUserRole(data))
     }, [id])
@@ -319,7 +319,7 @@ const UserRoleEdit = ({ id }) => {
 
 
         // Make a PUT request to update the user role
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role/edit/${userRoleId}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role/edit/${userRoleId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -820,7 +820,7 @@ const UserRoleEdit = ({ id }) => {
     }, [])
     const [btnIconUsers, setBtnIconUsers] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user-role/btn`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user-role/btn`)
             .then(Response => Response.json())
             .then(data => setBtnIconUsers(data))
 

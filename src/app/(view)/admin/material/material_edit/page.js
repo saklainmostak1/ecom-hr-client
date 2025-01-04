@@ -14,7 +14,7 @@ const EditMaterial = ({ id }) => {
     const { data: material = [], isLoading, refetch } = useQuery({
         queryKey: ['material'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -27,7 +27,7 @@ const EditMaterial = ({ id }) => {
 
     const [materials, setmaterials] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_all/${id}`)
             .then(Response => Response.json())
             .then(data => setmaterials(data))
     }, [id])
@@ -204,7 +204,7 @@ const EditMaterial = ({ id }) => {
         }
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -306,7 +306,7 @@ const EditMaterial = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

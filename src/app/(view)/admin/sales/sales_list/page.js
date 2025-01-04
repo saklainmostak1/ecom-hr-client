@@ -49,7 +49,7 @@ const SalesLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['loanAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sales_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sales_list`)
 
             const data = await res.json()
             return data
@@ -88,7 +88,7 @@ const SalesLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -158,7 +158,7 @@ const SalesLists = ({ searchParams }) => {
 
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/sale_list_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/sale_list_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -177,7 +177,7 @@ const SalesLists = ({ searchParams }) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/sales_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/sales_delete/${id}`, {
             method: "POST",
         })
             .then(response => {
@@ -258,7 +258,7 @@ const SalesLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -269,7 +269,7 @@ const SalesLists = ({ searchParams }) => {
     const { data: supplier = [], } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -284,7 +284,7 @@ const SalesLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -295,7 +295,7 @@ const SalesLists = ({ searchParams }) => {
     const loan_search = () => {
 
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
             toDate, fromDate, product_id, name, mobile, invoice
 
         })
@@ -320,8 +320,8 @@ const SalesLists = ({ searchParams }) => {
 
     const loan_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
             toDate, fromDate, product_id, name, mobile, invoice
         });
 
@@ -372,7 +372,7 @@ const SalesLists = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -410,8 +410,8 @@ const SalesLists = ({ searchParams }) => {
 
     const loan_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
                 toDate, fromDate, product_id, name, mobile, invoice
             });
 
@@ -464,7 +464,7 @@ const SalesLists = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -487,7 +487,7 @@ const SalesLists = ({ searchParams }) => {
 
     const loan_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
                 toDate, fromDate, product_id, name, mobile, invoice
             });
 
@@ -559,7 +559,7 @@ const SalesLists = ({ searchParams }) => {
 
     const loan_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
                 toDate, fromDate, product_id, name, mobile, invoice
             });
 
@@ -702,7 +702,7 @@ const SalesLists = ({ searchParams }) => {
 
     const sale_print_single = async (id) => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
             const singleSale = loanAll.find(loan => loan.id == id)
 
             const searchResults = singleSale;
@@ -754,7 +754,7 @@ const SalesLists = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_print_single`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_print_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -777,7 +777,7 @@ const SalesLists = ({ searchParams }) => {
 
     const sale_pdf_download_single = async (id) => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
         const singleSale = loanAll.find(loan => loan.id == id)
 
         const searchResults = singleSale;
@@ -829,7 +829,7 @@ const SalesLists = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_pdf_single`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_pdf_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -875,8 +875,8 @@ const SalesLists = ({ searchParams }) => {
         //     return
         // }
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_search`, {
                 toDate, fromDate, product_id, name, mobile, invoice
             });
 
@@ -929,7 +929,7 @@ const SalesLists = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_list_print_all`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_list_print_all`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -954,7 +954,7 @@ const SalesLists = ({ searchParams }) => {
 
     const sale_invoice_print_single = async (id, selectedFontSize, selectedPrintSize) => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
             const singleSale = loanAll.find(loan => loan.id == id)
 
             const searchResults = singleSale;
@@ -972,8 +972,8 @@ const SalesLists = ({ searchParams }) => {
 
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
-            // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_invoice_print_single
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_invoice_print_single`, {
+            // ${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_invoice_print_single
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_invoice_print_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -995,7 +995,7 @@ const SalesLists = ({ searchParams }) => {
 
     const sale_print_all_invoice = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
             const singleSale = loanAll
 
             const searchResults = singleSale;
@@ -1013,8 +1013,8 @@ const SalesLists = ({ searchParams }) => {
 
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
-            // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_invoice_print_single
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_print_all_invoice`, {
+            // ${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_invoice_print_single
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_print_all_invoice`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1037,7 +1037,7 @@ const SalesLists = ({ searchParams }) => {
 
     const sale_invoice_pdf_download_single = async (id, selectedFontSize, selectedPrintSize) => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
         const singleSale = loanAll.find(loan => loan.id == id)
 
         const searchResults = singleSale;
@@ -1045,9 +1045,9 @@ const SalesLists = ({ searchParams }) => {
         console.log(searchResults);
 
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_invoice_pdf_download_single
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_invoice_pdf_download_single
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_invoice_pdf_download_single`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_invoice_pdf_download_single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

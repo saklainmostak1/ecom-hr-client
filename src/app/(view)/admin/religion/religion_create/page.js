@@ -25,7 +25,7 @@
 // //     queryKey: ["religions"],
 // //     queryFn: async () => {
 // //       const res = await fetch(
-// //         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+// //         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
 // //       );
 // //       const data = await res.json();
 // //       return data;
@@ -63,7 +63,7 @@
 // //     };
 
 // //     fetch(
-// //       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_create`,
+// //       `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_create`,
 // //       {
 // //         method: "POST",
 // //         headers: {
@@ -197,7 +197,7 @@
 //     queryKey: ["religions"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -227,7 +227,7 @@
 
 //   //   try {
 //   //     const response = await fetch(
-//   //       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_create`,
+//   //       `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_create`,
 //   //       {
 //   //         method: "POST",
 //   //         headers: {
@@ -267,7 +267,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_create`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_create`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -405,7 +405,7 @@
 //     queryKey: ["religions"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -434,7 +434,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_create`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_create`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -611,7 +611,7 @@ useEffect(() => {
     queryKey: ["religions"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
       );
       const data = await res.json();
       return data;
@@ -654,7 +654,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_create`,
         {
           method: "POST",
           headers: {

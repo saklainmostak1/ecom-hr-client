@@ -136,7 +136,7 @@ const EmployeeExcelCreate = () => {
     } = useQuery({
         queryKey: ['schoolShiftList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_all`)
 
             const data = await res.json()
             return data
@@ -150,7 +150,7 @@ const EmployeeExcelCreate = () => {
     } = useQuery({
         queryKey: ['genderList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_list`)
 
             const data = await res.json()
             return data
@@ -161,7 +161,7 @@ const EmployeeExcelCreate = () => {
     } = useQuery({
         queryKey: ['religionList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_list`)
 
             const data = await res.json()
             return data
@@ -179,11 +179,11 @@ const EmployeeExcelCreate = () => {
     console.log(genderList)
     const model_excel_file_export = async () => {
 
-        const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_list`);
+        const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_list`);
         const rolePermissionData = await rolePermissionResponses.json();
         const religionList = rolePermissionData
 
-        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_list`);
+        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_list`);
         const rolePermissionDatas = await rolePermissionResponse.json();
         const genderList = rolePermissionDatas
 
@@ -555,7 +555,7 @@ const EmployeeExcelCreate = () => {
         // setDob(new Array(fields.length).fill(''));
       
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/quick_create_employee`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/quick_create_employee`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -992,7 +992,7 @@ export default EmployeeExcelCreate;
 //     } = useQuery({
 //         queryKey: ['schoolShiftList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_all`)
 
 //             const data = await res.json()
 //             return data
@@ -1006,7 +1006,7 @@ export default EmployeeExcelCreate;
 //     } = useQuery({
 //         queryKey: ['genderList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_list`)
 
 //             const data = await res.json()
 //             return data
@@ -1017,7 +1017,7 @@ export default EmployeeExcelCreate;
 //     } = useQuery({
 //         queryKey: ['religionList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_list`)
 
 //             const data = await res.json()
 //             return data
@@ -1173,7 +1173,7 @@ export default EmployeeExcelCreate;
        
  
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/quick_create_employee`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/quick_create_employee`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',

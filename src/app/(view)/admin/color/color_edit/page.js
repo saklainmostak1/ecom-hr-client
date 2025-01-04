@@ -16,7 +16,7 @@ const EditColor = ({ id }) => {
     const { data: color = [], isLoading, refetch } = useQuery({
         queryKey: ['color'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -28,7 +28,7 @@ const EditColor = ({ id }) => {
 
     const [colors, setcolors] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_all/${id}`)
             .then(Response => Response.json())
             .then(data => setcolors(data))
     }, [id])
@@ -206,7 +206,7 @@ const EditColor = ({ id }) => {
             setSameColorName("Color name already exists. Please choose a different Color name.");
         }
         else {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/color/color_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/color/color_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -270,7 +270,7 @@ const EditColor = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

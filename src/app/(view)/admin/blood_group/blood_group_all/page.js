@@ -31,7 +31,7 @@ const BloodGroupList = ({ searchParams }) => {
     queryKey: ["photogalleryCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all`
       );
 
       const data = await res.json();
@@ -71,7 +71,7 @@ const BloodGroupList = ({ searchParams }) => {
     queryKey: ["moduleInfo"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`
       );
 
       const data = await res.json();
@@ -119,7 +119,7 @@ const BloodGroupList = ({ searchParams }) => {
   }
   const [pageUsers, setPageUsers] = useState([]);
   const caregory_list = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_list_paigination/${currentPage}/${dataPerPage}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_list_paigination/${currentPage}/${dataPerPage}`;
     const response = await fetch(url);
     const data = await response.json();
     setPageUsers(data);
@@ -137,7 +137,7 @@ const BloodGroupList = ({ searchParams }) => {
   //   if (!procced) return; // If user cancels, exit the function
 
   //   fetch(
-  //     `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_delete/${id}`,
+  //     `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_delete/${id}`,
   //     {
   //       method: "POST",
   //     }
@@ -161,7 +161,7 @@ const BloodGroupList = ({ searchParams }) => {
   const blood_group_delete = id => {
 
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_delete/${id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_delete/${id}`, {
       method: "POST",
     })
       .then(response => {

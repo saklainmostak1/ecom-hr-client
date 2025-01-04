@@ -15,7 +15,7 @@ const CopySubCategory = ({ id }) => {
     } = useQuery({
         queryKey: ['subCategory'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
 
             const data = await res.json()
             return data
@@ -26,7 +26,7 @@ const CopySubCategory = ({ id }) => {
 
     const [subCategories, setsubCategories] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all/${id}`)
             .then(Response => Response.json())
             .then(data => setsubCategories(data))
     }, [id])
@@ -228,7 +228,7 @@ const CopySubCategory = ({ id }) => {
             return name?.trim().replace(/\s+/g, '');
         };
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
             .then((response) => response.json())
             .then((subCategoryData) => {
                 // Check if brand_name already exists in subCategoryData
@@ -249,7 +249,7 @@ const CopySubCategory = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -315,7 +315,7 @@ const CopySubCategory = ({ id }) => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -323,7 +323,7 @@ const CopySubCategory = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

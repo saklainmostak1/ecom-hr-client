@@ -27,7 +27,7 @@ const SalaryLists = () => {
     const { data: designations = [], } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
             const data = await res.json()
             return data
         }
@@ -36,7 +36,7 @@ const SalaryLists = () => {
     const { data: salaryList = [], } = useQuery({
         queryKey: ['salaryList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list`)
             const data = await res.json()
             return data
         }
@@ -80,7 +80,7 @@ const SalaryLists = () => {
             return
         }
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list_search`, {
             designation, month
         })
             .then(response => {
@@ -113,7 +113,7 @@ const SalaryLists = () => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${created}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${created}`)
 
             const data = await res.json()
             return data
@@ -148,7 +148,7 @@ const SalaryLists = () => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_delete/${id}`, {
                 method: "POST",
 
             })
@@ -167,7 +167,7 @@ const SalaryLists = () => {
 
         // setLoading(true);
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list_search`, {
                 designation, month
             });
 
@@ -363,7 +363,7 @@ const SalaryLists = () => {
     const employee_print = async () => {
         // setLoading(true);
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list_search`, {
                 designation, month
             });
 
@@ -446,7 +446,7 @@ const SalaryLists = () => {
 
         // setLoading(true);
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list_search`, {
                 designation, month
             });
 

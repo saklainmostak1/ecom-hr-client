@@ -47,7 +47,7 @@ const CreateExcelColor = () => {
     } = useQuery({
         queryKey: ['colors'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_all`)
 
             const data = await res.json()
             return data
@@ -315,7 +315,7 @@ const CreateExcelColor = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -392,7 +392,7 @@ const CreateExcelColor = () => {
 
     // const [status, setStatus] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data))
     // }, [])
@@ -581,7 +581,7 @@ const CreateExcelColor = () => {
     // const [excelData, setExcelData] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data));
     // }, []);
@@ -834,7 +834,7 @@ const CreateExcelColor = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

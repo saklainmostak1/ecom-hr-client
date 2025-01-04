@@ -31,7 +31,7 @@
 //     queryKey: ["newsCategoryAll"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all`
 //       );
 
 //       const data = await res.json();
@@ -45,7 +45,7 @@
 //     queryKey: ["moduleInfo"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`
 //       );
 
 //       const data = await res.json();
@@ -75,7 +75,7 @@
 //     const proceed = window.confirm(`Are You Sure delete${id}`);
 //     if (proceed) {
 //       fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_delete/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_delete/${id}`,
 //         {
 //           method: "POST",
 //         }
@@ -307,7 +307,7 @@ const NewsCategoryList = ({ searchParams }) => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all`
       );
 
       const data = await res.json();
@@ -345,7 +345,7 @@ const NewsCategoryList = ({ searchParams }) => {
     queryKey: ["moduleInfo"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`
       );
 
       const data = await res.json();
@@ -396,7 +396,7 @@ const NewsCategoryList = ({ searchParams }) => {
   }
   const [pageUsers, setPageUsers] = useState([]);
   const caregory_list = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_list_paigination/${currentPage}/${dataPerPage}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_list_paigination/${currentPage}/${dataPerPage}`;
     const response = await fetch(url);
     const data = await response.json();
     setPageUsers(data);
@@ -414,7 +414,7 @@ const NewsCategoryList = ({ searchParams }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_delete/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_delete/${id}`,
         {
           method: "POST",
         }

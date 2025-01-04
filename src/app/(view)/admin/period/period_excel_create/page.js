@@ -48,7 +48,7 @@ const PeriodExcelCreate = () => {
     } = useQuery({
         queryKey: ['periods'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
 
             const data = await res.json()
             return data
@@ -278,7 +278,7 @@ const PeriodExcelCreate = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -340,7 +340,7 @@ const PeriodExcelCreate = () => {
 
     // const [status, setStatus] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data))
     // }, [])
@@ -427,7 +427,7 @@ const PeriodExcelCreate = () => {
     // //  const router = useRouter();
 
     // //  useEffect(() => {
-    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     // //          .then(res => res.json())
     // //          .then(data => setStatus(data))
     // //  }, [])
@@ -536,7 +536,7 @@ const PeriodExcelCreate = () => {
     // const [excelData, setExcelData] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data));
     // }, []);
@@ -1349,7 +1349,7 @@ data.forEach((_data) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -1779,7 +1779,7 @@ export default PeriodExcelCreate;
 //     } = useQuery({
 //         queryKey: ['periods'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
 
 //             const data = await res.json()
 //             return data
@@ -2104,7 +2104,7 @@ export default PeriodExcelCreate;
 
 //     const [status, setStatus] = useState([]);
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
 //             .then(res => res.json())
 //             .then(data => setStatus(data))
 //     }, [])

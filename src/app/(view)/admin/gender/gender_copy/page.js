@@ -42,7 +42,7 @@ const GenderCopy = ({ id }) => {
     const { data: genderSingle, isLoading, refetch } = useQuery({
         queryKey: ['genderSingle', id],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_all/${id}`);
             const data = await res.json();
             return data;
         }
@@ -73,7 +73,7 @@ const GenderCopy = ({ id }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/gender/gender_create`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/gender/gender_create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

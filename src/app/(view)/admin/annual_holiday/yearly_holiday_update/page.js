@@ -11,7 +11,7 @@ const UpdateEarlyHoliday = ({ id }) => {
     } = useQuery({
         queryKey: ['holiday_category'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/holiday_category/holiday_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/holiday_category/holiday_category_all`)
 
             const data = await res.json()
             return data
@@ -23,7 +23,7 @@ const UpdateEarlyHoliday = ({ id }) => {
     } = useQuery({
         queryKey: ['year_holidays', id],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_all/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_all/${id}`)
 
             const data = await res.json()
             return data
@@ -186,7 +186,7 @@ const UpdateEarlyHoliday = ({ id }) => {
         // Generate an array of dates between start_date and end_date
 
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_edit/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

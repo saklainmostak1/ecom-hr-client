@@ -22,7 +22,7 @@ const AdminTemplateEdit = ({ id }) => {
 	} = useQuery({
 		queryKey: ['adminPanelSettingsEdit'],
 		queryFn: async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/admin_panel_settings/${id}`)
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/admin_panel_settings/${id}`)
 
 			const data = await res.json()
 			return data
@@ -582,7 +582,7 @@ const AdminTemplateEdit = ({ id }) => {
 	const { data: userss = [] } = useQuery({
 		queryKey: ['userss'],
 		queryFn: async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/group-names-id`);
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/group-names-id`);
 			const data = await res.json();
 			return data;
 		},
@@ -735,7 +735,7 @@ const AdminTemplateEdit = ({ id }) => {
 	} = useQuery({
 		queryKey: ['adminPanelSettings'],
 		queryFn: async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/admin_panel_settings`)
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/admin_panel_settings`)
 
 			const data = await res.json()
 			const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -979,11 +979,11 @@ const AdminTemplateEdit = ({ id }) => {
 		}
 
 		console.log(adminPageListSettings)
-		// ${process.env.NEXT_PUBLIC_API_URL}:5002/admin/create_side_menu
+		// ${process.env.NEXT_PUBLIC_API_URL}/admin/create_side_menu
 		// http://192.168.0.185:5002/submit-form
 		// http://192.168.0.185:5002/admin/create_side_menu
-		// ${process.env.NEXT_PUBLIC_API_URL}:5002/admin/update_side_menu/${id}
-		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/update_side_menu/${id}`, {
+		// ${process.env.NEXT_PUBLIC_API_URL}/admin/update_side_menu/${id}
+		fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/update_side_menu/${id}`, {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'

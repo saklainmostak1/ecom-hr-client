@@ -61,7 +61,7 @@ const SmsApiUpdate = ({ id }) => {
     const { data: allSmsApiList = [] } = useQuery({
         queryKey: ['allSmsApiList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_all/${id}`);
             return res.json();
         }
     });
@@ -209,7 +209,7 @@ const SmsApiUpdate = ({ id }) => {
     const { data: branchAll = [] } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             return res.json();
         }
     });
@@ -247,7 +247,7 @@ const SmsApiUpdate = ({ id }) => {
             return
         }
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_edit/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -563,7 +563,7 @@ export default SmsApiUpdate;
 // } = useQuery({
 //     queryKey: ['allSmsApiList'],
 //     queryFn: async () => {
-//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_all/${id}`)
+//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_all/${id}`)
 
 //         const data = await res.json()
 //         return data
@@ -677,7 +677,7 @@ export default SmsApiUpdate;
 // const { data: branchAll = [] } = useQuery({
 //     queryKey: ['branchAll'],
 //     queryFn: async () => {
-//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 //         const data = await res.json();
 //         return data;
 //     }
@@ -725,7 +725,7 @@ export default SmsApiUpdate;
 //     setPassingYear(new Array(fields.length).fill(''));
 
 
-//     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_create`, {
+//     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_create`, {
 //         method: 'POST',
 //         headers: {
 //             'content-type': 'application/json',

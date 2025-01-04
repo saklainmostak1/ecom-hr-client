@@ -29,7 +29,7 @@ const ListProduct = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -70,7 +70,7 @@ const ListProduct = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -106,7 +106,7 @@ const ListProduct = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_delete/${id}`, {
                 method: "POST",
 
             })
@@ -132,7 +132,7 @@ const ListProduct = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -211,7 +211,7 @@ const ListProduct = ({ searchParams }) => {
             return
         }
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_search`, {
             multiSearch,
             selectedColumns,
             searchQuery,
@@ -240,7 +240,7 @@ const ListProduct = ({ searchParams }) => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -277,7 +277,7 @@ const ListProduct = ({ searchParams }) => {
     }
 
     const getUsers = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -323,7 +323,7 @@ const ListProduct = ({ searchParams }) => {
 
     const product_print = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -740,7 +740,7 @@ const ListProduct = ({ searchParams }) => {
 
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -818,7 +818,7 @@ const ListProduct = ({ searchParams }) => {
     const product_word_download = async () => {
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -930,7 +930,7 @@ const ListProduct = ({ searchParams }) => {
     const product_delete_searching = id => {
         const proceed = window.confirm(`Are you sure you want to delete`);
         if (proceed) {
-            axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_delete/${id}`)
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_delete/${id}`)
                 .then(response => {
                     console.log(response)
                     // Handle success, such as displaying a success message or updating the UI
@@ -952,7 +952,7 @@ const ListProduct = ({ searchParams }) => {
     const [errorr, setErrorr] = useState(null);
     const product_PDF_download = async () => {
         setLoading(true);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_search`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_search`, {
             selectedColumns,
             searchQuery,
             statusFilter,
@@ -965,7 +965,7 @@ const ListProduct = ({ searchParams }) => {
         const searchResults = response.data.results;
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const EditPeriod = ({ id }) => {
     const { data: period = [], isLoading, refetch } = useQuery({
         queryKey: ['period'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -26,7 +26,7 @@ const EditPeriod = ({ id }) => {
 
     const [periods, setperiods] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all/${id}`)
             .then(Response => Response.json())
             .then(data => setperiods(data))
     }, [id])
@@ -202,7 +202,7 @@ const EditPeriod = ({ id }) => {
         }
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -287,7 +287,7 @@ const EditPeriod = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -537,7 +537,7 @@ export default EditPeriod;
 //     const { data: period = [], isLoading, refetch } = useQuery({
 //         queryKey: ['period'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`);
 //             const data = await res.json();
 //             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
 //             return filteredBrands;
@@ -548,7 +548,7 @@ export default EditPeriod;
 
 //     const [periods, setPeriods] = useState([]);
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all/${id}`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all/${id}`)
 //             .then(response => response.json())
 //             .then(data => setPeriods(data))
 //     }, [id]);
@@ -673,7 +673,7 @@ export default EditPeriod;
 //         if (existingBrand) {
 //             setSamePeriodName("Period name already exists. Please choose a different Period name.");
 //         } else {
-//             fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_edit/${id}`, {
+//             fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_edit/${id}`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'Content-Type': 'application/json'
@@ -742,7 +742,7 @@ export default EditPeriod;
 
 //     const [status, setStatus] = useState([]);
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
 //             .then(res => res.json())
 //             .then(data => setStatus(data))
 //     }, []);

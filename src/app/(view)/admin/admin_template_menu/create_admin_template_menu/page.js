@@ -33,7 +33,7 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
   const { data: currentPosts = [], isLoading, refetch } = useQuery({
     queryKey: ['currentPosts'],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/api/menu`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/menu`);
       const data = await res.json();
 
       return data;
@@ -76,7 +76,7 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
 
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/faIcons`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/faIcons`)
       .then(res => res.json())
       .then(data => {
         setIcons(data)
@@ -107,7 +107,7 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
     console.log(id)
     const proceed = window.confirm('Are You Sure delete')
     if (proceed) {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin_template_table/delete/${id}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin_template_table/delete/${id}`, {
         method: "DELETE",
 
       })
@@ -149,8 +149,8 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
   const admin_template_menu_update = event => {
     event.preventDefault()
 
-    // ${process.env.NEXT_PUBLIC_API_URL}:5002/admin_template_table/update/${editId.id}
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin_template_table/update/${editId.id}`, {
+    // ${process.env.NEXT_PUBLIC_API_URL}/admin_template_table/update/${editId.id}
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin_template_table/update/${editId.id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -344,8 +344,8 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
     };
     console.log(users)
 
-    // ${process.env.NEXT_PUBLIC_API_URL}:5002/menu_item/create
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/menu_item/create`, {
+    // ${process.env.NEXT_PUBLIC_API_URL}/menu_item/create
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/menu_item/create`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -368,13 +368,13 @@ const AdminTemplateMenu = ({ modal, setModal }) => {
 
     try {
       // Step 1: Delete all data
-      const deleteResponse = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin_template_table/delete_all`);
+      const deleteResponse = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/admin_template_table/delete_all`);
       console.log('Data deleted:', deleteResponse.data);
 
       // Step 2: Insert data
       const dataArray = Array.isArray(menuData) ? menuData : items;
       // const dataArray = Array.isArray(menuData) ? menuData : [];
-      const insertResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/insertData`, {
+      const insertResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/insertData`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',

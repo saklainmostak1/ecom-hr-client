@@ -36,7 +36,7 @@ const DesignationCreate = () => {
     queryKey: ["designations"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`
       );
 
       const data = await res.json();
@@ -61,7 +61,7 @@ const DesignationCreate = () => {
   useEffect(() => {
     // Fetch existing designations here
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`
+      `${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`
     )
       .then((response) => response.json())
       .then((data) => setExistingDesignations(data))
@@ -169,7 +169,7 @@ const DesignationCreate = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_create`,
         {
           method: "POST",
           headers: {

@@ -28,7 +28,7 @@ const LeaveCategoryCreate = () => {
   } = useQuery({
     queryKey: ['brands'],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_all`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_all`)
 
       const data = await res.json()
       return data
@@ -91,7 +91,7 @@ const LeaveCategoryCreate = () => {
     }
 
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_create`,
+      `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_create`,
       {
         method: "POST",
         headers: {
@@ -117,7 +117,7 @@ const LeaveCategoryCreate = () => {
   //   const [status, setStatus] = useState([])
 
   // useEffect(() => {
-  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
   //   .then(res => res.json())
   //   .then(data => setStatus(data))
   // }, [])

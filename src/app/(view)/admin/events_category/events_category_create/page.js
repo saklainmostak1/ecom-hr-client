@@ -30,7 +30,7 @@
 //     };
 
 //     fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_create`,
+//       `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_create`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -177,7 +177,7 @@ const PhotoGalleryCategoryCreate = () => {
   const [status, setStatus] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     .then(res => res.json())
     .then(data => setStatus(data))
   }, [])
@@ -223,7 +223,7 @@ useEffect(() => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_all`
       );
       const data = await res.json();
       return data;
@@ -319,7 +319,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_create`,
         {
           method: "POST",
           headers: {

@@ -667,9 +667,9 @@ const OfficeVisitCreate = () => {
         }
 
         console.log(schoolShift)
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

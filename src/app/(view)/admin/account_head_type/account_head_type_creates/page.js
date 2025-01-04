@@ -13,7 +13,7 @@ const CoountHeadTypeCreate = () => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_all`)
 
             const data = await res.json()
             return data
@@ -101,7 +101,7 @@ const CoountHeadTypeCreate = () => {
             created_by
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

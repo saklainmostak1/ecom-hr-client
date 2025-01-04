@@ -44,7 +44,7 @@
 //     } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`)
 
 //             const data = await res.json()
 //             return data
@@ -55,7 +55,7 @@
 //     } = useQuery({
 //         queryKey: ['branches'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
 //             const data = await res.json()
 //             return data
@@ -170,7 +170,7 @@
 //         const leaveDates = generateDateRange(formData.start_date, formData.end_date);
 //         const dataToSubmit = { ...formData, leave_date: leaveDates };
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -198,7 +198,7 @@
 //     } = useQuery({
 //         queryKey: ['leaveCategory'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`)
 
 //             const data = await res.json()
 //             return data
@@ -416,7 +416,7 @@
 //     const { data: employeeList = [], isLoading, refetch } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -425,7 +425,7 @@
 //     const { data: branches = [] } = useQuery({
 //         queryKey: ['branches'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -533,7 +533,7 @@
 //         const leaveDates = generateDateRange(formData.start_date, formData.end_date);
 //         const dataToSubmit = { ...formData, leave_date: leaveDates };
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -548,7 +548,7 @@
 //     const { data: leaveCategory = [] } = useQuery({
 //         queryKey: ['leaveCategory'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -757,7 +757,7 @@
 //     const { data: employeeList = [], isLoading, refetch } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -766,7 +766,7 @@
 //     const { data: branches = [] } = useQuery({
 //         queryKey: ['branches'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -874,7 +874,7 @@
 //         const leaveDates = generateDateRange(formData.start_date, formData.end_date);
 //         const dataToSubmit = { ...formData, leave_date: leaveDates };
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -889,7 +889,7 @@
 //     const { data: leaveCategory = [] } = useQuery({
 //         queryKey: ['leaveCategory'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1120,7 +1120,7 @@ const CreateLeaveApplication = () => {
     const { data: employeeList = [], isLoading } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             return data;
         }
@@ -1130,7 +1130,7 @@ const CreateLeaveApplication = () => {
     const { data: branches = [] } = useQuery({
         queryKey: ['branches'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }
@@ -1245,7 +1245,7 @@ const CreateLeaveApplication = () => {
         const leaveDates = generateDateRange(formData.start_date, formData.end_date);
         const dataToSubmit = { ...formData, leave_date: leaveDates };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1261,7 +1261,7 @@ const CreateLeaveApplication = () => {
     const { data: leaveCategory = [] } = useQuery({
         queryKey: ['leaveCategory'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_list`);
             const data = await res.json();
             return data;
         }

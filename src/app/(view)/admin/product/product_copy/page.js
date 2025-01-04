@@ -14,7 +14,7 @@ const CopyProduct = ({ id }) => {
 
     const [products, setproducts] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list/${id}`)
             .then(Response => Response.json())
             .then(data => setproducts(data))
     }, [id])
@@ -415,7 +415,7 @@ const CopyProduct = ({ id }) => {
         }
 
         console.log(addValue)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_copy`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_copy`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -452,7 +452,7 @@ const CopyProduct = ({ id }) => {
     const [brand, setBrand] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
             .then(res => res.json())
             .then(data => setBrand(data))
     }, [])
@@ -462,7 +462,7 @@ const CopyProduct = ({ id }) => {
     const [model, setModel] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_all`)
             .then(res => res.json())
             .then(data => setModel(data))
     }, [])
@@ -472,7 +472,7 @@ const CopyProduct = ({ id }) => {
     const [category, setCategory] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])
@@ -482,7 +482,7 @@ const CopyProduct = ({ id }) => {
     const [subCategory, setSubCategory] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
             .then(res => res.json())
             .then(data => setSubCategory(data))
     }, [])
@@ -491,7 +491,7 @@ const CopyProduct = ({ id }) => {
 
     const [color, setColor] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_all`)
             .then(res => res.json())
             .then(data => setColor(data))
     }, [])
@@ -500,7 +500,7 @@ const CopyProduct = ({ id }) => {
 
     const [material, setMaterial] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_all`)
             .then(res => res.json())
             .then(data => setMaterial(data))
     }, [])
@@ -508,7 +508,7 @@ const CopyProduct = ({ id }) => {
     console.log(material)
     const [period, setPeriod] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
             .then(res => res.json())
             .then(data => setPeriod(data))
     }, [])
@@ -517,7 +517,7 @@ const CopyProduct = ({ id }) => {
 
     const [type, setType] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`)
             .then(res => res.json())
             .then(data => setType(data))
     }, [])
@@ -526,7 +526,7 @@ const CopyProduct = ({ id }) => {
 
     const [unit, setUnit] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
             .then(res => res.json())
             .then(data => setUnit(data))
     }, [])
@@ -535,7 +535,7 @@ const CopyProduct = ({ id }) => {
 
     const [warranty, setWarranty] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all`)
             .then(res => res.json())
             .then(data => setWarranty(data))
     }, [])
@@ -545,7 +545,7 @@ const CopyProduct = ({ id }) => {
 
     const [status, setStatus] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

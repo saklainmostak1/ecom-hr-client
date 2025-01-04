@@ -13,7 +13,7 @@ const EditType = ({ id }) => {
     const { data: type = [], isLoading, refetch } = useQuery({
         queryKey: ['type'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -26,7 +26,7 @@ const EditType = ({ id }) => {
 
     const [types, settypes] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all/${id}`)
             .then(Response => Response.json())
             .then(data => settypes(data))
     }, [id])
@@ -203,7 +203,7 @@ const EditType = ({ id }) => {
             setSameTypeName("Type name already exists. Please choose a different Type name.");
         }
         else {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -305,7 +305,7 @@ const EditType = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

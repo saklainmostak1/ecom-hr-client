@@ -62,7 +62,7 @@ const BrandList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -73,7 +73,7 @@ const BrandList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
 
             const data = await res.json()
             return data
@@ -85,7 +85,7 @@ const BrandList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -192,7 +192,7 @@ const BrandList = ({ searchParams }) => {
             return
         }
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
             multiSearch,
             selectedColumns,
             searchQuery,
@@ -253,7 +253,7 @@ const BrandList = ({ searchParams }) => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -290,7 +290,7 @@ const BrandList = ({ searchParams }) => {
     }
 
     const brand_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -303,7 +303,7 @@ const BrandList = ({ searchParams }) => {
     // } = useQuery({
     //     queryKey: ['pageUsers'],
     //     queryFn: async () => {
-    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all/${currentPage}/${dataPerPage}`)
+    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all/${currentPage}/${dataPerPage}`)
 
     //         const data = await res.json()
     //         return data
@@ -316,7 +316,7 @@ const BrandList = ({ searchParams }) => {
 
     const brand_print = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -492,7 +492,7 @@ const BrandList = ({ searchParams }) => {
     const brand_excel_download = async () => {
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -567,7 +567,7 @@ const BrandList = ({ searchParams }) => {
     const [errorr, setErrorr] = useState(null);
     const brand_PDF_download = async () => {
         // setLoading(true);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
             selectedColumns,
             searchQuery,
             statusFilter,
@@ -580,7 +580,7 @@ const BrandList = ({ searchParams }) => {
         const searchResults = response.data.results;
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -618,7 +618,7 @@ const BrandList = ({ searchParams }) => {
     const brand_word_download = async () => {
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
                 selectedColumns,
                 searchQuery,
                 statusFilter,
@@ -765,7 +765,7 @@ const BrandList = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/brand/brand_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/brand/brand_delete/${id}`, {
                 method: "POST",
 
             })
@@ -784,7 +784,7 @@ const BrandList = ({ searchParams }) => {
     const brand_delete_searching = id => {
         const proceed = window.confirm(`Are you sure you want to delete ID ${id}?`);
         if (proceed) {
-            axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_delete/${id}`)
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_delete/${id}`)
                 .then(response => {
                     console.log(response)
                     // Handle success, such as displaying a success message or updating the UI
@@ -1601,7 +1601,7 @@ export default BrandList;
 //     const { data: module_settings = [] } = useQuery({
 //         queryKey: ['module_settings'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1610,7 +1610,7 @@ export default BrandList;
 //     const { data: brands = [], isLoading } = useQuery({
 //         queryKey: ['brands'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1619,7 +1619,7 @@ export default BrandList;
 //     const { data: moduleInfo = [] } = useQuery({
 //         queryKey: ['moduleInfo'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1673,7 +1673,7 @@ export default BrandList;
 //     }, []);
 
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
 //             .then(res => res.json())
 //             .then(data => setStatus(data));
 //     }, []);
@@ -1699,7 +1699,7 @@ export default BrandList;
 //             return;
 //         }
 
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_search`, {
 //             multiSearch,
 //             selectedColumns,
 //             searchQuery,
@@ -1736,7 +1736,7 @@ export default BrandList;
 //     const brand_delete_searching = id => {
 //         const proceed = window.confirm(`Are you sure you want to delete ID ${id}?`);
 //         if (proceed) {
-//             axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_delete/${id}`)
+//             axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_delete/${id}`)
 //                 .then(response => {
 //                     alert('Brand deleted successfully');
 //                     setSearchResults(prevResults => prevResults.filter(brand => brand.id !== id));

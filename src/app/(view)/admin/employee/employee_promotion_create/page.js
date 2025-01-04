@@ -11,7 +11,7 @@
 //     } = useQuery({
 //         queryKey: ['designationList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
 
 //             const data = await res.json()
 //             return data
@@ -22,7 +22,7 @@
 //     } = useQuery({
 //         queryKey: ['payRoll'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
 //             const data = await res.json()
 //             return data
@@ -33,7 +33,7 @@
 //     } = useQuery({
 //         queryKey: ['branches'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
 //             const data = await res.json()
 //             return data
@@ -45,7 +45,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list/${id}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list/${id}`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -89,7 +89,7 @@
 //             modified_by: modified_by
 //         }
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_promotion_create/${id}`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_promotion_create/${id}`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -239,7 +239,7 @@ const EmployeePromotionCreate = ({ id }) => {
     const { data: designationList = [] } = useQuery({
         queryKey: ['designationList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`);
             return res.json();
         },
     });
@@ -247,7 +247,7 @@ const EmployeePromotionCreate = ({ id }) => {
     const { data: payRoll = [] } = useQuery({
         queryKey: ['payRoll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`);
             return res.json();
         },
     });
@@ -255,7 +255,7 @@ const EmployeePromotionCreate = ({ id }) => {
     const { data: branches = [] } = useQuery({
         queryKey: ['branches'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             return res.json();
         },
     });
@@ -263,7 +263,7 @@ const EmployeePromotionCreate = ({ id }) => {
     const { data: employeeList = [] } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list/${id}`);
             return res.json();
         },
     });
@@ -347,7 +347,7 @@ const EmployeePromotionCreate = ({ id }) => {
         }
 
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_promotion_create/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_promotion_create/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

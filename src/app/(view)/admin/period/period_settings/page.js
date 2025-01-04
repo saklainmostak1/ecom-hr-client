@@ -13,7 +13,7 @@ const SettingsPeriod = () => {
     } = useQuery({
         queryKey: ['periods'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
 
             const data = await res.json()
             return data
@@ -43,7 +43,7 @@ const SettingsPeriod = () => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -121,8 +121,8 @@ const SettingsPeriod = () => {
 
         console.log(addValue)
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create`, {
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

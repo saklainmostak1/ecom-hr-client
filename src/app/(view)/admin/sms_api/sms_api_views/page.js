@@ -11,7 +11,7 @@ const SmsApiViews = ({ id }) => {
     const { data: allSmsApiList = [] } = useQuery({
         queryKey: ['allSmsApiList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_all/${id}`);
             return res.json();
         }
     });

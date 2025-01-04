@@ -20,7 +20,7 @@
 //     queryKey: ["newsCategorySingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -57,7 +57,7 @@
 //     e.preventDefault();
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -238,7 +238,7 @@ const EditnewsCategory = ({ id }) => {
   const [status, setStatus] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -249,7 +249,7 @@ const EditnewsCategory = ({ id }) => {
     queryKey: ["noticeCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -260,7 +260,7 @@ const EditnewsCategory = ({ id }) => {
     queryKey: ["noticeCategory"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -349,7 +349,7 @@ const EditnewsCategory = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_edit/${id}`,
         {
           method: "POST",
           headers: {

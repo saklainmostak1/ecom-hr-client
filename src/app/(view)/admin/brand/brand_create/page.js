@@ -48,7 +48,7 @@ const BrandCreate = () => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
 
             const data = await res.json()
             return data
@@ -311,7 +311,7 @@ const BrandCreate = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -389,7 +389,7 @@ const BrandCreate = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

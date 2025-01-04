@@ -92,7 +92,7 @@ const AdminPageEditAll = ({ Id, controllerName, pageGroup, controllerSort, pageG
             }
             console.log(EditValue);
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateAdminList/${selectAllData[index].id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateAdminList/${selectAllData[index].id}`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -199,7 +199,7 @@ const AdminPageEditAll = ({ Id, controllerName, pageGroup, controllerSort, pageG
     const module_info_delete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/allAdmin/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/allAdmin/${id}`, {
                 method: 'DELETE',
             })
                 .then((response) => response.json())

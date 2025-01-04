@@ -65,12 +65,12 @@ const SheetBalances = () => {
 
     //     try {
     //         // Make the first request for expense search
-    //         const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_search_account_reports`, {
+    //         const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_search_account_reports`, {
     //             fromDate, toDate
     //         });
 
     //         // Make the second request for income search
-    //         const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/account_report_income`, {
+    //         const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/account_report_income`, {
     //             fromDate, toDate
     //         });
 
@@ -110,12 +110,12 @@ const SheetBalances = () => {
 
         try {
             // Make the first request for expense search
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_search_account_reports`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_search_account_reports`, {
                 fromDate, toDate
             });
 
             // Make the second request for income search
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/account_report_income`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/account_report_income`, {
                 fromDate, toDate
             });
 
@@ -170,7 +170,7 @@ const SheetBalances = () => {
     } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`)
 
             const data = await res.json()
             return data
@@ -182,7 +182,7 @@ const SheetBalances = () => {
     } = useQuery({
         queryKey: ['totals'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/account_report_combined`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/account_report_combined`)
 
             const data = await res.json()
             return data
@@ -249,7 +249,7 @@ const SheetBalances = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/balance_sheet_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/balance_sheet_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -313,7 +313,7 @@ const SheetBalances = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/balance_sheet_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/balance_sheet_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

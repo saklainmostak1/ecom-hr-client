@@ -49,7 +49,7 @@ const MaterialExcelCreate = () => {
     } = useQuery({
         queryKey: ['materials'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_all`)
             const data = await res.json()
             return data
         }
@@ -286,7 +286,7 @@ const MaterialExcelCreate = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -348,7 +348,7 @@ const MaterialExcelCreate = () => {
 
     // const [status, setStatus] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data))
     // }, [])
@@ -537,7 +537,7 @@ const MaterialExcelCreate = () => {
     // const [excelData, setExcelData] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data));
     // }, []);
@@ -792,7 +792,7 @@ const MaterialExcelCreate = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

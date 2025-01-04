@@ -82,14 +82,14 @@ const QuickBrandEdit = ({ searchParams }) => {
     // }, [])
 
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
     //         .then(res => res.json())
     //         .then(data => setCategory(data))
     // }, []);
 
     // const [subCategory, setSubCategory] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
     //         .then(res => res.json())
     //         .then(data => setSubCategory(data))
     // }, []);
@@ -103,7 +103,7 @@ const QuickBrandEdit = ({ searchParams }) => {
     // } = useQuery({
     //     queryKey: ['module_settings'],
     //     queryFn: async () => {
-    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
     //         const data = await res.json()
     //         return data
@@ -114,7 +114,7 @@ const QuickBrandEdit = ({ searchParams }) => {
     // } = useQuery({
     //     queryKey: ['brands'],
     //     queryFn: async () => {
-    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
 
     //         const data = await res.json()
     //         return data
@@ -125,7 +125,7 @@ const QuickBrandEdit = ({ searchParams }) => {
     // } = useQuery({
     //     queryKey: ['moduleInfo'],
     //     queryFn: async () => {
-    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
     //         const data = await res.json()
     //         return data
     //     }
@@ -178,7 +178,7 @@ const QuickBrandEdit = ({ searchParams }) => {
     // }
 
     // const getUsers = async () => {
-    //     const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all/${currentPage}/${dataPerPage}`;
+    //     const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all/${currentPage}/${dataPerPage}`;
     //     const response = await fetch(url);
     //     const data = await response.json();
     //     setPageUsers(data);
@@ -208,14 +208,14 @@ const QuickBrandEdit = ({ searchParams }) => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
             .then(res => res.json())
             .then(data => setBrand(data))
     }, []);
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_all`)
             .then(res => res.json())
             .then(data => setModel(data))
     }, []);
@@ -248,7 +248,7 @@ const QuickBrandEdit = ({ searchParams }) => {
             set_apply_all_brand_error(null);
             set_apply_all_model_error(null);
 
-            axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/quick_brand_search`, {
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/quick_brand_search`, {
                 selectedColumns,
                 selected_brand_id
             })
@@ -470,7 +470,7 @@ const QuickBrandEdit = ({ searchParams }) => {
         if (!length) {
             setFieldEmpty({});
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/quick_brand_update`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/quick_brand_update`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

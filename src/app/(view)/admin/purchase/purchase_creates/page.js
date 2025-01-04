@@ -46,7 +46,7 @@
 //     } = useQuery({
 //         queryKey: ['products'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
 //             const data = await res.json()
 //             return data
@@ -131,7 +131,7 @@
 //     const { data: supplier = [], } = useQuery({
 //         queryKey: ['supplier'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
 //             const data = await res.json();
 //             // Filter out the brand with id 
 //             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -146,7 +146,7 @@
 //     } = useQuery({
 //         queryKey: ['unit'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
 //             const data = await res.json()
 //             return data
@@ -282,7 +282,7 @@
 
 
 //         // Make the fetch request
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_create/purchase_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_create/purchase_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json'
@@ -641,7 +641,7 @@ const CreatePurchase = () => {
         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
         queryFn: async () => {
             if (api) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
                 const data = await res.json();
                 return data;
             }
@@ -690,7 +690,7 @@ const CreatePurchase = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -868,7 +868,7 @@ const CreatePurchase = () => {
     const { data: supplierss = [], } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -880,7 +880,7 @@ const CreatePurchase = () => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -893,7 +893,7 @@ const CreatePurchase = () => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -1073,9 +1073,9 @@ const CreatePurchase = () => {
         }
 
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_create/purchase_creates
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_create/purchase_creates
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_create/purchase_creates`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_create/purchase_creates`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1270,7 +1270,7 @@ const CreatePurchase = () => {
             selectedEntryType: assetInfo.account
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1295,7 +1295,7 @@ const CreatePurchase = () => {
     } = useQuery({
         queryKey: ['ware_house_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_all`)
 
             const data = await res.json()
             return data

@@ -50,7 +50,7 @@ const CreateUnit = () => {
     } = useQuery({
         queryKey: ['units'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -280,7 +280,7 @@ const CreateUnit = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -342,7 +342,7 @@ const CreateUnit = () => {
 
     const [status, setStatus] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

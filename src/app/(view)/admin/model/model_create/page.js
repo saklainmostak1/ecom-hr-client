@@ -48,7 +48,7 @@ const CreateModel = () => {
     } = useQuery({
         queryKey: ['models'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_all`)
             const data = await res.json()
             return data
         }
@@ -59,7 +59,7 @@ const CreateModel = () => {
     const [brand, setBrand] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
             .then(res => res.json())
             .then(data => setBrand(data))
     }, [])
@@ -312,7 +312,7 @@ const CreateModel = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -348,7 +348,7 @@ const CreateModel = () => {
 
     const [status, setStatus] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

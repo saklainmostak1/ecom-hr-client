@@ -49,7 +49,7 @@ const AssetEmployeeCreates = () => {
     const { data: employeeList = [], } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -138,7 +138,7 @@ const AssetEmployeeCreates = () => {
     const { data: assetType = [], isLoading, refetch } = useQuery({
         queryKey: ['assetType'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/asset_info/asset_info_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/asset_info/asset_info_all`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -205,7 +205,7 @@ const AssetEmployeeCreates = () => {
         // Retrieve the form's image value
 
         // Make the fetch request
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/asset_employee/asset_employee_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/asset_employee/asset_employee_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

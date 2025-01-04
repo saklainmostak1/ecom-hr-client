@@ -111,7 +111,7 @@ const AdminPageCopyAll = ({ Id }) => {
             }
             console.log(EditValue);
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/copy`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/copy`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

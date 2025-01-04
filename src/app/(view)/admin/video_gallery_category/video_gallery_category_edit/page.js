@@ -20,7 +20,7 @@
 //     queryKey: ["videogalleryCategorySingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -57,7 +57,7 @@
 //     e.preventDefault();
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -232,7 +232,7 @@ const EditVideoGalleryCategory = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -249,7 +249,7 @@ const EditVideoGalleryCategory = ({ id }) => {
     queryKey: ["noticeCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -260,7 +260,7 @@ const EditVideoGalleryCategory = ({ id }) => {
     queryKey: ["noticeCategory"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -347,7 +347,7 @@ const EditVideoGalleryCategory = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_edit/${id}`,
         {
           method: "POST",
           headers: {

@@ -30,7 +30,7 @@
 //     };
 
 //     fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_create`,
+//       `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_create`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -214,7 +214,7 @@ const VideoGalleryCategoryCreate = () => {
   const [statuss, setstatus] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -248,7 +248,7 @@ const VideoGalleryCategoryCreate = () => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_all`
       );
       const data = await res.json();
       return data;
@@ -313,7 +313,7 @@ const VideoGalleryCategoryCreate = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_create`,
         {
           method: "POST",
           headers: {

@@ -52,7 +52,7 @@ const AssetInfoCreates = ({ id }) => {
     const { data: assetInfoSingle = [], } = useQuery({
         queryKey: ['assetInfoSingle'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/asset_info/asset_info_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/asset_info/asset_info_all/${id}`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -120,7 +120,7 @@ const AssetInfoCreates = ({ id }) => {
     const { data: assetType = [], isLoading, refetch } = useQuery({
         queryKey: ['assetType'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/asset_type/asset_type_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/asset_type/asset_type_all`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -290,7 +290,7 @@ const AssetInfoCreates = ({ id }) => {
 
 
         // Make the fetch request
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/asset_info/asset_info_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/asset_info/asset_info_edit/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -350,7 +350,7 @@ const AssetInfoCreates = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

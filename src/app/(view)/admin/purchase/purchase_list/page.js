@@ -47,7 +47,7 @@ const PurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['loanAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_list`)
 
             const data = await res.json()
             return data
@@ -86,7 +86,7 @@ const PurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -147,7 +147,7 @@ const PurchaseList = ({ searchParams }) => {
 
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_all_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_all_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -166,7 +166,7 @@ const PurchaseList = ({ searchParams }) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_delete/${id}`, {
             method: "POST",
         })
             .then(response => {
@@ -247,7 +247,7 @@ const PurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -258,7 +258,7 @@ const PurchaseList = ({ searchParams }) => {
     const { data: supplier = [], } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -273,7 +273,7 @@ const PurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -284,7 +284,7 @@ const PurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['purchase_type'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_type_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_type_list`)
 
             const data = await res.json()
             return data
@@ -294,7 +294,7 @@ const PurchaseList = ({ searchParams }) => {
     const loan_search = () => {
 
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_search`, {
             toDate, fromDate, supplier_id, product_id, unit_id, item_name, invoice, purchase_types
 
         })
@@ -319,8 +319,8 @@ const PurchaseList = ({ searchParams }) => {
 
     const loan_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_search`, {
             toDate, fromDate, supplier_id, product_id, unit_id, item_name, invoice, purchase_types
         });
 
@@ -371,7 +371,7 @@ const PurchaseList = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -411,8 +411,8 @@ const PurchaseList = ({ searchParams }) => {
 
     const loan_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_search`, {
                 toDate, fromDate, supplier_id, product_id, unit_id, item_name, invoice, purchase_types
             });
 
@@ -465,7 +465,7 @@ const PurchaseList = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -488,7 +488,7 @@ const PurchaseList = ({ searchParams }) => {
 
     const loan_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_search`, {
                 toDate, fromDate, supplier_id, product_id, unit_id, item_name, invoice, purchase_types
             });
 
@@ -559,7 +559,7 @@ const PurchaseList = ({ searchParams }) => {
 
     const loan_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_search`, {
                 toDate, fromDate, supplier_id, product_id, unit_id, item_name, invoice, purchase_types
             });
 
@@ -737,8 +737,8 @@ const PurchaseList = ({ searchParams }) => {
     //         printWindow.document.open();
 
     //         // Send barcode data to your backend or rendering function\
-    //         // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_print_single
-    //         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_print_single`, {
+    //         // ${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_print_single
+    //         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_print_single`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -792,7 +792,7 @@ const PurchaseList = ({ searchParams }) => {
     //             return
     //         }
 
-    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_pdf_single`, {
+    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_pdf_single`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -935,7 +935,7 @@ const PurchaseList = ({ searchParams }) => {
             `;
 
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_pdf_single`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_pdf_single`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1078,7 +1078,7 @@ const PurchaseList = ({ searchParams }) => {
     //     `;
 
     //     // Send the content to the server to generate the PDF
-    //     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_pdf`, {
+    //     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_pdf`, {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json',

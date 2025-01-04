@@ -20,7 +20,7 @@
 //     queryKey: ["photogalleryCategorySingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -57,7 +57,7 @@
 //     e.preventDefault();
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -204,7 +204,7 @@ const EditPhotoGalleryCategory = ({ id }) => {
   const [status, setStatus] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -248,7 +248,7 @@ const EditPhotoGalleryCategory = ({ id }) => {
     queryKey: ["noticeCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -260,7 +260,7 @@ const EditPhotoGalleryCategory = ({ id }) => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_all`
       );
       const data = await res.json();
 
@@ -336,7 +336,7 @@ const EditPhotoGalleryCategory = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/events_category/events_category_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/events_category/events_category_edit/${id}`,
         {
           method: "POST",
           headers: {

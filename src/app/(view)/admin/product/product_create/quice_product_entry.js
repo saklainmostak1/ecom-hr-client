@@ -17,7 +17,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getStatus`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getStatus`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -26,7 +26,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getCategories`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getCategories`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -35,7 +35,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getSubCategories`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getSubCategories`)
             .then(res => res.json())
             .then(data => setSubCategories(data))
     }, [])
@@ -245,7 +245,7 @@ const QuickProductEntry = () => {
         for (let index = 0; index < newArray.length; index++) {
             const updateValue = newArray[index];
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/excelInsertProductData`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/excelInsertProductData`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -419,9 +419,9 @@ export default QuickProductEntry;
 
 //             }
 //             console.log(productData)
-//             // `${process.env.NEXT_PUBLIC_API_URL}:5002/insertProductData`
+//             // `${process.env.NEXT_PUBLIC_API_URL}/insertProductData`
 
-//             fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/insertProduct`, {
+//             fetch(`${process.env.NEXT_PUBLIC_API_URL}/insertProduct`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'content-type': 'application/json',
@@ -448,7 +448,7 @@ export default QuickProductEntry;
 //     const [brand, setBrand] = useState([])
 
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
 //             .then(res => res.json())
 //             .then(data => setBrand(data))
 //     }, [])
@@ -458,7 +458,7 @@ export default QuickProductEntry;
 //     const [model, setModel] = useState([])
 
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_all`)
 //             .then(res => res.json())
 //             .then(data => setModel(data))
 //     }, [])
@@ -468,7 +468,7 @@ export default QuickProductEntry;
 //     const [category, setCategory] = useState([])
 
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
 //             .then(res => res.json())
 //             .then(data => setCategory(data))
 //     }, [])
@@ -478,7 +478,7 @@ export default QuickProductEntry;
 //     const [subCategory, setSubCategory] = useState([])
 
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
 //             .then(res => res.json())
 //             .then(data => setSubCategory(data))
 //     }, [])
@@ -487,7 +487,7 @@ export default QuickProductEntry;
 
 //     const [color, setColor] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/color/color_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/color/color_all`)
 //             .then(res => res.json())
 //             .then(data => setColor(data))
 //     }, [])
@@ -496,7 +496,7 @@ export default QuickProductEntry;
 
 //     const [material, setMaterial] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/material/material_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/material/material_all`)
 //             .then(res => res.json())
 //             .then(data => setMaterial(data))
 //     }, [])
@@ -504,7 +504,7 @@ export default QuickProductEntry;
 //     console.log(material)
 //     const [period, setPeriod] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
 //             .then(res => res.json())
 //             .then(data => setPeriod(data))
 //     }, [])
@@ -513,7 +513,7 @@ export default QuickProductEntry;
 
 //     const [type, setType] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/type/type_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/type/type_all`)
 //             .then(res => res.json())
 //             .then(data => setType(data))
 //     }, [])
@@ -522,7 +522,7 @@ export default QuickProductEntry;
 
 //     const [unit, setUnit] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 //             .then(res => res.json())
 //             .then(data => setUnit(data))
 //     }, [])
@@ -531,7 +531,7 @@ export default QuickProductEntry;
 
 //     const [warranty, setWarranty] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all`)
 //             .then(res => res.json())
 //             .then(data => setWarranty(data))
 //     }, [])
@@ -541,7 +541,7 @@ export default QuickProductEntry;
 
 //     const [status, setStatus] = useState([])
 //     useEffect(() => {
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
 //             .then(res => res.json())
 //             .then(data => setStatus(data))
 //     }, [])

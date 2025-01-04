@@ -28,7 +28,7 @@ const ProductPurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['asset_infoAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_all`)
 
             const data = await res.json()
             return data
@@ -68,7 +68,7 @@ const ProductPurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -125,7 +125,7 @@ const ProductPurchaseList = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_all_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_all_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -144,7 +144,7 @@ const ProductPurchaseList = ({ searchParams }) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_delete/${id}`, {
             method: "POST",
         })
             .then(response => {
@@ -225,7 +225,7 @@ const ProductPurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['units'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -236,7 +236,7 @@ const ProductPurchaseList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -246,7 +246,7 @@ const ProductPurchaseList = ({ searchParams }) => {
 
     const asset_type_search = () => {
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_search`, {
             productName, unit, toDate, fromDate
 
         })
@@ -271,8 +271,8 @@ const ProductPurchaseList = ({ searchParams }) => {
 
     const asset_info_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_search`, {
             productName, unit, toDate, fromDate
         });
 
@@ -323,7 +323,7 @@ const ProductPurchaseList = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -360,8 +360,8 @@ const ProductPurchaseList = ({ searchParams }) => {
 
     const asset_type_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_search`, {
                 productName, unit, toDate, fromDate
             });
 
@@ -414,7 +414,7 @@ const ProductPurchaseList = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -437,7 +437,7 @@ const ProductPurchaseList = ({ searchParams }) => {
 
     const asset_info_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_search`, {
                 productName, unit, toDate, fromDate
             });
             const searchResults = response.data.results;
@@ -492,7 +492,7 @@ const ProductPurchaseList = ({ searchParams }) => {
 
     const asset_info_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_search`, {
                 productName, unit, toDate, fromDate
             });
             const searchResults = response.data.results;

@@ -30,7 +30,7 @@ const LoanLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['loanAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_all`)
 
             const data = await res.json()
             return data
@@ -69,7 +69,7 @@ const LoanLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -126,7 +126,7 @@ const LoanLists = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_all_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_all_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -145,7 +145,7 @@ const LoanLists = ({ searchParams }) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_delete/${id}`, {
             method: "POST",
         })
             .then(response => {
@@ -225,7 +225,7 @@ const LoanLists = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['loan_authorityAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_authority/loan_authority_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_authority/loan_authority_all`)
 
             const data = await res.json()
             return data
@@ -235,7 +235,7 @@ const LoanLists = ({ searchParams }) => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -247,7 +247,7 @@ const LoanLists = ({ searchParams }) => {
     const [statuss, setStatuss] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatuss(data))
     }, [])
@@ -256,7 +256,7 @@ const LoanLists = ({ searchParams }) => {
     const loan_search = () => {
 
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_search`, {
             toDate, fromDate, account_heads, loanAuthority, loan_type, status
 
         })
@@ -281,8 +281,8 @@ const LoanLists = ({ searchParams }) => {
 
     const loan_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_search`, {
             toDate, fromDate, account_heads, loanAuthority, loan_type, status
         });
 
@@ -333,7 +333,7 @@ const LoanLists = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -373,8 +373,8 @@ const LoanLists = ({ searchParams }) => {
 
     const loan_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_search`, {
                 toDate, fromDate, account_heads, loanAuthority, loan_type, status
             });
 
@@ -427,7 +427,7 @@ const LoanLists = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -450,7 +450,7 @@ const LoanLists = ({ searchParams }) => {
 
     const loan_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_search`, {
                 toDate, fromDate, account_heads, loanAuthority, loan_type, status
             });
 
@@ -512,7 +512,7 @@ const LoanLists = ({ searchParams }) => {
 
     const loan_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_search`, {
                 toDate, fromDate, account_heads, loanAuthority, loan_type, status
             });
 

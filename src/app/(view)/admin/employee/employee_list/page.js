@@ -18,7 +18,7 @@ const EmployeeAll = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`)
 
             const data = await res.json()
             return data
@@ -62,7 +62,7 @@ const EmployeeAll = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -100,7 +100,7 @@ const EmployeeAll = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_delete/${id}`, {
                 method: "POST",
 
             })
@@ -173,7 +173,7 @@ const EmployeeAll = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['expenseList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list_settings`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list_settings`)
 
             const data = await res.json()
             return data
@@ -209,7 +209,7 @@ const EmployeeAll = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -280,7 +280,7 @@ const EmployeeAll = ({ searchParams }) => {
     const { data: branchAll = [] } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }
@@ -290,7 +290,7 @@ const EmployeeAll = ({ searchParams }) => {
     const { data: designations = [] } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`);
             const data = await res.json();
             return data;
         }
@@ -299,7 +299,7 @@ const EmployeeAll = ({ searchParams }) => {
     const { data: payrolls = [] } = useQuery({
         queryKey: ['payrolls'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`);
             const data = await res.json();
             return data;
         }
@@ -308,7 +308,7 @@ const EmployeeAll = ({ searchParams }) => {
     const { data: shifts = [] } = useQuery({
         queryKey: ['shifts'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_all`);
             const data = await res.json();
             return data;
         }
@@ -317,7 +317,7 @@ const EmployeeAll = ({ searchParams }) => {
     const { data: employees = [] } = useQuery({
         queryKey: ['employees'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             return data;
         }
@@ -365,7 +365,7 @@ const EmployeeAll = ({ searchParams }) => {
             return
         }
         console.log(multiSearch)
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_search`, {
             searchQuery, itemName, employee, shift, payroll, employee_id, fromDate, toDate, multiSearch
         })
             .then(response => {
@@ -414,7 +414,7 @@ const EmployeeAll = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -433,7 +433,7 @@ const EmployeeAll = ({ searchParams }) => {
     const employee_list_pdf_download = async () => {
         try {
             // Fetch search results
-            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_search`, {
+            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_search`, {
                 searchQuery, itemName, employee, shift, payroll, employee_id, fromDate, toDate
             });
 
@@ -477,7 +477,7 @@ const EmployeeAll = ({ searchParams }) => {
             console.log(searchResults);
 
             // Fetch PDF
-            const pdfResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list_pdf`, {
+            const pdfResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -510,7 +510,7 @@ const EmployeeAll = ({ searchParams }) => {
     const attendance_excel_download = async () => {
         try {
             // Fetch data from the API
-            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_search`, {
+            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_search`, {
                 searchQuery, itemName, employee, shift, payroll, employee_id, fromDate, toDate
             });
             const searchResults = searchResponse.data.results;
@@ -570,7 +570,7 @@ const EmployeeAll = ({ searchParams }) => {
 
     const employee_word_download = async () => {
         try {
-            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_search`, {
+            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_search`, {
                 searchQuery, itemName, employee, shift, payroll, employee_id, fromDate, toDate
             });
             const searchResults = searchResponse.data.results;
@@ -684,8 +684,8 @@ const EmployeeAll = ({ searchParams }) => {
     const employee_print_download = async () => {
 
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
-            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
+            const searchResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_search`, {
                 searchQuery, itemName, employee, shift, payroll, employee_id, fromDate, toDate
             });
             const searchResults = searchResponse.data.results;
@@ -746,7 +746,7 @@ const EmployeeAll = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

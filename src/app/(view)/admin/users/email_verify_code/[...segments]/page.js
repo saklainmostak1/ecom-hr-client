@@ -22,7 +22,7 @@ const EmailVerifyCode = ({ params }) => {
     const { data: singleUsers = [] } = useQuery({
         queryKey: ['singleUsers'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
             const data = await res.json();
 
             return data;
@@ -42,7 +42,7 @@ const EmailVerifyCode = ({ params }) => {
     // const { data: pass_reset = [] } = useQuery({
     //     queryKey: ['pass_reset'],
     //     queryFn: async () => {
-    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${roleName}`);
+    //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${roleName}`);
     //         const data = await res.json();
 
     //         return data;
@@ -52,7 +52,7 @@ const EmailVerifyCode = ({ params }) => {
     const [pass_reset, setPass_reset] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${roleName}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${roleName}`)
             .then(res => res.json())
             .then(data => setPass_reset(data))
 
@@ -79,7 +79,7 @@ const EmailVerifyCode = ({ params }) => {
     } = useQuery({
         queryKey: ['roleDefaultPage'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_permission/${roleName}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users_role/users_role_permission/${roleName}`)
 
             const data = await res.json()
             return data
@@ -95,7 +95,7 @@ const EmailVerifyCode = ({ params }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${id}`)
 
             const data = await res.json()
             return data
@@ -122,7 +122,7 @@ const EmailVerifyCode = ({ params }) => {
     const { data: singleUser = [], isLoading, refetch } = useQuery({
         queryKey: ['singleUser'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
             const data = await res.json();
 
             return data;
@@ -148,7 +148,7 @@ const EmailVerifyCode = ({ params }) => {
         if (verifyCode === enteredOtp) {
             try {
                 // Clear the verifyCode by making a PUT request
-                const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${id}`, {
+                const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${id}`, {
                     email_verifiy_code: null,
                     OTP: null,
                     // emailCodeTimeOut

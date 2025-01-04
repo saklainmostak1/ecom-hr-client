@@ -23,7 +23,7 @@
 //     queryKey: ["religions"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/profession/profession_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/profession/profession_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -52,7 +52,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/profession/profession_create`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/profession/profession_create`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -210,7 +210,7 @@ useEffect(() => {
       queryKey: ["professions"],
       queryFn: async () => {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/profession/profession_all`
+          `${process.env.NEXT_PUBLIC_API_URL}/Admin/profession/profession_all`
         );
         const data = await res.json();
         return data;
@@ -275,7 +275,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/profession/profession_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/profession/profession_create`,
         {
           method: "POST",
           headers: {

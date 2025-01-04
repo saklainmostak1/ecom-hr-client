@@ -17,7 +17,7 @@ const PasswordReset = ({ id }) => {
     const { data: changePassword = [], isLoading, refetch } = useQuery({
         queryKey: ['changePassword'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
             const data = await res.json();
             return data;
         }

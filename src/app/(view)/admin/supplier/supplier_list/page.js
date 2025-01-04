@@ -26,7 +26,7 @@ const ListSupplier = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['asset_typeAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`)
 
             const data = await res.json()
             return data
@@ -69,7 +69,7 @@ const ListSupplier = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -126,7 +126,7 @@ const ListSupplier = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -142,7 +142,7 @@ const ListSupplier = ({ searchParams }) => {
 
         console.log(id)
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_delete/${id}`, {
             method: "POST",
         })
             .then(response => {
@@ -187,7 +187,7 @@ const ListSupplier = ({ searchParams }) => {
 
     const asset_search = () => {
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_search`, {
             status, name, email, mobile
         })
             .then(response => {
@@ -208,8 +208,8 @@ const ListSupplier = ({ searchParams }) => {
 
     const asset_type_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_search`, {
             status, name, email, mobile
         });
 
@@ -260,7 +260,7 @@ const ListSupplier = ({ searchParams }) => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -297,8 +297,8 @@ const ListSupplier = ({ searchParams }) => {
 
     const asset_type_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_search`, {
                 status, name, email, mobile
             });
 
@@ -351,7 +351,7 @@ const ListSupplier = ({ searchParams }) => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -376,7 +376,7 @@ const ListSupplier = ({ searchParams }) => {
     const [statuss, setStatuss] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatuss(data))
     }, [])
@@ -388,7 +388,7 @@ const ListSupplier = ({ searchParams }) => {
 
     const asset_type_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_search`, {
                 status, name, email, mobile
             });
             const searchResults = response.data.results;
@@ -448,7 +448,7 @@ const ListSupplier = ({ searchParams }) => {
 
     const attendance_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_address_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_address_search`, {
                 status, name, email, mobile
             });
             const searchResults = response.data.results;

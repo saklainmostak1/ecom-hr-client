@@ -11,7 +11,7 @@ const IconModal = ({ index, names, handleInputChange, inputValue }) => {
     const [icons, setIcons] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/faIcons`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/faIcons`)
             .then(res => res.json())
             .then(data => {
                 setIcons(data)

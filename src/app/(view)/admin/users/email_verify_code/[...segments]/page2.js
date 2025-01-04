@@ -19,7 +19,7 @@
 //         const otp = generateOTP();
 
 //         try {
-//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //                 email,
 //                 otp
 //             });
@@ -107,13 +107,13 @@
 //         const otp = generateOTP();
 
 //         try {
-//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //                 email,
 //                 otp
 //             });
 //             console.log(response);
 
-//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${id}`, {
+//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${id}`, {
 //                 email_verifiy_code: otp,
 //                 OTP: 2,
 //                 emailCodeTimeOut: otpTimeLimite
@@ -217,13 +217,13 @@
 //         const otp = generateOTP();
 
 //         try {
-//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //                 email,
 //                 otp
 //             });
 //             console.log(response);
 
-//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${id}`, {
+//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${id}`, {
 //                 email_verifiy_code: otp,
 //                 OTP: 2,
 //                 emailCodeTimeOut: otpTimeLimite
@@ -344,13 +344,13 @@ const CountDown = ({ otpTimeLimite, userEmail, id }) => {
         const otp = generateOTP();
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
                 email,
                 otp
             });
             console.log(response);
 
-            const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${id}`, {
+            const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${id}`, {
                 email_verifiy_code: otp,
                 OTP: 2,
                 emailCodeTimeOut: otpTimeLimite

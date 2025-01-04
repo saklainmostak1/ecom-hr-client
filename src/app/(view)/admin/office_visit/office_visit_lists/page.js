@@ -12,7 +12,7 @@ const OfficeVisitList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['office_visits'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_all`)
 
             const data = await res.json()
             return data
@@ -53,7 +53,7 @@ const OfficeVisitList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -112,7 +112,7 @@ const OfficeVisitList = ({ searchParams }) => {
     }
     const [pageUserss, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_list/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_list/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -129,7 +129,7 @@ const OfficeVisitList = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_delete/${id}`, {
                 method: "POST",
 
             })

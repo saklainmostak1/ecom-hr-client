@@ -12,7 +12,7 @@ const AccountHeadList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_all`)
 
             const data = await res.json()
             return data
@@ -54,7 +54,7 @@ const AccountHeadList = ({ searchParams }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -88,7 +88,7 @@ const AccountHeadList = ({ searchParams }) => {
     //     console.log(id)
     //     const proceed = window.confirm(`Are You Sure delete${id}`)
     //     if (proceed) {
-    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_delete/${id}`, {
+    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_delete/${id}`, {
     //             method: "POST",
 
     //         })
@@ -128,7 +128,7 @@ const AccountHeadList = ({ searchParams }) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list_paigination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list_paigination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -145,7 +145,7 @@ const AccountHeadList = ({ searchParams }) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_delete/${id}`, {
             method: "POST",
         })
             .then(response => {

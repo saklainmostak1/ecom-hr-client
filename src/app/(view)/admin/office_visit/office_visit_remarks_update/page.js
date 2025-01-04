@@ -49,7 +49,7 @@ const OfficeVisitRemarksEdit = ({ id }) => {
     } = useQuery({
         queryKey: ['office_visits_remarksSingles'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_list/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_list/${id}`)
 
             const data = await res.json()
             return data
@@ -208,7 +208,7 @@ const OfficeVisitRemarksEdit = ({ id }) => {
 
         console.log(schoolShift)
        
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_edit/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

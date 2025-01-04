@@ -19,7 +19,7 @@
 //     const { data: products = [], isLoading } = useQuery({
 //         queryKey: ['products'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -454,7 +454,7 @@
 //         const printWindow = window.open('', '_blank');
 //         printWindow.document.open();
 
-//         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_print`, {
+//         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_print`, {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json',
@@ -528,7 +528,7 @@
 //     const fontSize = parseInt(selectedFontSize.split('-')[1]) * zoomMultiplier;
 
 //     try {
-//         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_pdf`, {
+//         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_pdf`, {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json',
@@ -583,7 +583,7 @@ const BarCodePurchases = () => {
     const { data: products = [], isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`);
             const data = await res.json();
             return data;
         }
@@ -789,7 +789,7 @@ const BarCodePurchases = () => {
         `;
 
         // Send the content to the server to generate the PDF
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_pdf`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_pdf`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1148,7 +1148,7 @@ export default BarCodePurchases;
 //     const { data: products = [], isLoading } = useQuery({
 //         queryKey: ['products'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1172,7 +1172,7 @@ export default BarCodePurchases;
 //             const printWindow = window.open('', '_blank');
 //             printWindow.document.open();
 
-//             const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/barcode_print`, {
+//             const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/barcode_print`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'Content-Type': 'application/json',

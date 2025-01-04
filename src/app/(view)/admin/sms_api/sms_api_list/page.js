@@ -19,7 +19,7 @@ const SmsApiList = () => {
         queryKey: ["smsApiLists"],
         queryFn: async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_all`
+                `${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_all`
             );
     
             const data = await res.json();
@@ -73,7 +73,7 @@ const SmsApiList = () => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -116,7 +116,7 @@ const SmsApiList = () => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete this Item`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_delete/${id}`, {
                 method: "POST",
 
             })

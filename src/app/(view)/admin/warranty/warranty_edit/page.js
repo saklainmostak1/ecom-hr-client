@@ -15,7 +15,7 @@ const WarrantyEdit = ({ id }) => {
     const { data: warranty = [], isLoading, refetch } = useQuery({
         queryKey: ['warranty'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -28,7 +28,7 @@ const WarrantyEdit = ({ id }) => {
 
     const [warrantys, setwarrantys] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all/${id}`)
             .then(Response => Response.json())
             .then(data => setwarrantys(data))
     }, [id])
@@ -208,7 +208,7 @@ const WarrantyEdit = ({ id }) => {
         }
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -311,7 +311,7 @@ const WarrantyEdit = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

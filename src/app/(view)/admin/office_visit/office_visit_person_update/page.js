@@ -53,7 +53,7 @@ const OfficeVisitPersonUpdate = ({id}) => {
     } = useQuery({
         queryKey: ['office_visits_persons'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list/${id}`)
 
             const data = await res.json()
             return data
@@ -168,9 +168,9 @@ const OfficeVisitPersonUpdate = ({id}) => {
 
 
         console.log(schoolShift)
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/mobile_allowance/mobile_allowance_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/mobile_allowance/mobile_allowance_create
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_edit/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -272,7 +272,7 @@ const OfficeVisitPersonUpdate = ({id}) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_delete/${id}`, {
                 method: "POST",
 
             })

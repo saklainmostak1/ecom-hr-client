@@ -79,7 +79,7 @@ const AdminPageListA = ({ searchParams }) => {
 
 
     const module_info_all = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Pagination/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Pagination/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -94,7 +94,7 @@ const AdminPageListA = ({ searchParams }) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete${id}`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/delete/${id}`, {
                 method: "POST",
 
             })
@@ -123,7 +123,7 @@ const AdminPageListA = ({ searchParams }) => {
     //         const id = idArr[index];
     //         const deleteId = { id }
     //         if (proceed) {
-    //             fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/delete`, {
+    //             fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/delete`, {
     //                 method: 'POST',
     //                 headers: {
     //                     'content-type': 'application/json'

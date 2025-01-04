@@ -35,7 +35,7 @@ const BrandCreate = () => {
     } = useQuery({
         queryKey: ['companys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`)
 
             const data = await res.json()
             return data
@@ -46,7 +46,7 @@ const BrandCreate = () => {
     } = useQuery({
         queryKey: ['companysType'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`)
 
             const data = await res.json()
             return data
@@ -60,7 +60,7 @@ const BrandCreate = () => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
             const data = await res.json()
             return data
@@ -397,7 +397,7 @@ const BrandCreate = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -441,7 +441,7 @@ const BrandCreate = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

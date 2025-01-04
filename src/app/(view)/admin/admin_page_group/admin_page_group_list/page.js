@@ -25,7 +25,7 @@ const AdminPageGroupList = () => {
     const { data: userss = [], isLoading, refetch } = useQuery({
         queryKey: ['userss'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/group-names-id`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/group-names-id`);
             const data = await res.json();
             return data;
         },
@@ -173,7 +173,7 @@ export default AdminPageGroupList;
 //     const { data: userss = [], isLoading, refetch } = useQuery({
 //         queryKey: ['userss'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/group-names-id`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/group-names-id`);
 //             const data = await res.json();
 //             return data;
 //         },

@@ -31,7 +31,7 @@ const PayRollEdit = ({ id }) => {
     const { data: payRollSingle, isLoading, refetch } = useQuery({
         queryKey: ['payRollSingle', id],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all/${id}`);
             const data = await res.json();
             return data;
         }
@@ -101,7 +101,7 @@ const PayRollEdit = ({ id }) => {
         }
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_edit/${id}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

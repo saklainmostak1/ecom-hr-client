@@ -29,7 +29,7 @@ const BranchUpdate = ({ id }) => {
     const { data: brands = [], isLoading, refetch } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -41,7 +41,7 @@ const BranchUpdate = ({ id }) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -53,7 +53,7 @@ const BranchUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['companys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`)
 
             const data = await res.json()
             return data
@@ -64,7 +64,7 @@ const BranchUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['companysType'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`)
 
             const data = await res.json()
             return data
@@ -230,7 +230,7 @@ const BranchUpdate = ({ id }) => {
         }
     
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_edit/${id}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -302,7 +302,7 @@ const BranchUpdate = ({ id }) => {
 
     //     // else {
 
-    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_edit/${id}`, {
+    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_edit/${id}`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json'
@@ -352,7 +352,7 @@ const BranchUpdate = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

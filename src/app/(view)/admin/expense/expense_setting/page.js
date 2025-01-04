@@ -13,7 +13,7 @@
 //     } = useQuery({
 //         queryKey: ['expenses'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/expense/expense_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/expense/expense_list`)
 
 //             const data = await res.json()
 //             return data
@@ -26,7 +26,7 @@
 //     } = useQuery({
 //         queryKey: ['module_settings'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
 //             const data = await res.json()
 //             return data
@@ -60,7 +60,7 @@
 //     // } = useQuery({
 //     //     queryKey: ['moduleInfo'],
 //     //     queryFn: async () => {
-//     //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all`)
+//     //         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all`)
 
 //     //         const data = await res.json()
 //     //         return data
@@ -143,8 +143,8 @@
 
 //         console.log(addValue)
 
-//         // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create`, {
+//         // ${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create`, {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -281,7 +281,7 @@ const ExpenseSettings = () => {
     } = useQuery({
         queryKey: ['expenses'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/expense/expense_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/expense/expense_list`)
 
             const data = await res.json()
             return data
@@ -294,7 +294,7 @@ const ExpenseSettings = () => {
     } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`)
 
             const data = await res.json()
             return data
@@ -414,8 +414,8 @@ const ExpenseSettings = () => {
 
         console.log(addValue)
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_create`, {
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -68,7 +68,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -84,7 +84,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -338,7 +338,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -575,7 +575,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -738,7 +738,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1059,7 +1059,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -1075,7 +1075,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -1320,7 +1320,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1334,7 +1334,7 @@
 //     useEffect(() => {
 //         const fetchEmployeeGeo = async (employeeId) => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${employeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${employeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -1524,7 +1524,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1537,7 +1537,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${employeeId}`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee data');
 //             }
@@ -1670,7 +1670,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -1683,7 +1683,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${employeeId}`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee data');
 //             }
@@ -1830,8 +1830,8 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
-//                 // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -1847,7 +1847,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2046,7 +2046,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -2063,7 +2063,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             // if (!res.ok) {
 //             //     throw new Error('Failed to fetch employee data');
 //             // }
@@ -2343,7 +2343,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -2360,7 +2360,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             const data = await res.json();
 //             return data;
 //         } catch (error) {
@@ -2633,7 +2633,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -2650,7 +2650,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             const data = await res.json();
 //             return data;
 //         } catch (error) {
@@ -2918,7 +2918,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -2935,7 +2935,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             const data = await res.json();
 //             return data;
 //         } catch (error) {
@@ -3206,7 +3206,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -3223,7 +3223,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             const data = await res.json();
 //             return data;
 //         } catch (error) {
@@ -3532,7 +3532,7 @@
 
 //     const fetchEmployeeList = async () => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             if (!res.ok) {
 //                 throw new Error('Failed to fetch employee list');
 //             }
@@ -3549,7 +3549,7 @@
 
 //     const fetchEmployeeGeo = async (employeeId) => {
 //         try {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
 //             const data = await res.json();
 //             return data;
 //         } catch (error) {
@@ -3949,7 +3949,7 @@ const EmployeeGoogleMap = () => {
     } = useQuery({
         queryKey: ['usersFireBaseToken'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list_role_wise`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list_role_wise`)
 
             const data = await res.json()
             return data
@@ -4050,7 +4050,7 @@ const EmployeeGoogleMap = () => {
 
     const fetchEmployeeList = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
             if (!res.ok) {
                 throw new Error('Failed to fetch employee list');
             }
@@ -4069,7 +4069,7 @@ const EmployeeGoogleMap = () => {
 
     const fetchEmployeeGeo = async (employeeId) => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
             const data = await res.json();
 
             return data;
@@ -4379,7 +4379,7 @@ const EmployeeGoogleMap = () => {
     const { data: module_settings = [] } = useQuery({
         queryKey: ['module_settings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/module_settings/module_settings_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/module_settings/module_settings_all`);
             const data = await res.json();
             return data;
         },

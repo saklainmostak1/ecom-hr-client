@@ -19,12 +19,12 @@ const CountDownNumber = ({ otpTimeLimite, userNumber, id }) => {
         const quickApi = '622bfee8efc9aff53';
 
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
                 quick_api: quickApi,
                 mobile,
                 msg: `Your OTP is ${otp}`,
             });
-            const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+            const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
                 verifiy_codes: otp,
                 OTP: 1,
                 emailCodeTimeOut: otpTimeLimite
@@ -159,12 +159,12 @@ export default CountDownNumber;
 //         const quickApi = '622bfee8efc9aff53';
 
 //         try {
-//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
 //                 quick_api: quickApi,
 //                 mobile,
 //                 msg: `Your OTP is ${otp}`,
 //             });
-//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+//             const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
 //                 verifiy_codes: otp,
 //                 OTP: 1,
 //                 emailCodeTimeOut: otpTimeLimite

@@ -35,12 +35,12 @@ const AccountReports = () => {
         }
 
         try {
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
                 yearName,
                 type,
             });
 
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
                 yearName,
                 type,
             });
@@ -474,12 +474,12 @@ const AccountReports = () => {
 
 
         try {
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
                 yearName,
                 type,
             });
 
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
                 yearName,
                 type,
             });
@@ -537,7 +537,7 @@ const AccountReports = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/accounts_report_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/accounts_report_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -562,12 +562,12 @@ const AccountReports = () => {
 
     const accounts_report_pdf = async () => {
 
-        const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+        const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
             yearName,
             type,
         });
 
-        const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+        const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
             yearName,
             type,
         });
@@ -614,7 +614,7 @@ const AccountReports = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/accounts_report_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/accounts_report_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -880,12 +880,12 @@ export default AccountReports;
 
 //         try {
 //             // Make the first request for expense search
-//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
 //                 yearName, type
 //             });
 
 //             // Make the second request for income search
-//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
 //                 yearName, type
 //             });
 
@@ -1151,12 +1151,12 @@ export default AccountReports;
 //         }
 
 //         try {
-//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
 //                 yearName,
 //                 type
 //             });
 
-//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
 //                 yearName,
 //                 type
 //             });
@@ -1683,11 +1683,11 @@ const formatTableRows = (expenses, incomes) => {
 //         setLoading(true);
 
 //         try {
-//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_amount_account_report`, {
+//             const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_amount_account_report`, {
 //                 yearName, type
 //             });
 
-//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/income_amount_account_report`, {
+//             const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/income_amount_account_report`, {
 //                 yearName, type
 //             });
 

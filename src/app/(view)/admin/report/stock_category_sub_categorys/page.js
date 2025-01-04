@@ -59,7 +59,7 @@ const CategorySubCategoryStock = () => {
     } = useQuery({
         queryKey: ['purchase_product_stock_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_product_stock_list_current_month`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_product_stock_list_current_month`)
             const data = await res.json()
             const updatedSearchResults = data.map(product => ({
                 ...product,
@@ -74,7 +74,7 @@ const CategorySubCategoryStock = () => {
     const purchase_product_stock_list_search = () => {
 
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_product_stock_list_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_product_stock_list_search`, {
             toDate, fromDate, supplier_id, product_id
 
         })
@@ -112,7 +112,7 @@ const CategorySubCategoryStock = () => {
     } = useQuery({
         queryKey: ['subCategories'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
 
             const data = await res.json()
             return data
@@ -123,7 +123,7 @@ const CategorySubCategoryStock = () => {
     } = useQuery({
         queryKey: ['categorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
 
             const data = await res.json()
             return data
@@ -257,8 +257,8 @@ const CategorySubCategoryStock = () => {
 
     const stock_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_product_stock_list_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_product_stock_list_search`, {
             toDate, fromDate, supplier_id, product_id
         });
 
@@ -339,7 +339,7 @@ const CategorySubCategoryStock = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/report/stock_category_sub_category_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/report/stock_category_sub_category_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -377,8 +377,8 @@ const CategorySubCategoryStock = () => {
 
     const stock_print = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_person_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_product_stock_list_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_person_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_product_stock_list_search`, {
                 toDate, fromDate, supplier_id, product_id
             });
 
@@ -460,7 +460,7 @@ const CategorySubCategoryStock = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/report/stock_category_sub_category_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/report/stock_category_sub_category_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

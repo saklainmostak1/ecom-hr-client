@@ -298,7 +298,7 @@ const FontServiceBoxCreates = () => {
     } = useQuery({
         queryKey: ['page_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
             const data = await res.json()
             return data
@@ -308,7 +308,7 @@ const FontServiceBoxCreates = () => {
     } = useQuery({
         queryKey: ['page_list_status'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
             const data = await res.json()
             return data
@@ -320,7 +320,7 @@ const FontServiceBoxCreates = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -409,9 +409,9 @@ const FontServiceBoxCreates = () => {
         }
         console.log(allData)
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/front_service_box_create
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/front_service_box_create
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/front_service_box_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/front_service_box_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -531,7 +531,7 @@ const FontServiceBoxCreates = () => {
     const [statuss, setStatuss] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatuss(data))
     }, [])
@@ -910,7 +910,7 @@ export default FontServiceBoxCreates;
 //     } = useQuery({
 //         queryKey: ['page_list'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
 //             const data = await res.json()
 //             return data
@@ -920,7 +920,7 @@ export default FontServiceBoxCreates;
 //     } = useQuery({
 //         queryKey: ['page_list_status'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
 //             const data = await res.json()
 //             return data
@@ -932,7 +932,7 @@ export default FontServiceBoxCreates;
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+//                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
 //                     method: 'POST',
 //                     headers: {
 //                         'Content-Type': 'application/json',

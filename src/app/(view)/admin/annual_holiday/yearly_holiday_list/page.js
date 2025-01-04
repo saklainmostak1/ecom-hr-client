@@ -11,7 +11,7 @@ const YearlyHolidayList = ({searchParams}) => {
     } = useQuery({
         queryKey: ['holiday_category'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_all`)
 
             const data = await res.json()
             return data
@@ -53,7 +53,7 @@ const YearlyHolidayList = ({searchParams}) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -111,7 +111,7 @@ const YearlyHolidayList = ({searchParams}) => {
     }
     const [pageUsers, setPageUsers] = useState([]);
     const caregory_list = async () => {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_list/${currentPage}/${dataPerPage}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_list/${currentPage}/${dataPerPage}`;
         const response = await fetch(url);
         const data = await response.json();
         setPageUsers(data);
@@ -128,7 +128,7 @@ const YearlyHolidayList = ({searchParams}) => {
         console.log(id)
         const proceed = window.confirm(`Are You Sure delete`)
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_delete/${id}`, {
                 method: "POST",
 
             })

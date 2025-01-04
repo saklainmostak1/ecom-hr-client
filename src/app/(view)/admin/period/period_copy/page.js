@@ -17,7 +17,7 @@ const CopyBrand = ({ id }) => {
     } = useQuery({
         queryKey: ['periods'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
 
             const data = await res.json()
             return data
@@ -28,7 +28,7 @@ const CopyBrand = ({ id }) => {
 
     const [periods, setperiods] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all/${id}`)
             .then(Response => Response.json())
             .then(data => setperiods(data))
     }, [id])
@@ -215,7 +215,7 @@ const CopyBrand = ({ id }) => {
             return name?.trim().replace(/\s+/g, '');
         };
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_all`)
             .then((response) => response.json())
             .then((periodData) => {
                 // Check if brand_name already exists in periodData
@@ -236,7 +236,7 @@ const CopyBrand = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/period/period_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/period/period_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -303,7 +303,7 @@ const CopyBrand = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

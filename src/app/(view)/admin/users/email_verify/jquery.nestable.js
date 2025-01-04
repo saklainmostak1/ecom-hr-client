@@ -194,7 +194,7 @@ export default NestableComponent;
 //     const { data: singleUser = [], isLoading, refetch } = useQuery({
 //         queryKey: ['singleUser'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
 //             const data = await res.json();
 
 //             return data;
@@ -222,7 +222,7 @@ export default NestableComponent;
 //         if (verifyCode === AllValue) {
 //             try {
 //                 // Clear the verifyCode by making a PUT request
-//                 const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+//                 const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
 //                     verifiy_codes: null,
 //                     OTP: null
 //                 });

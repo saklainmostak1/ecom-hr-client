@@ -31,7 +31,7 @@ const EducationList = ({ searchParams }) => {
     queryKey: ["photogalleryCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all`
       );
 
       const data = await res.json();
@@ -71,7 +71,7 @@ const EducationList = ({ searchParams }) => {
     queryKey: ["moduleInfo"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`
       );
 
       const data = await res.json();
@@ -122,7 +122,7 @@ const EducationList = ({ searchParams }) => {
   }
   const [pageUsers, setPageUsers] = useState([]);
   const caregory_list = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_list_paigination/${currentPage}/${dataPerPage}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_list_paigination/${currentPage}/${dataPerPage}`;
     const response = await fetch(url);
     const data = await response.json();
     setPageUsers(data);
@@ -142,7 +142,7 @@ const EducationList = ({ searchParams }) => {
 
   //   // const proceed = window.confirm(`Are You Sure delete${id}`)
   //   fetch(
-  //     `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_delete/${id}`,
+  //     `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_delete/${id}`,
   //     {
   //       method: "POST",
   //     }
@@ -173,7 +173,7 @@ const EducationList = ({ searchParams }) => {
   const education_delete = id => {
 
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_delete/${id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_delete/${id}`, {
       method: "POST",
     })
       .then(response => {

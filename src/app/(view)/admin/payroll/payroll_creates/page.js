@@ -33,7 +33,7 @@
 
 // 		};
 
-// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_create`, {
+// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_create`, {
 // 			method: 'POST',
 // 			headers: {
 // 				'content-type': 'application/json',
@@ -255,7 +255,7 @@ const PayRollCreate = () => {
             return
         }
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

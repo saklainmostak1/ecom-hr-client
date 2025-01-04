@@ -45,7 +45,7 @@ const CopynewsCategory = ({ id }) => {
 
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -59,7 +59,7 @@ const CopynewsCategory = ({ id }) => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all`
       );
       const data = await res.json();
       return data;
@@ -74,7 +74,7 @@ const CopynewsCategory = ({ id }) => {
     queryKey: ["newsSingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -148,7 +148,7 @@ const CopynewsCategory = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_create`,
         {
           method: "POST",
           headers: {

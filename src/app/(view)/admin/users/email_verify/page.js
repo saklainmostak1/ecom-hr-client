@@ -18,7 +18,7 @@ const EmailVerifi = ({ id }) => {
     const { data: singleUsers = [], isLoading, refetch } = useQuery({
         queryKey: ['singleUsers'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser/${id}`);
             const data = await res.json();
 
             return data;
@@ -47,16 +47,16 @@ const EmailVerifi = ({ id }) => {
 
             // Send the OTP via send-otp endpoint
             if (verifyCode === email) {
-                // ${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp-email
-                const responseSendOTP = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+                // ${process.env.NEXT_PUBLIC_API_URL}/send-otp-email
+                const responseSendOTP = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
                      email,
                     // msg: `Your OTP is ${otp}`,
 
                 });
                 console.log(responseSendOTP.data);
                 console.log(`responseSendOTP.data`);
-                // ${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}
-                // const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${id}`, {
+                // ${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}
+                // const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${id}`, {
                 //     email_verifiy_code: otp,
                 //     OTP: '1',
                 // });

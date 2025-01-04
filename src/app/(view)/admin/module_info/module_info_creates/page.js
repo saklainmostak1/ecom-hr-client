@@ -90,7 +90,7 @@ export default function AdminPageListC() {
             if (!page_group) {
                 setError('Page Group must be filled.')
             } else {
-                fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/allAdmin`, {
+                fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/allAdmin`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

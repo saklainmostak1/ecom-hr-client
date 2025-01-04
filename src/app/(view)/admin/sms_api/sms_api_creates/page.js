@@ -215,7 +215,7 @@ const SmsApiCreate = () => {
     const { data: branchAll = [] } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }
@@ -286,7 +286,7 @@ const SmsApiCreate = () => {
         setPassingYear(new Array(fields.length).fill(''));
 
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

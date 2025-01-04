@@ -17,7 +17,7 @@
 //     queryKey: ["companyTypes"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -52,7 +52,7 @@
 
 //     try {
 //       // const response = await fetch(
-//       //   `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_create`,
+//       //   `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_create`,
 //       //   {
 //       //     method: "POST",
 //       //     headers: {
@@ -70,7 +70,7 @@
 //       // }
 
 //       fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_create`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_create`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -217,7 +217,7 @@ const CompanyTypeCreate = () => {
     queryKey: ["companyTypes"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`
       );
       const data = await res.json();
       return data;
@@ -280,7 +280,7 @@ const [name, setName] = useState([])
 
     try {
       fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_create`,
         {
           method: "POST",
           headers: {

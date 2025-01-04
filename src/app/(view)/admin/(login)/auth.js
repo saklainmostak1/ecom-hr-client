@@ -38,7 +38,7 @@
 //             else {
 //                 if (count <= 3) {
 //                     try {
-//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
 //                             method: 'POST',
 //                             headers: {
 //                                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@
 //                     }
 //                 }
 //                 else {
-//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json'
@@ -134,7 +134,7 @@
 //             } else {
 //                 if (count <= 3) {
 //                     try {
-//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
 //                             method: 'POST',
 //                             headers: {
 //                                 'Content-Type': 'application/json',
@@ -144,7 +144,7 @@
 
 //                         if (response.ok) {
 //                             // Send OTP to user's email
-//                             await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, { email });
+//                             await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, { email });
 
 //                             getAllUserData().then(allUser => {
 //                                 const sUser = allUser.filter((users) => users?.email === email);
@@ -171,7 +171,7 @@
 //                         console.error('Login failed:', error);
 //                     }
 //                 } else {
-//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json'
@@ -219,7 +219,7 @@
 //             } else {
 //                 if (count <= 3) {
 //                     try {
-//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
 //                             method: 'POST',
 //                             headers: {
 //                                 'Content-Type': 'application/json',
@@ -261,7 +261,7 @@
 //                         console.error('Login failed:', error);
 //                     }
 //                 } else {
-//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json'
@@ -287,7 +287,7 @@
 
 // const sendEmailOTP = async (email, otp) => {
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //             email,
 
 //         });
@@ -299,12 +299,12 @@
 // const quickApi = '622bfee8efc9aff53';
 // const sendPhoneOTP = async (mobile, otp) => {
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
 //             quick_api: quickApi, // Assuming you have an environment variable for quickApi
 //             mobile,
 //             msg: `Your OTP is ${otp}`,
 //         });
-//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
 //             verifiy_codes: otp,
 //             OTP: null,
 //         });
@@ -345,7 +345,7 @@
 //             } else {
 //                 if (count <= 3) {
 //                     try {
-//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
 //                             method: 'POST',
 //                             headers: {
 //                                 'Content-Type': 'application/json',
@@ -394,7 +394,7 @@
 //                         console.error('Login failed:', error);
 //                     }
 //                 } else {
-//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json'
@@ -420,7 +420,7 @@
 
 // const sendEmailOTP = async (email, otp) => {
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //             email,
 
 //         });
@@ -433,12 +433,12 @@
 // const quickApi = '622bfee8efc9aff53';
 // const sendPhoneOTP = async (mobile, otp) => {
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
 //             quick_api: quickApi, // Assuming you have an environment variable for quickApi
 //             mobile,
 //             msg: `Your OTP is ${otp}`,
 //         });
-//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${id}`, {
+//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${id}`, {
 //             verifiy_codes: otp,
 //             OTP: null,
 //         });
@@ -483,7 +483,7 @@
 //             } else {
 //                 if (count <= 3) {
 //                     try {
-//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+//                         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
 //                             method: 'POST',
 //                             headers: {
 //                                 'Content-Type': 'application/json',
@@ -493,7 +493,7 @@
 
 //                         if (response.ok) {
                            
-//                             const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${sUser[0]?.role_name}`);
+//                             const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${sUser[0]?.role_name}`);
 
 //                             const roleNameId = await rolePermissionResponses.json();
 
@@ -537,12 +537,12 @@
 
 //                             else {
 //                                 // Fetch user role permissions based on role name
-//                                 const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_permission/${sUser[0]?.role_name}`);
+//                                 const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users_role/users_role_permission/${sUser[0]?.role_name}`);
 //                                 const rolePermissionData = await rolePermissionResponse.json();
 //                                 const userDefaultPage = rolePermissionData[0]?.user_default_page;
 
 //                                 // Fetch module info based on user id
-//                                 const moduleInfoResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${sUser[0]?.id}`);
+//                                 const moduleInfoResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${sUser[0]?.id}`);
 //                                 const moduleInfoData = await moduleInfoResponse.json();
 
 //                                 // Find matching user_default_page in moduleInfoData
@@ -606,7 +606,7 @@
 //                         console.error('Login failed:', error);
 //                     }
 //                 } else {
-//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+//                     fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json'
@@ -644,12 +644,12 @@
 
 //     console.log(emailCodeTimeOut)
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
 //             email,
 //             otp
 //         });
 //         console.log(response.data); // Handle response if needed
-//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${userId}`, {
+//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${userId}`, {
 //             email_verifiy_code: otp,
 //             OTP: 2,
 //             emailCodeTimeOut
@@ -665,12 +665,12 @@
 // const sendPhoneOTP = async (mobile, userId, otp, roleNameId) => {
 //     const emailCodeTimeOut = parseFloat(roleNameId?.user_role?.otp_expire)
 //     try {
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
 //             quick_api: quickApi,
 //             mobile,
 //             msg: `Your OTP is ${otp}`,
 //         });
-//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${userId}`, {
+//         const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${userId}`, {
 //             verifiy_codes: otp,
 //             OTP: 1,
 //             emailCodeTimeOut
@@ -711,7 +711,7 @@ const handleSubmit = async (event) => {
             } else {
                 if (count <= 3) {
                     try {
-                        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/login`, {
+                        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -720,7 +720,7 @@ const handleSubmit = async (event) => {
                         });
 
                         if (response.ok) {
-                            const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${sUser[0]?.role_name}`);
+                            const rolePermissionResponses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${sUser[0]?.role_name}`);
                             const roleNameId = await rolePermissionResponses.json();
                             console.log(roleNameId);
 
@@ -746,11 +746,11 @@ const handleSubmit = async (event) => {
                                     window.location.href = `/admin/users/email_verify_code/${sUser[0]?.id}`;
                                 }
                             } else {
-                                const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_permission/${sUser[0]?.role_name}`);
+                                const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users_role/users_role_permission/${sUser[0]?.role_name}`);
                                 const rolePermissionData = await rolePermissionResponse.json();
                                 const userDefaultPage = rolePermissionData[0]?.user_default_page;
 
-                                const moduleInfoResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${sUser[0]?.id}`);
+                                const moduleInfoResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${sUser[0]?.id}`);
                                 const moduleInfoData = await moduleInfoResponse.json();
 
                                 const matchingPage = moduleInfoData?.find(info => info.id === parseFloat(userDefaultPage));
@@ -786,7 +786,7 @@ const handleSubmit = async (event) => {
                         console.error('Login failed:', error);
                     }
                 } else {
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/updateLogin/${email}`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/updateLogin/${email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json',
@@ -815,12 +815,12 @@ const sendEmailOTP = async (email, userId, otp, roleNameId) => {
     const emailCodeTimeOut = parseFloat(roleNameId?.user_role?.otp_expire);
     console.log(emailCodeTimeOut);
     try {
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp/email`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp/email`, {
             email,
             otp,
         });
         console.log(response.data); // Handle response if needed
-        const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code_email/${userId}`, {
+        const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code_email/${userId}`, {
             email_verifiy_code: otp,
             OTP: 2,
             emailCodeTimeOut,
@@ -836,12 +836,12 @@ const quickApi = '622bfee8efc9aff53';
 const sendPhoneOTP = async (mobile, userId, otp, roleNameId) => {
     const emailCodeTimeOut = parseFloat(roleNameId?.user_role?.otp_expire);
     try {
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/send-otp`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-otp`, {
             quick_api: quickApi,
             mobile,
             msg: `Your OTP is ${otp}`,
         });
-        const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}:5002/update/verification_code/${userId}`, {
+        const responseVerifyOTP = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/update/verification_code/${userId}`, {
             verifiy_codes: otp,
             OTP: 1,
             emailCodeTimeOut,

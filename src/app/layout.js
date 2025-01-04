@@ -31,7 +31,7 @@ const [css, setCss] = useState([])
 
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/admin_panel_settings`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/admin_panel_settings`)
       .then(Response => Response.json())
       .then(data => setCategories(data))
   }, [])

@@ -17,7 +17,7 @@
 //     queryKey: ["noticeCategorySingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -28,7 +28,7 @@
 //     queryKey: ["religions"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -74,7 +74,7 @@
 //     }
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -231,7 +231,7 @@ useEffect(() => {
     queryKey: ["noticeCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -242,7 +242,7 @@ useEffect(() => {
     queryKey: ["religions"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -317,7 +317,7 @@ useEffect(() => {
     }
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/religion/religion_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/religion/religion_edit/${id}`,
         {
           method: "POST",
           headers: {

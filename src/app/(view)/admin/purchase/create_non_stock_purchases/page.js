@@ -46,7 +46,7 @@
 //     } = useQuery({
 //         queryKey: ['products'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
 //             const data = await res.json()
 //             return data
@@ -131,7 +131,7 @@
 //     const { data: supplier = [], } = useQuery({
 //         queryKey: ['supplier'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
 //             const data = await res.json();
 //             // Filter out the brand with id 
 //             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -146,7 +146,7 @@
 //     } = useQuery({
 //         queryKey: ['unit'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
 //             const data = await res.json()
 //             return data
@@ -288,7 +288,7 @@
 
 
 //         // Make the fetch request
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/non_stock_purchase/create_non_stock_purchase`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/non_stock_purchase/create_non_stock_purchase`, {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json'
@@ -642,7 +642,7 @@ const CreateNotStockPurchases = () => {
         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
         queryFn: async () => {
             if (api) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
                 const data = await res.json();
                 return data;
             }
@@ -861,7 +861,7 @@ const CreateNotStockPurchases = () => {
     const { data: supplierss = [], } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -873,7 +873,7 @@ const CreateNotStockPurchases = () => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -886,7 +886,7 @@ const CreateNotStockPurchases = () => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -1063,9 +1063,9 @@ const CreateNotStockPurchases = () => {
             return
         }
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_creates
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_creates
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_creates`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_creates`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1227,7 +1227,7 @@ const CreateNotStockPurchases = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -1266,7 +1266,7 @@ const CreateNotStockPurchases = () => {
             selectedEntryType: assetInfo.account
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

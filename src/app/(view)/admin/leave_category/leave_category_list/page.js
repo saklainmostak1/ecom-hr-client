@@ -14,7 +14,7 @@ const LeaveCategoryList = ({ searchParams }) => {
     queryKey: ["leaveCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_all`
       );
 
       const data = await res.json();
@@ -53,7 +53,7 @@ const LeaveCategoryList = ({ searchParams }) => {
     queryKey: ["moduleInfo"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`
       );
 
       const data = await res.json();
@@ -106,7 +106,7 @@ const LeaveCategoryList = ({ searchParams }) => {
   }
   const [pageUsers, setPageUsers] = useState([]);
   const caregory_list = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_all_paigination/${currentPage}/${dataPerPage}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_all_paigination/${currentPage}/${dataPerPage}`;
     const response = await fetch(url);
     const data = await response.json();
     setPageUsers(data);
@@ -123,7 +123,7 @@ const LeaveCategoryList = ({ searchParams }) => {
   //   const proceed = window.confirm(`Are You Sure delete${id}`);
   //   if (proceed) {
   //     fetch(
-  //       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_delete/${id}`,
+  //       `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_delete/${id}`,
   //       {
   //         method: "POST",
   //       }
@@ -139,7 +139,7 @@ const LeaveCategoryList = ({ searchParams }) => {
   const leaveCategoryAll_delete = id => {
 
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_delete/${id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_delete/${id}`, {
       method: "POST",
     })
       .then(response => {

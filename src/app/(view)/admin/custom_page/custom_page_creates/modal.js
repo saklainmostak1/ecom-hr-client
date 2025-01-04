@@ -12,7 +12,7 @@ const IconModalCustomBox = ({ index, names, handleInputChange, inputValue }) => 
     const [selectedIcon, setSelectedIcon] = useState(inputValue.page_group_icon || ''); // Add this state to handle the selected icon.
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/faIcons`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/faIcons`)
             .then(res => res.json())
             .then(data => setIcons(data));
     }, []);

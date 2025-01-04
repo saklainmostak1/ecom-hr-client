@@ -42,7 +42,7 @@ const ImageSettingsProduct = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_image_settings/product_image_settings_create`, formData)
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_image_settings/product_image_settings_create`, formData)
             .then(response => {
                 console.log(response.data.message);
 

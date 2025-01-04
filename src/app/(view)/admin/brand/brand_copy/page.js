@@ -17,7 +17,7 @@ const CopyBrand = ({ id }) => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
 
             const data = await res.json()
             return data
@@ -28,7 +28,7 @@ const CopyBrand = ({ id }) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/brand/brand_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/brand/brand_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -216,7 +216,7 @@ const CopyBrand = ({ id }) => {
             return name?.trim().replace(/\s+/g, '');
         };
         // Fetch existing brand data from API
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
             .then((response) => response.json())
             .then((brandData) => {
                 // Check if brand_name already exists in brandData
@@ -235,7 +235,7 @@ const CopyBrand = ({ id }) => {
                     };
                     console.log(addValue.file_path);
                     console.log(addValue);
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -302,7 +302,7 @@ const CopyBrand = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -517,7 +517,7 @@ export default CopyBrand;
 //     }
 //     console.log(addValue.file_path)
 //     console.log(addValue)
-//     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_create`, {
+//     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_create`, {
 //         method: 'POST',
 //         headers: {
 //             'content-type': 'application/json',

@@ -48,7 +48,7 @@ const CreateSubCategoryExcelRelational = () => {
     } = useQuery({
         queryKey: ['subCategorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
             const data = await res.json()
             return data
         }
@@ -300,7 +300,7 @@ const CreateSubCategoryExcelRelational = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -357,7 +357,7 @@ const CreateSubCategoryExcelRelational = () => {
 
     // const [status, setStatus] = useState([])
     // useEffect(() => {
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //         .then(res => res.json())
     //         .then(data => setStatus(data))
     // }, [])
@@ -443,7 +443,7 @@ const CreateSubCategoryExcelRelational = () => {
     // //  const router = useRouter();
 
     // //  useEffect(() => {
-    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    // //      fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     // //          .then(res => res.json())
     // //          .then(data => setStatus(data))
     // //  }, [])
@@ -550,7 +550,7 @@ const CreateSubCategoryExcelRelational = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -649,7 +649,7 @@ const CreateSubCategoryExcelRelational = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -664,7 +664,7 @@ const CreateSubCategoryExcelRelational = () => {
 
     const sub_category_excel_file_export = async () => {
 
-        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`);
+        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`);
         const rolePermissionData = await rolePermissionResponse.json();
         const brand = rolePermissionData
 
@@ -786,7 +786,7 @@ const CreateSubCategoryExcelRelational = () => {
 
     // const sub_category_excel_file_export = async () => {
 
-    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`);
+    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`);
     //     const rolePermissionData = await rolePermissionResponse.json();
     //     const categories = rolePermissionData;
 

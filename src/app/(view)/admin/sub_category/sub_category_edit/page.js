@@ -13,7 +13,7 @@ const EditSubCategory = ({ id }) => {
     const { data: sub_category = [], isLoading, refetch } = useQuery({
         queryKey: ['sub_category'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -26,7 +26,7 @@ const EditSubCategory = ({ id }) => {
 
     const [subCategories, setsubCategories] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all/${id}`)
             .then(Response => Response.json())
             .then(data => setsubCategories(data))
     }, [id])
@@ -217,7 +217,7 @@ const EditSubCategory = ({ id }) => {
             setSameSubCategoryName("Sub Category name already exists. Please choose a different Sub Category name.");
         }
         else {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -320,7 +320,7 @@ const EditSubCategory = ({ id }) => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -329,7 +329,7 @@ const EditSubCategory = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

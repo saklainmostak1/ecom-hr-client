@@ -30,7 +30,7 @@ const EditIncome = ({ id }) => {
     } = useQuery({
         queryKey: ['incomeSingle'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/income_all/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/income_all/${id}`)
             const data = await res.json()
             return data
         }
@@ -185,7 +185,7 @@ const EditIncome = ({ id }) => {
         });
 
         // Make a POST request to your API endpoint
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/income_update/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/income_update/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -208,7 +208,7 @@ const EditIncome = ({ id }) => {
         // event.preventDefault();
         // try {
         //     // Perform API call to update income details
-        //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/income_update/${id}`, {
+        //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/income_update/${id}`, {
         //         method: 'POST',
         //         headers: {
         //             'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ const EditIncome = ({ id }) => {
     } = useQuery({
         queryKey: ['incomeCategories'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income_category/income_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income_category/income_category_all`)
 
             const data = await res.json()
             return data
@@ -280,7 +280,7 @@ const EditIncome = ({ id }) => {
     } = useQuery({
         queryKey: ['supplierList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`)
 
             const data = await res.json()
             return data

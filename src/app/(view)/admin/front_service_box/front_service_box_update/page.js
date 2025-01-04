@@ -102,7 +102,7 @@ const FontServiceBoxUpdate = ({ id }) => {
     const { data: front_service_box_single = [], } = useQuery({
         queryKey: ['front_service_box_single'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/front_service_box_single/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/front_service_box_single/${id}`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -357,7 +357,7 @@ const FontServiceBoxUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['page_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
             const data = await res.json()
             return data
@@ -367,7 +367,7 @@ const FontServiceBoxUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['page_list_status'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
             const data = await res.json()
             return data
@@ -379,7 +379,7 @@ const FontServiceBoxUpdate = ({ id }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -449,9 +449,9 @@ const FontServiceBoxUpdate = ({ id }) => {
 
         console.log(allData)
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/front_service_box_update/${id}
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/front_service_box_update/${id}
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/front_service_box_update/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/front_service_box_update/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -483,7 +483,7 @@ const FontServiceBoxUpdate = ({ id }) => {
     const [statuss, setStatuss] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatuss(data))
     }, [])

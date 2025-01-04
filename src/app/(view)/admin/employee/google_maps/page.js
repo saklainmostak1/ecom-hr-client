@@ -116,7 +116,7 @@
 //     } = useQuery({
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`)
 
 //             const data = await res.json()
 //             return data
@@ -245,7 +245,7 @@
 //     const { data: employeeGeo = [] } = useQuery({
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -365,7 +365,7 @@
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -506,7 +506,7 @@
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -636,7 +636,7 @@
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -781,7 +781,7 @@
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -938,7 +938,7 @@
 //         queryKey: ['employeeGeo'],
 //         queryFn: async () => {
 //             try {
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${id}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${id}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -956,7 +956,7 @@
 //     } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 
 //             const data = await res.json()
 //             return data
@@ -1137,7 +1137,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_geo/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_geo/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -1154,7 +1154,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -1304,7 +1304,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             employeeGeo,
 //             selectedEmployeeId,
 //             fromDate,
@@ -1497,7 +1497,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -1513,7 +1513,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -1663,7 +1663,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             selectedEmployeeId,
 //             fromDate,
 //             toDate
@@ -1689,7 +1689,7 @@
 
 //     const employee_PDF_download = async () => {
 //         setLoading(true);
-//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             selectedEmployeeId,
 //             fromDate,
 //             toDate
@@ -1698,7 +1698,7 @@
 //         const searchResults = response.data.results;
 
 //         try {
-//             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_pdf`, {
+//             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_pdf`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'Content-Type': 'application/json',
@@ -1737,7 +1737,7 @@
 //     const employee_print = async () => {
 //         setLoading(true);
 //         try {
-//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//             const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //                 selectedEmployeeId,
 //                 fromDate,
 //                 toDate
@@ -2017,7 +2017,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -2033,7 +2033,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2183,7 +2183,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             selectedEmployeeId,
 //             fromDate,
 //             toDate
@@ -2392,7 +2392,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -2408,7 +2408,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -2646,7 +2646,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             selectedEmployeeId,
 //             fromDate,
 //             toDate
@@ -2881,7 +2881,7 @@
 //                 if (!selectedEmployeeId) {
 //                     return [];
 //                 }
-//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+//                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
 //                 if (!res.ok) {
 //                     throw new Error('Failed to fetch employee data');
 //                 }
@@ -2898,7 +2898,7 @@
 //     const { data: employeeList = [] } = useQuery({
 //         queryKey: ['employeeList'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -2922,7 +2922,7 @@
 
 //     const period_search = () => {
 //         setLoading(true);
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
 //             selectedEmployeeId,
 //             fromDate,
 //             toDate
@@ -3307,7 +3307,7 @@ const GoogleMaps = () => {
                 if (!selectedEmployeeId) {
                     return [];
                 }
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all/${selectedEmployeeId}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all/${selectedEmployeeId}`);
                 if (!res.ok) {
                     throw new Error('Failed to fetch employee data');
                 }
@@ -3324,7 +3324,7 @@ const GoogleMaps = () => {
     const { data: employeeList = [] } = useQuery({
         queryKey: ['employeeList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
             const data = await res.json();
             return data;
         }
@@ -3365,7 +3365,7 @@ const GoogleMaps = () => {
 
     const period_search = () => {
         setLoading(true);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
             selectedEmployeeId,
             fromDate,
             toDate
@@ -3554,7 +3554,7 @@ const GoogleMaps = () => {
 
     const employee_PDF_download = async () => {
         setLoading(true);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
             selectedEmployeeId,
             fromDate,
             toDate
@@ -3563,7 +3563,7 @@ const GoogleMaps = () => {
         const searchResults = response.data.results;
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -3602,7 +3602,7 @@ const GoogleMaps = () => {
     const employee_print = async () => {
         setLoading(true);
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/location_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/location_search`, {
                 selectedEmployeeId,
                 fromDate,
                 toDate

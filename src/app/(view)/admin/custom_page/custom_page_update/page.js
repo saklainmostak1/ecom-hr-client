@@ -230,7 +230,7 @@ const CustomPageUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['page_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list`)
 
             const data = await res.json()
             return data
@@ -240,7 +240,7 @@ const CustomPageUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['page_list_status'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/page_list_list_one`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/page_list_list_one`)
 
             const data = await res.json()
             return data
@@ -252,7 +252,7 @@ const CustomPageUpdate = ({ id }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/page_list/all_table_data`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/page_list/all_table_data`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -669,7 +669,7 @@ const CustomPageUpdate = ({ id }) => {
     const { data: custom_page_single = [], } = useQuery({
         queryKey: ['custom_page_single'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/custom_page/custom_page_list_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/custom_page/custom_page_list_all/${id}`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -818,9 +818,9 @@ const CustomPageUpdate = ({ id }) => {
         }
         console.log(allData)
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/front_service_box/custom_page_update
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/front_service_box/custom_page_update
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/custom_page/custom_page_update/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/custom_page/custom_page_update/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

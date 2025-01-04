@@ -18,7 +18,7 @@
 //     const { data: branchAll = [], isLoading, refetch } = useQuery({
 //         queryKey: ['branchAll'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -27,7 +27,7 @@
 //     const { data: smsSettings = [],  } = useQuery({
 //         queryKey: ['smsSettings'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/smsSettings`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/smsSettings`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -40,7 +40,7 @@
 //     const { data: designations = [] } = useQuery({
 //         queryKey: ['designations'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -49,7 +49,7 @@
 //     const { data: employees = [] } = useQuery({
 //         queryKey: ['employees'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -97,7 +97,7 @@
 //             setLoading(false);
 //             return
 //         }
-//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_search`, {
+//         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_search`, {
 //             searchQuery, itemName, employee
 //         })
 //             .then(response => {
@@ -240,7 +240,7 @@
 //     const { data: yearlyHolidays = [] } = useQuery({
 //         queryKey: ['yearlyHolidays'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_all`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_all`);
 //             const data = await res.json();
 //             return data;
 //         }
@@ -273,7 +273,7 @@
 //     const { data: leaveAllApproved = [] } = useQuery({
 //         queryKey: ['leaveAllApproved'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_details_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_details_list`)
 //             const data = await res.json()
 //             return data
 //         }
@@ -296,7 +296,7 @@
 // const { data: absentList = [] } = useQuery({
 //     queryKey: ['absentList'],
 //     queryFn: async () => {
-//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_all`)
+//         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_all`)
 //         const data = await res.json()
 //         return data
 //     }
@@ -348,7 +348,7 @@
 //         console.log(dataToSend);
 
 //         // Send dataToSend to the attendance API
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
 //           method: 'POST',
 //           headers: {
 //             'Content-Type': 'application/json',
@@ -397,7 +397,7 @@
 //         console.log(absentDataToSend);
 
 //         if (absentDataToSend.length > 0) {
-//           fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+//           fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
 //             method: 'POST',
 //             headers: {
 //               'Content-Type': 'application/json',
@@ -465,7 +465,7 @@
 //     //     console.log(dataToSend);
 
 //     //     // Send dataToSend to the attendance API
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'Content-Type': 'application/json',
@@ -508,7 +508,7 @@
 //     //     console.log(absentDataToSend);
 
 //     //     if (absentDataToSend.length > 0) {
-//     //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+//     //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
 //     //             method: 'POST',
 //     //             headers: {
 //     //                 'Content-Type': 'application/json',
@@ -573,7 +573,7 @@
 //     //     console.log(dataToSend);
 
 //     //     // Send dataToSend to the attendance API
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'Content-Type': 'application/json',
@@ -612,7 +612,7 @@
 //     //     console.log(absentDataToSend);
 
 //     //     if (unCheckedItemsData.length > 0) {
-//     //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+//     //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
 //     //             method: 'POST',
 //     //             headers: {
 //     //                 'Content-Type': 'application/json',
@@ -679,9 +679,9 @@
 //     //     });
 
 //     //     console.log(dataToSend);
-//     //     // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create
+//     //     // ${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create
 
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'content-type': 'application/json',
@@ -788,7 +788,7 @@
 //                     .replace('[[in_time]]', formatDateAmPm(startDatetime.datetime))
 //                     .replace('[[sms_time]]', smsTime);
 
-//                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+//                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 //                     quick_api: quickApi,
 //                     mobile: employee.mobile,
 //                     msg: msg,
@@ -832,7 +832,7 @@
 //                     .replace('[[absent_date]]', date)               
 //                     .replace('[[sms_time]]', smsTime);
 
-//                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+//                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 //                     quick_api: quickApi,
 //                     mobile: employee.mobile,
 //                     msg: msg,
@@ -874,7 +874,7 @@
 // //                     .replace('[[in_time]]', formatDateAmPm(startDatetime.datetime))
 // //                     .replace('[[sms_time]]', smsTime);
 
-// //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+// //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 // //                     quick_api: quickApi,
 // //                     mobile: employee.mobile,
 // //                     msg: msg,
@@ -918,7 +918,7 @@
 // //                     .replace('[[in_time]]', 'N/A') // Assuming there's no in-time for absent employees
 // //                     .replace('[[sms_time]]', smsTime);
 
-// //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+// //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 // //                     quick_api: quickApi,
 // //                     mobile: employee.mobile,
 // //                     msg: msg,
@@ -951,7 +951,7 @@
 //     //         if (withPresent && checkedItems[employee.user_id]) {
 //     //             // Send OTP to checked employees if 'With Present' is checked
 //     //             const otp = generateOTP();
-//     //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+//     //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 //     //                 quick_api: quickApi,
 //     //                 mobile: employee.mobile,
 //     //                 msg: `You Are Present`,
@@ -971,7 +971,7 @@
 //     //         if (withAbsent && !checkedItems[employee.user_id]) {
 //     //             // Send OTP to checked employees if 'With Present' is checked
 //     //             const otp = generateOTP();
-//     //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+//     //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
 //     //                 quick_api: quickApi,
 //     //                 mobile: employee.mobile,
 //     //                 msg: `You Are Absent`,
@@ -1330,7 +1330,7 @@
 
 //     //     console.log(dataToSend)
 
-//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+//     //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'content-type': 'application/json',
@@ -1436,7 +1436,7 @@ const AttendanceCreates = () => {
         queryKey: ["apiData"],
         queryFn: async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sms_api/sms_api_all`
+                `${process.env.NEXT_PUBLIC_API_URL}/Admin/sms_api/sms_api_all`
             );
 
             const data = await res.json();
@@ -1535,7 +1535,7 @@ const AttendanceCreates = () => {
     const { data: branchAll = [], isLoading, refetch } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }
@@ -1544,7 +1544,7 @@ const AttendanceCreates = () => {
     const { data: smsSettings = [], } = useQuery({
         queryKey: ['smsSettings'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/smsSettings`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/smsSettings`);
             const data = await res.json();
             return data;
         }
@@ -1557,7 +1557,7 @@ const AttendanceCreates = () => {
     const { data: designations = [] } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`);
             const data = await res.json();
             return data;
         }
@@ -1566,7 +1566,7 @@ const AttendanceCreates = () => {
     const { data: employees = [] } = useQuery({
         queryKey: ['employees'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             return data;
         }
@@ -1614,7 +1614,7 @@ const AttendanceCreates = () => {
             setLoading(false);
             return
         }
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_search`, {
             searchQuery, itemName, employee
         })
             .then(response => {
@@ -1757,7 +1757,7 @@ const AttendanceCreates = () => {
     const { data: yearlyHolidays = [] } = useQuery({
         queryKey: ['yearlyHolidays'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_all`);
             const data = await res.json();
             return data;
         }
@@ -1790,7 +1790,7 @@ const AttendanceCreates = () => {
     const { data: leaveAllApproved = [] } = useQuery({
         queryKey: ['leaveAllApproved'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_details_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_details_list`)
             const data = await res.json()
             return data
         }
@@ -1813,7 +1813,7 @@ const AttendanceCreates = () => {
     const { data: absentList = [] } = useQuery({
         queryKey: ['absentList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_all`)
             const data = await res.json()
             return data
         }
@@ -1822,7 +1822,7 @@ const AttendanceCreates = () => {
     const { data: attendance_sms_campaign_categorys = [] } = useQuery({
         queryKey: ['attendance_sms_campaign_categorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance_sms/attendance_sms_campaign_category`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance_sms/attendance_sms_campaign_category`)
             const data = await res.json()
             return data
         }
@@ -1878,7 +1878,7 @@ const AttendanceCreates = () => {
 
                 setPresent_sms(msg)
 
-                axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+                axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
                     // quick_api: quickApi,
                     formattedUrl,
                     mobile: employee.mobile,
@@ -1929,7 +1929,7 @@ const AttendanceCreates = () => {
                     .replace('[[absent_date]]', date)
                     .replace('[[sms_time]]', smsTime);
 
-                axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+                axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
                     // quick_api: quickApi,
                     formattedUrl,
                     mobile: employee.mobile,
@@ -2009,7 +2009,7 @@ const AttendanceCreates = () => {
 
 
         // Send dataToSend to the attendance API
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2090,7 +2090,7 @@ const AttendanceCreates = () => {
         console.log(absentDataToSend);
 
         if (absentDataToSend.length > 0) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -2158,7 +2158,7 @@ const AttendanceCreates = () => {
     //     console.log(dataToSend);
 
     //     // Send dataToSend to the attendance API
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json',
@@ -2201,7 +2201,7 @@ const AttendanceCreates = () => {
     //     console.log(absentDataToSend);
 
     //     if (absentDataToSend.length > 0) {
-    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -2266,7 +2266,7 @@ const AttendanceCreates = () => {
     //     console.log(dataToSend);
 
     //     // Send dataToSend to the attendance API
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json',
@@ -2305,7 +2305,7 @@ const AttendanceCreates = () => {
     //     console.log(absentDataToSend);
 
     //     if (unCheckedItemsData.length > 0) {
-    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_create`, {
+    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_create`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -2372,9 +2372,9 @@ const AttendanceCreates = () => {
     //     });
 
     //     console.log(dataToSend);
-    //     // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create
+    //     // ${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create
 
-    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_create`, {
+    //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_create`, {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json',
@@ -2480,7 +2480,7 @@ const AttendanceCreates = () => {
     //                     .replace('[[in_time]]', formatDateAmPm(startDatetime.datetime))
     //                     .replace('[[sms_time]]', smsTime);
 
-    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                     quick_api: quickApi,
     //                     mobile: employee.mobile,
     //                     msg: msg,
@@ -2524,7 +2524,7 @@ const AttendanceCreates = () => {
     //                     .replace('[[absent_date]]', date)               
     //                     .replace('[[sms_time]]', smsTime);
 
-    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                     quick_api: quickApi,
     //                     mobile: employee.mobile,
     //                     msg: msg,
@@ -2566,7 +2566,7 @@ const AttendanceCreates = () => {
     //                     .replace('[[in_time]]', formatDateAmPm(startDatetime.datetime))
     //                     .replace('[[sms_time]]', smsTime);
 
-    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                     quick_api: quickApi,
     //                     mobile: employee.mobile,
     //                     msg: msg,
@@ -2610,7 +2610,7 @@ const AttendanceCreates = () => {
     //                     .replace('[[in_time]]', 'N/A') // Assuming there's no in-time for absent employees
     //                     .replace('[[sms_time]]', smsTime);
 
-    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //                 axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                     quick_api: quickApi,
     //                     mobile: employee.mobile,
     //                     msg: msg,
@@ -2643,7 +2643,7 @@ const AttendanceCreates = () => {
     //         if (withPresent && checkedItems[employee.user_id]) {
     //             // Send OTP to checked employees if 'With Present' is checked
     //             const otp = generateOTP();
-    //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                 quick_api: quickApi,
     //                 mobile: employee.mobile,
     //                 msg: `You Are Present`,
@@ -2663,7 +2663,7 @@ const AttendanceCreates = () => {
     //         if (withAbsent && !checkedItems[employee.user_id]) {
     //             // Send OTP to checked employees if 'With Present' is checked
     //             const otp = generateOTP();
-    //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_otp`, {
+    //             axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_otp`, {
     //                 quick_api: quickApi,
     //                 mobile: employee.mobile,
     //                 msg: `You Are Absent`,

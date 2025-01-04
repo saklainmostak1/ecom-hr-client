@@ -79,7 +79,7 @@ const WareHouseCreates = () => {
 
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_create`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

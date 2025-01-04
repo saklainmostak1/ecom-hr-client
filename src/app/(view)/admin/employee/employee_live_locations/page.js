@@ -410,7 +410,7 @@ const EmployeeLiveLocation = ({ id }) => {
 
     const fetchEmployeeList = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_list`);
             if (!res.ok) {
                 throw new Error('Failed to fetch employee list');
             }
@@ -430,7 +430,7 @@ console.log(employeeName)
 console.log(employeeList)
     const fetchEmployeeGeo = async (employeeId) => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/location/geo_location_all_live/${employeeId}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/location/geo_location_all_live/${employeeId}`);
             const data = await res.json();
 
             return data;

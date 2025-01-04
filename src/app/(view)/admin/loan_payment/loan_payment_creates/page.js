@@ -54,7 +54,7 @@ const LoanPaymentCreates = () => {
     } = useQuery({
         queryKey: ['loanAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan/loan_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan/loan_all`)
 
             const data = await res.json()
             return data
@@ -120,7 +120,7 @@ const LoanPaymentCreates = () => {
     } = useQuery({
         queryKey: ['loanPaymentList'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_all`)
 
             const data = await res.json()
             return data
@@ -150,7 +150,7 @@ const LoanPaymentCreates = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -345,7 +345,7 @@ const LoanPaymentCreates = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -452,9 +452,9 @@ const LoanPaymentCreates = () => {
 
         // Retrieve the form's image value
 
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_create
         // Make the fetch request
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/loan_payment/loan_payment_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/loan_payment/loan_payment_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

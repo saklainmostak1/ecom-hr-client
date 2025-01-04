@@ -48,7 +48,7 @@ const ModelExcelCreate = () => {
     } = useQuery({
         queryKey: ['models'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_all`)
             const data = await res.json()
             return data
         }
@@ -59,7 +59,7 @@ const ModelExcelCreate = () => {
     const [brand, setBrand] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`)
             .then(res => res.json())
             .then(data => setBrand(data))
     }, [])
@@ -312,7 +312,7 @@ const ModelExcelCreate = () => {
             return fields[index];
         });
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/model/model_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/model/model_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -351,7 +351,7 @@ const ModelExcelCreate = () => {
     //     const [excelData, setExcelData] = useState([]);
 
     //     useEffect(() => {
-    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    //         fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
     //             .then(res => res.json())
     //             .then(data => setStatus(data));
     //     }, []);
@@ -648,14 +648,14 @@ const ModelExcelCreate = () => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
 
 
     // const model_excel_file_export = async () => {
-    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
     //     const rolePermissionData = await rolePermissionResponse.json();
     //     const brand = rolePermissionData;
 
@@ -787,7 +787,7 @@ const ModelExcelCreate = () => {
 
 
     // const model_excel_file_export = async () => {
-    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
     //     const rolePermissionData = await rolePermissionResponse.json();
     //     const brand = rolePermissionData;
 
@@ -925,7 +925,7 @@ const ModelExcelCreate = () => {
 
 
     // const model_excel_file_export = async () => {
-    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
     //     const rolePermissionData = await rolePermissionResponse.json();
     //     const brand = rolePermissionData;
 
@@ -1078,7 +1078,7 @@ const ModelExcelCreate = () => {
     // };
 
     // const model_excel_file_export = async () => {
-    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+    //     const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
     //     const rolePermissionData = await rolePermissionResponse.json();
     //     const brand = rolePermissionData;
 
@@ -1243,7 +1243,7 @@ const ModelExcelCreate = () => {
     
     const model_excel_file_export = async () => {
 
-        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/brand/brand_all`);
+        const rolePermissionResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/brand/brand_all`);
         const rolePermissionData = await rolePermissionResponse.json();
         const brand = rolePermissionData
 

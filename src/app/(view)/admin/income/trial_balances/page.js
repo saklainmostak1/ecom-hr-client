@@ -58,7 +58,7 @@ const TrialBalance = () => {
     const { data: incomeCategorys = [], isLoading, refetch } = useQuery({
         queryKey: ['incomeCategorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income_category/income_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income_category/income_category_all`)
 
             const data = await res.json()
             return data
@@ -68,7 +68,7 @@ const TrialBalance = () => {
     const { data: expenseCategorys = [], } = useQuery({
         queryKey: ['expenseCategorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/expence_category/expence_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/expence_category/expence_category_all`)
 
             const data = await res.json()
             return data
@@ -84,12 +84,12 @@ const TrialBalance = () => {
 
         try {
             // Make the first request for expense search
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_search_account_reports`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_search_account_reports`, {
                 fromDate, toDate, expenseCategory
             });
 
             // Make the second request for income search
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/account_report_income`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/account_report_income`, {
                 fromDate, toDate, incomeCategory
             });
 
@@ -208,7 +208,7 @@ const TrialBalance = () => {
     //         const printWindow = window.open('', '_blank');
     //         printWindow.document.open();
 
-    //         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/general_ledgers_print`, {
+    //         const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/general_ledgers_print`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -280,7 +280,7 @@ const TrialBalance = () => {
     //     console.log(searchResults)
 
     //     try {
-    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/general_ledgers_pdf`, {
+    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/general_ledgers_pdf`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -431,12 +431,12 @@ const TrialBalance = () => {
 
 
 
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_search_account_reports`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_search_account_reports`, {
                 fromDate, toDate, expenseCategory
             });
 
             // Make the second request for income search
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/account_report_income`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/account_report_income`, {
                 fromDate, toDate, incomeCategory
             });
 
@@ -524,7 +524,7 @@ const TrialBalance = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/general_ledgers_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/general_ledgers_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -599,12 +599,12 @@ const TrialBalance = () => {
         try {
 
 
-            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/expense_search_account_reports`, {
+            const expenseResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/expense_search_account_reports`, {
                 fromDate, toDate, expenseCategory
             });
 
             // Make the second request for income search
-            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/account_report_income`, {
+            const incomeResponse = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/account_report_income`, {
                 fromDate, toDate, incomeCategory
             });
 
@@ -641,7 +641,7 @@ const TrialBalance = () => {
 
 
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_report/general_ledgers_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_report/general_ledgers_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

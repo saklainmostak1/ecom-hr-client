@@ -12,7 +12,7 @@ const PayRollList = ({searchParams}) => {
     } = useQuery({
         queryKey: ['payRoll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_all`)
 
             const data = await res.json()
             return data
@@ -52,7 +52,7 @@ const PayRollList = ({searchParams}) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
@@ -109,7 +109,7 @@ const PayRollList = ({searchParams}) => {
       }
       const [pageUsers, setPageUsers] = useState([]);
       const caregory_list = async () => {
-          const url = `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_list/${currentPage}/${dataPerPage}`;
+          const url = `${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_list/${currentPage}/${dataPerPage}`;
           const response = await fetch(url);
           const data = await response.json();
           setPageUsers(data);
@@ -126,7 +126,7 @@ const PayRollList = ({searchParams}) => {
         // console.log(id)
         // const proceed = window.confirm(`Are You Sure delete${id}`)
         // if (proceed) {
-        //     fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_delete/${id}`, {
+        //     fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_delete/${id}`, {
         //         method: "POST",
 
         //     })
@@ -141,7 +141,7 @@ const PayRollList = ({searchParams}) => {
 
 
         // const proceed = window.confirm(`Are You Sure delete${id}`)
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/pay_roll/pay_roll_delete/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/pay_roll/pay_roll_delete/${id}`, {
             method: "POST",
         })
             .then(response => {

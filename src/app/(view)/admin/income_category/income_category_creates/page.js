@@ -14,7 +14,7 @@ const CreateIncomeCategory = () => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income_category/income_category_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income_category/income_category_all`)
 
             const data = await res.json()
             return data
@@ -71,7 +71,7 @@ const CreateIncomeCategory = () => {
             created
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income_category/income_category_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income_category/income_category_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

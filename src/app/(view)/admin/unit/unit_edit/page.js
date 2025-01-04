@@ -16,7 +16,7 @@ const EditUnit = ({ id }) => {
     const { data: unit = [], isLoading, refetch } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -29,7 +29,7 @@ const EditUnit = ({ id }) => {
 
     const [units, setunits] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all/${id}`)
             .then(Response => Response.json())
             .then(data => setunits(data))
     }, [id])
@@ -212,7 +212,7 @@ const EditUnit = ({ id }) => {
         else {
 
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -316,7 +316,7 @@ const EditUnit = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

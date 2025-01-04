@@ -12,7 +12,7 @@ const AccountHeadTypeCopy = ({ id }) => {
     } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_all`)
 
             const data = await res.json()
             return data
@@ -42,7 +42,7 @@ const AccountHeadTypeCopy = ({ id }) => {
     const { data: account_head_typeSingle, isLoading, refetch } = useQuery({
         queryKey: ['account_head_typeSingle', id],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_all/${id}`);
             const data = await res.json();
             return data;
         }
@@ -118,7 +118,7 @@ const AccountHeadTypeCopy = ({ id }) => {
         }
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_create`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

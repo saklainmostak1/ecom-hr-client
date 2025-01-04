@@ -66,7 +66,7 @@
 
 // 		};
 
-// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_create`, {
+// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_create`, {
 // 			method: 'POST',
 // 			headers: {
 // 				'content-type': 'application/json',
@@ -254,7 +254,7 @@
 // 	} = useQuery({
 // 		queryKey: ['companys'],
 // 		queryFn: async () => {
-// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`)
+// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`)
 
 // 			const data = await res.json()
 // 			return data
@@ -265,7 +265,7 @@
 // 	} = useQuery({
 // 		queryKey: ['branchs'],
 // 		queryFn: async () => {
-// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`)
+// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`)
 
 // 			const data = await res.json()
 // 			return data
@@ -354,7 +354,7 @@
 
 // 		};
 
-// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_create`, {
+// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_create`, {
 // 			method: 'POST',
 // 			headers: {
 // 				'content-type': 'application/json',
@@ -607,7 +607,7 @@
 // 	const { data: companys = [], isLoading, refetch } = useQuery({
 // 		queryKey: ['companys'],
 // 		queryFn: async () => {
-// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`)
+// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`)
 // 			const data = await res.json();
 // 			return data;
 // 		}
@@ -616,7 +616,7 @@
 // 	const { data: branchs = [] } = useQuery({
 // 		queryKey: ['branchs'],
 // 		queryFn: async () => {
-// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+// 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 // 			const data = await res.json();
 // 			return data;
 // 		}
@@ -719,7 +719,7 @@
 // 			branch_id
 // 		};
 
-// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_create`, {
+// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_create`, {
 // 			method: 'POST',
 // 			headers: {
 // 				'content-type': 'application/json',
@@ -977,7 +977,7 @@ const SchoolShiftCreate = () => {
 	const { data: companys = [], isLoading, refetch } = useQuery({
 		queryKey: ['companys'],
 		queryFn: async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company/company_all`);
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/company/company_all`);
 			const data = await res.json();
 			return data;
 		}
@@ -986,7 +986,7 @@ const SchoolShiftCreate = () => {
 	const { data: branchs = [] } = useQuery({
 		queryKey: ['branchs'],
 		queryFn: async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
 			const data = await res.json();
 			return data;
 		}
@@ -1112,7 +1112,7 @@ const SchoolShiftCreate = () => {
 
 		console.log(schoolShift)
 
-		fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/school_shift/school_shift_create`, {
+		fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/school_shift/school_shift_create`, {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',

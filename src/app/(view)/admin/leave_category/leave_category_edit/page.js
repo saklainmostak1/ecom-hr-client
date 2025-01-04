@@ -28,7 +28,7 @@ const EditLeaveCategory = ({ id }) => {
   } = useQuery({
     queryKey: ['brands'],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_all`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_all`)
       const data = await res.json()
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
       return filteredBrands;
@@ -49,7 +49,7 @@ const EditLeaveCategory = ({ id }) => {
     queryKey: ["leaveCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -119,7 +119,7 @@ const EditLeaveCategory = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_category/leave_category_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_category/leave_category_edit/${id}`,
         {
           method: "POST",
           headers: {

@@ -7,32 +7,32 @@
 //   }
 // get All Admin Data 
 export const getAllAdminData = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/allAdmin`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/allAdmin`)
     const data = await response.json()
     return data
 }
 export const getAllSideNavData = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/group-names-id`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/group-names-id`)
     const data = await response.json()
     return data
 }
 
 // export const getAllSideNavDataAllUserWise = async () => {
-//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${usersId}/role`)
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${usersId}/role`)
 //     const data = await response.json()
 //     return data
 // }
 
 // get All user Data 
 export const getAllUserData = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser`)
     const data = await response.json()
     return data
 }
 
 // get All user role Data 
 export const getUserRoleData = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/users/role_all`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/role_all`)
     const data = await response.json()
     return data
 }

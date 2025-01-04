@@ -21,7 +21,7 @@ const CreatesSales = () => {
     const [category, setCategory] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`)
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])
@@ -31,7 +31,7 @@ const CreatesSales = () => {
     const [subCategory, setSubCategory] = useState([])
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sub_category/sub_category_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sub_category/sub_category_all`)
             .then(res => res.json())
             .then(data => setSubCategory(data))
     }, [])
@@ -168,7 +168,7 @@ const CreatesSales = () => {
     const { data: usersAll = [], } = useQuery({
         queryKey: ['usersAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/allUser`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/allUser`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -190,7 +190,7 @@ const CreatesSales = () => {
         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
         queryFn: async () => {
             if (api) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
                 const data = await res.json();
                 return data;
             }
@@ -212,7 +212,7 @@ const CreatesSales = () => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -268,7 +268,7 @@ const CreatesSales = () => {
             return;
         }
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sales_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sales_search`, {
             barcode: codes,
         })
             .then(response => {
@@ -340,7 +340,7 @@ const CreatesSales = () => {
     //         return;
     //     }
 
-    //     axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sales_search`, {
+    //     axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sales_search`, {
     //         barcode: codes,
     //     })
     //         .then(response => {
@@ -389,7 +389,7 @@ const CreatesSales = () => {
     //         return;
     //     }
 
-    //     axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sales_search`, {
+    //     axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sales_search`, {
     //         barcode: codes
     //     })
     //         .then(response => {
@@ -573,7 +573,7 @@ const CreatesSales = () => {
     const { data: supplierss = [], isLoading } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -651,7 +651,7 @@ const CreatesSales = () => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -795,9 +795,9 @@ const CreatesSales = () => {
 
 
 
-        //${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_create/purchase_creates
+        //${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_create/purchase_creates
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_create`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -863,7 +863,7 @@ const CreatesSales = () => {
             selectedEntryType: assetInfo.account
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -919,7 +919,7 @@ const CreatesSales = () => {
     const { data: purchase_product = [], } = useQuery({
         queryKey: ['purchase_product'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_product/purchase_product_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_product/purchase_product_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -929,7 +929,7 @@ const CreatesSales = () => {
     const { data: sale_product = [], } = useQuery({
         queryKey: ['sale_product'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/sales/sale_product_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/sales/sale_product_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -1000,7 +1000,7 @@ const CreatesSales = () => {
     } = useQuery({
         queryKey: ['ware_house_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_all`)
 
             const data = await res.json()
             return data

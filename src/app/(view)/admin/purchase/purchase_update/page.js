@@ -46,7 +46,7 @@
 //     } = useQuery({
 //         queryKey: ['products'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
 //             const data = await res.json()
 //             return data
@@ -66,7 +66,7 @@
 //     } = useQuery({
 //         queryKey: ['purchaseProductSingle'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_list/${id}`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_list/${id}`)
 
 //             const data = await res.json()
 //             return data
@@ -198,7 +198,7 @@
 //     const { data: supplier = [], } = useQuery({
 //         queryKey: ['supplier'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
 //             const data = await res.json();
 //             // Filter out the brand with id 
 //             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -213,7 +213,7 @@
 //     } = useQuery({
 //         queryKey: ['unit'],
 //         queryFn: async () => {
-//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+//             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
 //             const data = await res.json()
 //             return data
@@ -259,11 +259,11 @@
 //         // Retrieve the form's image value
 
 
-//         // Make the fetch request ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_edit/:id
+//         // Make the fetch request ${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_edit/:id
 
 //         console.log(assetInfo)
 
-//         fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_edit/${id}`, {
+//         fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_edit/${id}`, {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json'
@@ -680,7 +680,7 @@ const PurchaseUpdate = ({ id }) => {
     const { data: purchaseProductSingle = [] } = useQuery({
         queryKey: ['purchaseProductSingle'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_list/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_list/${id}`);
             const data = await res.json();
             return data;
         }
@@ -715,7 +715,7 @@ const PurchaseUpdate = ({ id }) => {
         queryKey: ['supplierLastDue', api], // Include api in queryKey to trigger refetch when api changes
         queryFn: async () => {
             if (api) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002${api}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${api}`);
                 const data = await res.json();
                 return data;
             }
@@ -764,7 +764,7 @@ const PurchaseUpdate = ({ id }) => {
     const { data: account_head = [], } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -780,7 +780,7 @@ const PurchaseUpdate = ({ id }) => {
     const { data: supplierss = [], } = useQuery({
         queryKey: ['supplier'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/supplier/supplier_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/supplier/supplier_list`);
             const data = await res.json();
             // Filter out the brand with id 
             // const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -792,7 +792,7 @@ const PurchaseUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -805,7 +805,7 @@ const PurchaseUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/product/product_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/product/product_list`)
 
             const data = await res.json()
             return data
@@ -1014,12 +1014,12 @@ console.log(parseFloat(formData.payable_amount) - (parseFloat(formData.discount)
         //     fields, supplier_id, purchase_date, assetInfo
         // }
         // console.log(allData)
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_edit/${id}
-        // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase_create/purchase_create
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_edit/${id}
+        // ${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase_create/purchase_create
 
         console.log(formData)
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/purchase/purchase_edit/${id}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/purchase/purchase_edit/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -1081,7 +1081,7 @@ console.log(parseFloat(formData.payable_amount) - (parseFloat(formData.discount)
             selectedEntryType: formData.account
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/income/update_income_amount`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/income/update_income_amount`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1106,7 +1106,7 @@ console.log(parseFloat(formData.payable_amount) - (parseFloat(formData.discount)
     } = useQuery({
         queryKey: ['ware_house_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_all`)
 
             const data = await res.json()
             return data

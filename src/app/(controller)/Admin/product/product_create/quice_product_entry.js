@@ -17,7 +17,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getStatus`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getStatus`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])
@@ -26,7 +26,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getCategories`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getCategories`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -35,7 +35,7 @@ const QuickProductEntry = () => {
 
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/getSubCategories`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/getSubCategories`)
             .then(res => res.json())
             .then(data => setSubCategories(data))
     }, [])
@@ -245,7 +245,7 @@ const QuickProductEntry = () => {
         for (let index = 0; index < newArray.length; index++) {
             const updateValue = newArray[index];
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/excelInsertProductData`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/excelInsertProductData`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

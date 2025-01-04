@@ -48,7 +48,7 @@
 //   //   queryKey: ["education"],
 //   //   queryFn: async () => {
 //   //     const res = await fetch(
-//   //       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all`
+//   //       `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all`
 //   //     );
 //   //     const data = await res.json();
 //   //     return data;
@@ -63,7 +63,7 @@
 //     queryKey: ["bloodgroups"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/Admin/education/education_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/Admin/education/education_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -97,7 +97,7 @@
 //     }
 
 //     fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}:5002//Admin/education/education_create`,
+//       `${process.env.NEXT_PUBLIC_API_URL}//Admin/education/education_create`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -374,7 +374,7 @@ const EducationCreate = () => {
     queryKey: ["bloodgroups"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_all`
       );
       const data = await res.json();
       return data;
@@ -437,7 +437,7 @@ const EducationCreate = () => {
     setError(new Array(bloodGroups.length).fill(''));
 
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/education/education_create`,
+      `${process.env.NEXT_PUBLIC_API_URL}/Admin/education/education_create`,
       {
         method: "POST",
         headers: {

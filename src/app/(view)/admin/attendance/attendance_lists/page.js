@@ -20,7 +20,7 @@ const AttendanceLists = () => {
     const { data: branchAll = [], isLoading, refetch } = useQuery({
         queryKey: ['branchAll'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/branch/branch_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/branch/branch_all`);
             const data = await res.json();
             return data;
         }
@@ -29,7 +29,7 @@ const AttendanceLists = () => {
     const { data: designations = [] } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_all`);
             const data = await res.json();
             return data;
         }
@@ -38,7 +38,7 @@ const AttendanceLists = () => {
     const { data: employees = [] } = useQuery({
         queryKey: ['employees'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/employee/employee_all_list`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/employee/employee_all_list`);
             const data = await res.json();
             return data;
         }
@@ -173,7 +173,7 @@ const AttendanceLists = () => {
         //     setLoading(false);
         //     return
         // }
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_search`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_search`, {
             searchQuery, itemName, employee, month, fromDate, toDate
         })
             .then(response => {
@@ -195,8 +195,8 @@ const AttendanceLists = () => {
 
     const attendance_pdf_download = async () => {
 
-        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_search`, {
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_search`, {
             searchQuery, itemName, employee, month, fromDate, toDate
         });
 
@@ -241,7 +241,7 @@ const AttendanceLists = () => {
         console.log(searchResults)
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_pdf`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_pdf`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -278,8 +278,8 @@ const AttendanceLists = () => {
 
     const attendance_print_download = async () => {
         try {
-            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_search`, {
+            // const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Admin/office_visit/office_visit_remarks_list_visit/${id}`);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_search`, {
                 searchQuery, itemName, employee, month, fromDate, toDate
             });
 
@@ -340,7 +340,7 @@ const AttendanceLists = () => {
             const printWindow = window.open('', '_blank');
             printWindow.document.open();
 
-            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_print`, {
+            const html = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_print`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -374,7 +374,7 @@ const AttendanceLists = () => {
 
     const attendance_excel_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_search`, {
                 searchQuery, itemName, employee, month, fromDate, toDate
             });
             const searchResults = response.data.results;
@@ -441,7 +441,7 @@ const AttendanceLists = () => {
 
     const attendance_word_download = async () => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance/attendance_list_search`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance/attendance_list_search`, {
                 searchQuery, itemName, employee, month, fromDate, toDate
             });
             const searchResults = response.data.results;

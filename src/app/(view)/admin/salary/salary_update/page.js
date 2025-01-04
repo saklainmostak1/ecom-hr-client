@@ -34,7 +34,7 @@ const SalaryUpdate = ({ id }) => {
     } = useQuery({
         queryKey: ['account_head'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head/account_head_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head/account_head_list`)
 
             const data = await res.json()
             return data
@@ -96,7 +96,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: designations = [], isLoading: isDesignationsLoading } = useQuery({
         queryKey: ['designations'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/designation/designation_list`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/designation/designation_list`)
             const data = await res.json()
             return data
         }
@@ -108,7 +108,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: attendance = [] } = useQuery({
         queryKey: ['attendance'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/attendance_all/attendance_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/attendance_all/attendance_all`)
             const data = await res.json()
             return data
         }
@@ -119,7 +119,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: salaries = [] } = useQuery({
         queryKey: ['salaries'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_list/${id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_list/${id}`)
             const data = await res.json()
             return data
         }
@@ -135,7 +135,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: searchResults = [] } = useQuery({
         queryKey: ['searchResults'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_details/${user_id}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_details/${user_id}`)
             const data = await res.json()
             return data
         }
@@ -169,7 +169,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: holidays = [] } = useQuery({
         queryKey: ['holidays'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/yearly_holiday/yearly_holiday_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/yearly_holiday/yearly_holiday_all`)
             const data = await res.json()
             return data
         }
@@ -183,7 +183,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: leavesDays = [] } = useQuery({
         queryKey: ['leavesDays'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_application/leave_application_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_application/leave_application_all`)
             const data = await res.json()
             return data
         }
@@ -194,7 +194,7 @@ const SalaryUpdate = ({ id }) => {
     const { data: leavesDaysApproved = [] } = useQuery({
         queryKey: ['leavesDaysApproved'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/leave_approved/leave_approved_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/leave_approved/leave_approved_all`)
             const data = await res.json()
             return data
         }
@@ -274,7 +274,7 @@ console.log(leaveApproveCount)
 
 
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/salary/salary_edit/${id}`, brandData)
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/Admin/salary/salary_edit/${id}`, brandData)
             .then(response => {
                 alert('Data submitted successfully!');
             })
@@ -288,7 +288,7 @@ console.log(leaveApproveCount)
     const { data: absents = [] } = useQuery({
         queryKey: ['absents'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/absent/absent_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/absent/absent_all`)
             const data = await res.json()
             return data
         }

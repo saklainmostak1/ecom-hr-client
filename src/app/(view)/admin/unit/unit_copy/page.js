@@ -15,7 +15,7 @@ const CopyUnit = ({ id }) => {
     } = useQuery({
         queryKey: ['unit'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
 
             const data = await res.json()
             return data
@@ -26,7 +26,7 @@ const CopyUnit = ({ id }) => {
 
     const [units, setunits] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all/${id}`)
             .then(Response => Response.json())
             .then(data => setunits(data))
     }, [id])
@@ -215,7 +215,7 @@ const CopyUnit = ({ id }) => {
         };
 
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_all`)
             .then((response) => response.json())
             .then((unitData) => {
                 // Check if brand_name already exists in unitData
@@ -236,7 +236,7 @@ const CopyUnit = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/unit/unit_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/unit/unit_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -302,7 +302,7 @@ const CopyUnit = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

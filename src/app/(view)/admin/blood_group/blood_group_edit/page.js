@@ -47,7 +47,7 @@ const EditBloodGroup = ({ id }) => {
     queryKey: ["newsCategorySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -68,7 +68,7 @@ const EditBloodGroup = ({ id }) => {
     queryKey: ["bloodgroups"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -127,7 +127,7 @@ const EditBloodGroup = ({ id }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/blood_group/blood_group_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/blood_group/blood_group_edit/${id}`,
         {
           method: "POST",
           headers: {

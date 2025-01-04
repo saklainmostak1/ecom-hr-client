@@ -43,7 +43,7 @@ useEffect(() => {
   const [status, setStatus] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -56,7 +56,7 @@ useEffect(() => {
     queryKey: ["videogallerySingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -88,7 +88,7 @@ useEffect(() => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/video_gallery_category/video_gallery_category_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/video_gallery_category/video_gallery_category_create`,
         {
           method: "POST",
           headers: {

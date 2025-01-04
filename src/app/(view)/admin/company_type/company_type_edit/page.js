@@ -17,7 +17,7 @@
 //     queryKey: ["companyTypeSingle", id],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all/${id}`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all/${id}`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -28,7 +28,7 @@
 //     queryKey: ["companyTypes"],
 //     queryFn: async () => {
 //       const res = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`
 //       );
 //       const data = await res.json();
 //       return data;
@@ -75,7 +75,7 @@
 
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/Admin/company_type/company_type_edit/${id}`,
+//         `${process.env.NEXT_PUBLIC_API_URL}/Admin/Admin/company_type/company_type_edit/${id}`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -233,7 +233,7 @@ useEffect(() => {
     queryKey: ["companyTypeSingle", id],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all/${id}`
       );
       const data = await res.json();
       return data;
@@ -244,7 +244,7 @@ useEffect(() => {
     queryKey: ["companyTypes"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_all`
       );
       const data = await res.json();
       const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -300,7 +300,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/company_type/company_type_edit/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/company_type/company_type_edit/${id}`,
         {
           method: "POST",
           headers: {

@@ -12,7 +12,7 @@ const AccountHeadTypeUpdate = ({ id }) => {
     const { data: brands = [],  } = useQuery({
         queryKey: ['brands'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -42,7 +42,7 @@ const AccountHeadTypeUpdate = ({ id }) => {
     const { data: accountHeadTypeSingle, isLoading, refetch } = useQuery({
         queryKey: ['accountHeadTypeSingle', id],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_all/${id}`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_all/${id}`);
             const data = await res.json();
             return data;
         }
@@ -117,7 +117,7 @@ const AccountHeadTypeUpdate = ({ id }) => {
         }
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/account_head_type/account_head_type_edit/${id}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/account_head_type/account_head_type_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

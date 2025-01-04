@@ -15,7 +15,7 @@ const CopyWarranty = ({ id }) => {
     } = useQuery({
         queryKey: ['warranty'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all`)
 
             const data = await res.json()
             return data
@@ -26,7 +26,7 @@ const CopyWarranty = ({ id }) => {
 
     const [warrantys, setwarrantys] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all/${id}`)
             .then(Response => Response.json())
             .then(data => setwarrantys(data))
     }, [id])
@@ -215,7 +215,7 @@ const CopyWarranty = ({ id }) => {
         };
 
         // Add your form submission logic here using the 'fields' state.
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_all`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_all`)
             .then((response) => response.json())
             .then((warrantyData) => {
                 // Check if brand_name already exists in warrantyData
@@ -236,7 +236,7 @@ const CopyWarranty = ({ id }) => {
                     }
                     console.log(addValue.file_path)
                     console.log(addValue)
-                    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/warranty/warranty_copy`, {
+                    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/warranty/warranty_copy`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -303,7 +303,7 @@ const CopyWarranty = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

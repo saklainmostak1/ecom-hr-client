@@ -30,7 +30,7 @@
 //     };
 
 //     fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_create`,
+//       `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_create`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -212,7 +212,7 @@ const NewsCategoryCreate = () => {
 
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
       .then(res => res.json())
       .then(data => setStatus(data))
   }, [])
@@ -253,7 +253,7 @@ const NewsCategoryCreate = () => {
     queryKey: ["noticeCategoryAll"],
     queryFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_all`
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_all`
       );
       const data = await res.json();
       return data;
@@ -308,7 +308,7 @@ const NewsCategoryCreate = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/news_category/news_category_create`,
+        `${process.env.NEXT_PUBLIC_API_URL}/Admin/news_category/news_category_create`,
         {
           method: "POST",
           headers: {

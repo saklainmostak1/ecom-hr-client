@@ -13,7 +13,7 @@ const EditCategory = ({ id }) => {
     const { data: categorys = [], isLoading, refetch } = useQuery({
         queryKey: ['categorys'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/category/category_all`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/category/category_all`);
             const data = await res.json();
             // Filter out the brand with id 
             const filteredBrands = data.filter(brand => brand.id !== parseInt(id));
@@ -26,7 +26,7 @@ const EditCategory = ({ id }) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/category/category_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/category/category_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -232,7 +232,7 @@ const EditCategory = ({ id }) => {
         }
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/category/category_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/category/category_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -294,7 +294,7 @@ const EditCategory = ({ id }) => {
 
     const [status, setStatus] = useState([]);
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/status/all_status`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/status/all_status`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [])

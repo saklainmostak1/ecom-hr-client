@@ -37,7 +37,7 @@ const WareHouseUpdate = ({id}) => {
 
     const [brandSingle, setBrandSingle] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_all/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_all/${id}`)
             .then(Response => Response.json())
             .then(data => setBrandSingle(data))
     }, [id])
@@ -100,7 +100,7 @@ const WareHouseUpdate = ({id}) => {
 
         else {
 
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/ware_house/ware_house_edit/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/ware_house/ware_house_edit/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
