@@ -144,7 +144,7 @@ export default function AdminPageListC() {
                 <div className='col-12 p-4'>
                     <div className='card'>
 
-                        <div className=" bg-light shadow-lg rounded mx-auto">
+                        <div className="">
                             <div className='mb-3'>
                                 <li className="list-group-item text-light  p-1 px-4 " aria-current="true" style={{ background: '#4267b2' }}>
                                     <div className='d-flex justify-content-between'>
