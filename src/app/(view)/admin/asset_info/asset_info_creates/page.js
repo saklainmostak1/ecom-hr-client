@@ -498,6 +498,7 @@ const AssetInfoCreates = () => {
 
                                                     {selectedFile[0] &&
                                                         <>
+                                                        
                                                             <img className="w-100 mb-2 img-thumbnail" onChange={(e) => brand_file_change(e)} src={`${process.env.NEXT_PUBLIC_API_URL}/${selectedFile[0].path}`} alt="Uploaded File" />
 
                                                             <input type="hidden" name="img" value={selectedFile[0].path} />
