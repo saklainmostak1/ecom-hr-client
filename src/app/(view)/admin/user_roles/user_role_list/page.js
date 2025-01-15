@@ -14,7 +14,7 @@ const UsersRoleList = () => {
     } = useQuery({
         queryKey: ['users_role_permission_list'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/role`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/role`)
 
             const data = await res.json()
             return data
@@ -24,7 +24,7 @@ const UsersRoleList = () => {
 
     const [btnIconUsers, setBtnIconUsers] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user-role/btn`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user-role/btn`)
             .then(Response => Response.json())
             .then(data => setBtnIconUsers(data))
 
@@ -53,7 +53,7 @@ const UsersRoleList = () => {
 
         const proceed = window.confirm('Are You Sure delete')
         if (proceed) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role/delete/${id}`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role/delete/${id}`, {
                 method: "DELETE",
 
             })
