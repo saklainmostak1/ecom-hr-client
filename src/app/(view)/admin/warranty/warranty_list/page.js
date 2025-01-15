@@ -100,6 +100,7 @@ const WarrantyList = ({ searchParams }) => {
     );
 
     // http://192.168.0.119:5002/admin/brand/brand_delete/3
+    
     const warranty_delete = id => {
 
         console.log(id)

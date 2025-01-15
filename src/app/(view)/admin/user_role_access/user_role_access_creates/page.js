@@ -16,7 +16,7 @@ const UserRoleAccessCreates = () => {
     } = useQuery({
         queryKey: ['usersRoleCreate'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/user_role_access/module_info_all_access`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/user_role_access/module_info_all_access`)
 
             const data = await res.json()
             return data
@@ -618,7 +618,7 @@ const UserRoleAccessCreates = () => {
         // http://localhost/:5002/user/user-role-create
         // ${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-create
         // ${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/user/users_role_access_create
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/user/users_role_access_create`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/user/users_role_access_create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

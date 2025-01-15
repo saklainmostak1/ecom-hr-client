@@ -16,7 +16,7 @@ const UpdateUserRoleAccess = ({ id }) => {
     } = useQuery({
         queryKey: ['usersRoleCreate'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/Admin/user_role_access/module_info_all_access`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Admin/user_role_access/module_info_all_access`)
 
             const data = await res.json()
             return data
@@ -25,7 +25,7 @@ const UpdateUserRoleAccess = ({ id }) => {
 
     const [userRole, setUserRole] = useState([])
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/user/user-role-single/${id}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/user-role-single/${id}`)
             .then(Response => Response.json())
             .then(data => setUserRole(data))
     }, [id])
@@ -341,7 +341,7 @@ const UpdateUserRoleAccess = ({ id }) => {
 
         // ${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_access_update/${userRoleId}
         // Make a PUT request to update the user role
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/users_role/users_role_access_update/${userRoleId}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users_role/users_role_access_update/${userRoleId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -996,7 +996,7 @@ const UpdateUserRoleAccess = ({ id }) => {
     } = useQuery({
         queryKey: ['moduleInfo'],
         queryFn: async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
 
             const data = await res.json()
             return data
