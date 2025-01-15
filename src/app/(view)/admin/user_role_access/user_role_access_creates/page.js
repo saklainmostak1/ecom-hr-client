@@ -54,7 +54,7 @@ const UserRoleAccessCreates = () => {
         } = useQuery({
             queryKey: ['moduleInfo'],
             queryFn: async () => {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}:5002/admin/module_info/module_info_all/${userId}`)
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/module_info/module_info_all/${userId}`)
     
                 const data = await res.json()
                 return data
