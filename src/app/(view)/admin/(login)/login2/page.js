@@ -41,6 +41,7 @@ const Login2 = () => {
                                                     required
                                                     type="email"
                                                     name="email"
+                                                    value='nayan@gmail.com'
                                                     id="form2Example11" className="form-control"
                                                     placeholder="Enter Email or Mobile" />
                                             </div>
@@ -50,6 +51,7 @@ const Login2 = () => {
                                                     required
                                                     placeholder='Password'
                                                     type="password"
+                                                    value='1234'
                                                     name="password"
                                                     id="form2Example22" className="form-control" />
                                             </div>
